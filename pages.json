@@ -6,7 +6,34 @@
 				"navigationBarTitleText": "uni-app"
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/schoolActivity/schoolActivity",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "校园活动",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/recruitInfo/recruitInfo",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "校园招聘",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/lostAndFound/lostAndFound",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
