@@ -1,12 +1,12 @@
 
-let url_config = '';
+let urlConfig = '';
 
 if(process.env.NODE_ENV === 'development'){
     // 开发环境
-    url_config = 'https://*****.com/';
+    urlConfig = 'http://127.0.0.1:8000/';
 }else{
     // 生产环境
-    url_config = 'https://*****.com/';
+    urlConfig = 'xxx';
 }
 
-export default url_config;
+export default urlConfig;

@@ -2,7 +2,6 @@ import urlConfig from './config.js';
 
 const request = {};
 const headers = {};
-const PORT1 = '/baseinfo';
     
 request.globalRequest = (url, method, data, power) => {
 /*     权限判断 因为有的接口请求头可能需要添加的参数不一样，所以这里做了区分
@@ -21,10 +20,6 @@ request.globalRequest = (url, method, data, power) => {
             responseType = 'blob';
             break;
         default:
-            headers['Authorization'] = `Bearer ${
-                this.$store.getters.userInfo
-            }`;
-            headers['TENANT-ID'] = this.$store.getters.userInfo.tenant_id;
             break;
     }
             
@@ -41,7 +36,6 @@ request.globalRequest = (url, method, data, power) => {
             throw res[1].data;
         }
     }).catch(parmas => {
-
 　　　　　　switch (parmas.code) {
 　　　　　　　　case 401:
 　　　　　　　　　　uni.clearStorageSync();
