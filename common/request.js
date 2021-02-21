@@ -1,3 +1,12 @@
+/**
+ * config.js  请求方法封装
+ * @Author: xqbzheng
+ * @Date: 2021-2-21
+ * @LastEditTime: 
+ * @LastEditors: xqbzheng
+ * @Description:
+ */
+
 import urlConfig from './config.js';
 
 const request = {};
@@ -25,4 +34,4 @@ request.globalRequest = (url, method, data, power) => {
 	 });
     
  };
- export default request;
+export default request;
