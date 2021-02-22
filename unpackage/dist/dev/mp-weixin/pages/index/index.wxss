@@ -34,4 +34,16 @@
 	font-size: 36rpx;
 	color: #8f8f94;
 }
+.user-info {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	font-size: .5rem;
+	-webkit-align-self: flex-start;
+	        align-self: flex-start;
+}
 
