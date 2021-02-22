@@ -1,13 +1,20 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
+		<image class="logo" :src="avatarUrl"></image>
 		<view class="text-area">
 			<text class="title">{{title}}</text>
+			<text class="title">{{userInfo}}</text>
 		</view>
+		<text class="user-info" v-for="key in Object.keys(userInfo)">
+			<text>
+				{{key}}: {{userInfo[key]}}
+			</text>
+		</text>
 	</view>
 </template>
 
 <script>
+	import {mapState} from 'vuex'
 	export default {
 		data() {
 			return {
@@ -19,6 +26,15 @@
 		},
 		methods: {
 
+		},
+		computed: {
+			...mapState({
+				'userInfo': state=>state.userInfo
+			}),
+			// 头像地址
+			avatarUrl() {
+				return this.userInfo?.avatarUrl
+			}
 		}
 	}
 </script>
@@ -48,5 +64,11 @@
 	.title {
 		font-size: 36rpx;
 		color: #8f8f94;
+	}
+	.user-info {
+		display: flex;
+		flex-direction: column;
+		font-size: .5rem;
+		align-self: flex-start;
 	}
 </style>
