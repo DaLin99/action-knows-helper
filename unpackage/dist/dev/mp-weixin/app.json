@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/schoolActivity/schoolActivity",
+    "pages/recruitInfo/recruitInfo",
+    "pages/lostAndFound/lostAndFound",
     "pages/index/index"
   ],
   "subPackages": [],
@@ -9,6 +12,5 @@
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }
