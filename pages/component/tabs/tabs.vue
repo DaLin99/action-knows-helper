@@ -1,57 +1,57 @@
 <template>
-  <div class="tab-list-container">
-    <div class="tab-list">
-      <div
+  <view class="tab-list-container">
+    <view class="tab-list">
+      <view
         v-for="(item, index) in tabsList"
         :key="index"
         @click="$emit('clickTab', index)"
       >
         <!-- tab-nav-name -->
-        <span class="tab-name">{{ item.tabName }}</span>
+        <text class="tab-name">{{ item.tabName }}</text>
         <!-- tab-nav-block -->
-        <span
+        <text
           :style="{
             background:
               index == activeTabIndex ? '#4402ec' : 'transparent',
           }"
           class="tab-block"
         />
-      </div>
-    </div>
-    <div class="card-list">
-      <div
+      </view>
+    </view>
+    <view class="card-list">
+      <view
         v-for="(item, index) in showDatasource"
         :key="index"
         class="card-item"
       >
-        <div class="card-top">
-          <div class="card-top-left">
-            <img 
+        <view class="card-top">
+          <view class="card-top-left">
+            <image 
               :src="item.imgPath" 
-              alt="" >
-          </div>
-          <div class="card-top-right">
+              alt="" />
+          </view>
+          <view class="card-top-right">
             <h4>{{ item.titleConfig.value }}</h4>
-            <div>{{ item.content.value }}</div>
-          </div>
-        </div>
-        <div class="card-bottom">
-          <div class="icon-publisher">
+            <view>{{ item.content.value }}</view>
+          </view>
+        </view>
+        <view class="card-bottom">
+          <view class="icon-publisher">
             <uni-icons 
               class="icon" 
               type="contact" 
               size="24" />
-            <span class="publisher-name">{{
+            <text class="publisher-name">{{
               item.publisher.value
-            }}</span>
-          </div>
-          <span class="publish-date">{{
+            }}</text>
+          </view>
+          <text class="publish-date">{{
             item.publishDate.value
-          }}</span>
-        </div>
-      </div>
-    </div>
-  </div>
+          }}</text>
+        </view>
+      </view>
+    </view>
+  </view>
 </template>
 
 <script>

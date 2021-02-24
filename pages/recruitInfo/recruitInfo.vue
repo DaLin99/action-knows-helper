@@ -1,39 +1,39 @@
 <template>
-  <div class="recruit-info-container">
-    <div
+  <view class="recruit-info-container">
+    <view
       v-for="(item, index) in recruitInfoList"
       :key="index"
       class="recruit-info-item"
     >
-      <div class="container-left">
-        <div class="flex-box hover-height-light">
-          <span>{{ item.workType }}</span>
-          <span>{{ item.salary }}</span>
-        </div>
-        <div class="flex-box">
-          <span>{{ item.company }}</span>
-          <span>{{ item.palce }}</span>
-        </div>
-        <div class="flex-box">
-          <span
+      <view class="container-left">
+        <view class="flex-box hover-height-light">
+          <text>{{ item.workType }}</text>
+          <text>{{ item.salary }}</text>
+        </view>
+        <view class="flex-box">
+          <text>{{ item.company }}</text>
+          <text>{{ item.palce }}</text>
+        </view>
+        <view class="flex-box">
+          <text
             v-for="(
               requirementItem, requirementIndex
             ) in item.requirement"
             :key="requirementIndex"
           >
             {{ requirementItem }}
-          </span>
-          <span class="date">{{ item.date }}</span>
-        </div>
-      </div>
-      <div class="container-right">
-        <img 
+          </text>
+          <text class="date">{{ item.date }}</text>
+        </view>
+      </view>
+      <view class="container-right">
+        <image 
           :src="item.imgPath" 
           class="company-img" 
-          alt="" >
-      </div>
-    </div>
-  </div>
+          alt="" />
+      </view>
+    </view>
+  </view>
 </template>
 
 <script>

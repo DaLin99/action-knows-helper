@@ -1,12 +1,13 @@
 <template>
-  <div class="lost-found-container">
+  <view class="lost-found-container">
+    111
     <tabs
       :tabs-list="tabsList"
       :show-datasource="showDatasource"
       :active-tab-index="activeTabIndex"
       @clickTab="clcikTab"
     />
-  </div>
+  </view>
 </template>
 
 <script>
