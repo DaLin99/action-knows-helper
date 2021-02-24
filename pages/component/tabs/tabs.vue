@@ -27,11 +27,12 @@
         <view class="card-top">
           <view class="card-top-left">
             <image 
+				class="card-img"
               :src="item.imgPath" 
               alt="" />
           </view>
           <view class="card-top-right">
-            <h4>{{ item.titleConfig.value }}</h4>
+            <text>{{ item.titleConfig.value }}</text>
             <view>{{ item.content.value }}</view>
           </view>
         </view>

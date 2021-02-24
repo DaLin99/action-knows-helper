@@ -1,6 +1,5 @@
 <template>
   <view class="activity-container">
-    111
     <view
       v-for="(item, index) in activityList"
       :key="index"

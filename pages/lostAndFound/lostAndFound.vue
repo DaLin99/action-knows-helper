@@ -1,6 +1,5 @@
 <template>
   <view class="lost-found-container">
-    111
     <tabs
       :tabs-list="tabsList"
       :show-datasource="showDatasource"

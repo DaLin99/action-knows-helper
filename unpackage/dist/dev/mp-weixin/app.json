@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/lostAndFound/lostAndFound",
-    "pages/index/index",
     "pages/schoolActivity/schoolActivity",
-    "pages/recruitInfo/recruitInfo"
+    "pages/recruitInfo/recruitInfo",
+    "pages/lostAndFound/lostAndFound",
+    "pages/index/index"
   ],
   "subPackages": [],
   "window": {

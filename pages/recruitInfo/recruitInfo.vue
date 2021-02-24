@@ -6,25 +6,30 @@
       class="recruit-info-item"
     >
       <view class="container-left">
-        <view class="flex-box hover-height-light">
-          <text>{{ item.workType }}</text>
-          <text>{{ item.salary }}</text>
+        <view class="left-top">
+          <view class="flex-box hover-height-light">
+            <text>{{ item.workType }}</text>
+            <text>{{ item.salary }}</text>
+          </view>
+          <view class="flex-box">
+            <text>{{ item.company }}</text>
+            <text>{{ item.palce }}</text>
+          </view>
         </view>
-        <view class="flex-box">
-          <text>{{ item.company }}</text>
-          <text>{{ item.palce }}</text>
+        <view class="left-bottom">
+          <view class="flex-box">
+            <text
+              v-for="(
+                requirementItem, requirementIndex
+              ) in item.requirement"
+              :key="requirementIndex"
+            >
+              {{ requirementItem }}
+            </text>
+            <text class="date">{{ item.date }}</text>
+          </view>
         </view>
-        <view class="flex-box">
-          <text
-            v-for="(
-              requirementItem, requirementIndex
-            ) in item.requirement"
-            :key="requirementIndex"
-          >
-            {{ requirementItem }}
-          </text>
-          <text class="date">{{ item.date }}</text>
-        </view>
+        
       </view>
       <view class="container-right">
         <image 

@@ -1,6 +1,24 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 	{
+	        "path" : "pages/schoolActivity/schoolActivity",
+	        "style" :                                                                                    
+	        {
+	            "navigationBarTitleText": "校园活动",
+	            "enablePullDownRefresh": false
+	        }
+	        
+	    },
+	{
+	    "path" : "pages/recruitInfo/recruitInfo",
+	    "style" :                                                                                    
+	    {
+	        "navigationBarTitleText": "校园招聘",
+	        "enablePullDownRefresh": false
+	    }
+	    
+	},
+	{
 	    "path" : "pages/lostAndFound/lostAndFound",
 	    "style" :                                                                                    
 	    {
@@ -15,24 +33,7 @@
 				"navigationBarTitleText": "uni-app"
 			}
 		}
-	    ,{
-            "path" : "pages/schoolActivity/schoolActivity",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "校园活动",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/recruitInfo/recruitInfo",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "校园招聘",
-                "enablePullDownRefresh": false
-            }
-            
-        }
+        
         
     ],
 	"globalStyle": {
