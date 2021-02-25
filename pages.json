@@ -1,7 +1,25 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 	{
-	        "path" : "pages/schoolActivity/schoolActivity",
+	    "path" : "pages/schoolActivityDetail/schoolActivityDetail",
+	    "style" :                                                                                    
+	    {
+	        "navigationBarTitleText": "活动详情",
+	        "enablePullDownRefresh": false
+	    }
+	    
+	},
+	{
+	    "path" : "pages/submitLost/submitLost",
+	    "style" :                                                                                    
+	    {
+	        "navigationBarTitleText": "发布失物信息",
+	        "enablePullDownRefresh": false
+	    }
+	    
+	},
+	{
+	        "path" : "pages/schoolActivityList/schoolActivityList",
 	        "style" :                                                                                    
 	        {
 	            "navigationBarTitleText": "校园活动",
@@ -10,7 +28,7 @@
 	        
 	    },
 	{
-	    "path" : "pages/recruitInfo/recruitInfo",
+	    "path" : "pages/recruitInfoList/recruitInfoList",
 	    "style" :                                                                                    
 	    {
 	        "navigationBarTitleText": "校园招聘",
@@ -19,7 +37,7 @@
 	    
 	},
 	{
-	    "path" : "pages/lostAndFound/lostAndFound",
+	    "path" : "pages/lostAndFoundList/lostAndFoundList",
 	    "style" :                                                                                    
 	    {
 	        "navigationBarTitleText": "失物招领",
@@ -34,7 +52,25 @@
 			}
 		}
         
-        
+        ,{
+            "path" : "pages/lostInfo/lostInfo",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "寻物启事",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/recruitDetail/recruitDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "校招信息",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+       
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

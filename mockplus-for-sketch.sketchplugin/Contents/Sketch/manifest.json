@@ -1,0 +1,35 @@
+{
+  "name": "Mockplus",
+  "description": "Collaborate and handoff designs easier and faster with auto specs and assets.",
+  "version": "2.2.7",
+  "author": "Mockplus",
+  "homepage": "https://www.mockplus.cn",
+  "compatibleVersion": "57.1",
+  "bundleVersion": 1,
+  "identifier": "com.mockplus.allen",
+  "icon": "icon.png",
+  "commands": [
+    {
+      "name": "❤️  Mockplus",
+      "identifier": "mockplus-for-sketch.mainCommand",
+      "script": "__plugin_main.js",
+      "shortcut": "cmd shift p",
+      "handlers": {
+        "run": "onRun",
+        "actions": {
+          "Shutdown": "onShutdown"
+        }
+      }
+    }
+  ],
+  "menu": {
+    "items": [
+      "mockplus-for-sketch.mainCommand"
+    ],
+    "isRoot": true,
+    "title": "摹客",
+    "shortcut": "cmd shift p"
+  },
+  "disableCocoaScriptPreprocessor": true,
+  "appcast": "https://raw.githubusercontent.com//master/.appcast.xml"
+}

@@ -72,5 +72,5 @@ export default {
 </script>
 
 <style lang="less" scope>
-@import "./schoolActivity.less";
+@import "./schoolActivityList.less";
 </style>

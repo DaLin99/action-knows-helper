@@ -105,11 +105,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"uni_modules/uni-icons/components/uni-icons/uni-icons":1,"pages/component/tabs/tabs":1};
+/******/ 		var cssChunks = {"uni_modules/uni-forms/components/uni-forms-item/uni-forms-item":1,"uni_modules/uni-forms/components/uni-forms/uni-forms":1,"components/mx-datepicker/mx-datepicker":1,"uni_modules/uni-icons/components/uni-icons/uni-icons":1,"pages/component/tabs/tabs":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"uni_modules/uni-icons/components/uni-icons/uni-icons":"uni_modules/uni-icons/components/uni-icons/uni-icons","pages/component/tabs/tabs":"pages/component/tabs/tabs"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"uni_modules/uni-forms/components/uni-forms-item/uni-forms-item":"uni_modules/uni-forms/components/uni-forms-item/uni-forms-item","uni_modules/uni-forms/components/uni-forms/uni-forms":"uni_modules/uni-forms/components/uni-forms/uni-forms","components/mx-datepicker/mx-datepicker":"components/mx-datepicker/mx-datepicker","uni_modules/uni-icons/components/uni-icons/uni-icons":"uni_modules/uni-icons/components/uni-icons/uni-icons","pages/component/tabs/tabs":"pages/component/tabs/tabs"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {
