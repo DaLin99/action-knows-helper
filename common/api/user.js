@@ -9,11 +9,11 @@
 
 import request from '../request.js';
 
-const PORT = 'user';
+const MODULE = 'user';
 
 // 登陆
 const login = async params => {
-	return await request.globalRequest(`${PORT}/login/`, 'get', params);
+	return await request.globalRequest(`${MODULE}/login/`, 'get', params);
 };
 
 export default {

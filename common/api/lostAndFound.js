@@ -8,9 +8,10 @@
  */
 
 import request from '../request.js';
-const PORT = 'lostAndFound';
 
-const fun1 = params => request.globalRequest(`${PORT}/mobile/signUp` , params, 1);
+const MODULE = 'lostAndFound';
+
+const fun1 = params => request.globalRequest(`${MODULE}/mobile/signUp` , params, 1);
 
 export default {
 	fun1, 
