@@ -1,5 +1,12 @@
 {
 	"pages": [{
+	    "path" : "pages/userInfo/userInfo",
+	    "style" :                                                                                    
+	    {
+	        "navigationBarTitleText": "我的",
+	        "enablePullDownRefresh": false
+	    }
+  },{
       "path" : "pages/schoolActivity/schoolActivity",
       "style" :                                                                                    
       {
@@ -21,19 +28,19 @@
 	        "navigationBarTitleText": "失物招领",
 	        "enablePullDownRefresh": false
 	    }
-	    
 	},{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "uni-app"
       }
-  }],
+  }
+  ],
   "tabBar": {
       "color": "#cccccc",
       "selectedColor": "#6666FF",
       "borderStyle": "black",
       "backgroundColor": "#ffffff",
-      "list": [{
+      "list": [ {
         "pagePath": "pages/lostAndFound/lostAndFound",
         "iconPath": "static/image/tabBar/lostAndFound.png",
         "selectedIconPath": "static/image/tabBar/lostAndFound-selected.png",
@@ -53,8 +60,8 @@
           "iconPath":"static/image/tabBar/activity.png",
           "selectedIconPath":"static/image/tabBar/activity-selected.png",
           "text": "学院活动"
-      }, {
-          "pagePath": "pages/index/index",
+      },{
+          "pagePath": "pages/userInfo/userInfo",
           "iconPath":"static/image/tabBar/user.png",
           "selectedIconPath":"static/image/tabBar/user-selected.png",
           "text": "我的"

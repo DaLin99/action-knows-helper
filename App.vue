@@ -21,6 +21,7 @@
 			 */
 			async auth() {
 				const that = this;
+        console.log(123)
 				uni.getUserInfo({
 				  provider: 'weixin',
 				  success: function (infoRes) {

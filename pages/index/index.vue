@@ -1,5 +1,6 @@
 <template>
 	<view class="content">
+    <button open-type="getUserInfo">ss</button>
 		<image class="logo" :src="avatarUrl"></image>
 		<view class="text-area">
 			<text class="title">{{title}}</text>
@@ -14,18 +15,21 @@
 </template>
 
 <script>
+	import {mapMutations} from 'vuex'
 	import {mapState} from 'vuex'
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
 			}
 		},
 		onLoad() {
 
 		},
 		methods: {
-
+      getUserInfo(e){
+        console.log(e)
+      }
 		},
 		computed: {
 			...mapState({
