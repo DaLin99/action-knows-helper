@@ -2,7 +2,7 @@
  * api/index.js  请求接口导出入口
  * @Author: xqbzheng
  * @Date: 2021-2-21
- * @LastEditTime: 
+ * @LastEditTime:
  * @LastEditors: xqbzheng
  * @Description:
  */
@@ -13,4 +13,4 @@ import lostAndFound from './lostAndFound.js';
 export default {
 	...user,
 	...lostAndFound,
-};;
+};
