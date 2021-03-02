@@ -167,6 +167,12 @@
   .mt40 {
       margin-top: 40rpx;
   }
+  .mt70 {
+      margin-top: 70rpx;
+  }
+  .mt80 {
+      margin-top: 80rpx;
+  }
   .mb40 {
       margin-bottom: 40rpx;
   }

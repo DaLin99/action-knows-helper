@@ -43,5 +43,38 @@ export default {
 </script>
 
 <style lang="less" scope>
-@import "./tabs.less";
+.tab-list-container {
+  position: fixed;
+  top: 0;
+  height: 70rpx;
+  width: 100%;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    filter: blur(8rpx);
+    z-index: -1;
+}
+	.tab-list {
+    height: 100%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		.tab-name {
+			display: block;
+		}
+		.tab-block {
+			display: block;
+			width: 100%;
+			height: 4rpx;
+			background: transparent;
+			border-radius: 4rpx;
+		}
+	}
+}
+
 </style>

@@ -1,12 +1,12 @@
 <template>
   <view class="lost-found-container">
     <tabs
-      class="mb10"
       :tabs-list="tabsList"
       :active-tab-index="activeTabIndex"
+      class="mb10"
       @clickTab="clcikTab"
     />
-    <view class="card-list">
+    <view class="card-list mt80">
       <card
         v-for="(item, index) in showDatasource"
         :key="index"
@@ -18,7 +18,7 @@
 
 <script>
 import tabs from 'pages/component/tabs/tabs.vue';
-import card from './component/card.vue'
+import card from './component/card.vue';
 export default {
 	name: 'HelloWorld',
 	components: { tabs, card },
@@ -31,44 +31,35 @@ export default {
 					tabName: '寻找失物',
 					dataSource: [
 						{
-							imgPath: '../../static/image/activity-bgc.png',
-							titleConfig: {
-								style: {},
-								value: '寻找一双鞋子',
-							},
-							content: {
-								style: {},
-								value:
-									'我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以',
-							},
-							publisher: {
-								style: {},
-								value: '发布者名字',
-							},
-							publishDate: {
-								style: {},
-								value: '2021-1-2',
-							},
-						},
-						{
-							imgPath: '../../static/image/activity-bgc.png',
-							titleConfig: {
-								style: {},
-								value: '寻找一双鞋子',
-							},
-							content: {
-								style: {},
-								value:
-									'我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以',
-							},
-							publisher: {
-								style: {},
-								value: '发布者名字',
-							},
-							publishDate: {
-								style: {},
-								value: '2021-1-2',
-							},
+							imgPath: require('../../static/image/activity-bgc.jpeg'),
+							title: '寻找一双鞋子',
+							content: '我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以',
+							publisher: '发布者名字',
+							publishDate: '2021-1-2'
+						},{
+							imgPath: require('../../static/image/activity-bgc.jpeg'),
+							title: '寻找一双鞋子',
+							content: '我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以',
+							publisher: '发布者名字',
+							publishDate: '2021-1-2'
+						},{
+							imgPath: require('../../static/image/activity-bgc.jpeg'),
+							title: '寻找一双鞋子',
+							content: '我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以',
+							publisher: '发布者名字',
+							publishDate: '2021-1-2'
+						},{
+							imgPath: require('../../static/image/activity-bgc.jpeg'),
+							title: '寻找一双鞋子',
+							content: '我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以',
+							publisher: '发布者名字',
+							publishDate: '2021-1-2'
+						},{
+							imgPath: require('../../static/image/activity-bgc.jpeg'),
+							title: '寻找一双鞋子',
+							content: '我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以',
+							publisher: '发布者名字',
+							publishDate: '2021-1-2'
 						},
 					],
 				},
@@ -76,23 +67,23 @@ export default {
 					tabName: '寻找失主',
 					dataSource: [
 						{
-							imgPath: '',
-							titleConfig: {
-								style: {},
-								value: '',
-							},
-							content: {
-								style: {},
-								value: '',
-							},
-							publisher: {
-								style: {},
-								value: '',
-							},
-							publishDate: {
-								style: {},
-								value: '2021-1-2',
-							},
+							imgPath: require('../../static/image/activity-bgc.jpeg'),
+							title: '寻找一双鞋子',
+							content: '我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以',
+							publisher: '发布者名字',
+							publishDate: '2021-1-2'
+						},{
+							imgPath: require('../../static/image/activity-bgc.jpeg'),
+							title: '寻找一双鞋子',
+							content: '我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以',
+							publisher: '发布者名字',
+							publishDate: '2021-1-2'
+						},{
+							imgPath: require('../../static/image/activity-bgc.jpeg'),
+							title: '寻找一双鞋子',
+							content: '我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以',
+							publisher: '发布者名字',
+							publishDate: '2021-1-2'
 						},
 					],
 				},
@@ -115,7 +106,6 @@ export default {
 <style lang="less" scoped>
   
   .card-list {
-  	margin-top: 24rpx;
   	padding: 0px 36rpx;
   }
 </style>

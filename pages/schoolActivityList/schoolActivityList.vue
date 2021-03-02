@@ -34,7 +34,7 @@ export default {
     return {
       activityList: [
         {
-          activityBgcSrc: '../../static/image/activity-bgc.png',
+          activityBgcSrc: '../../static/image/activity-bgc.jpeg',
           activityTitle: '志愿者招募',
           activityDate: '2020-9-1',
           activityHolder: '组织名称',
@@ -42,7 +42,7 @@ export default {
             '招聘要求：1.无关端正。2.担任干部的经历有限。3.幽默有趣4.写bug多的4.会做菜做得很好吃的',
         },
         {
-          activityBgcSrc: '../../static/image/activity-bgc.png',
+          activityBgcSrc: '../../static/image/activity-bgc.jpeg',
           activityTitle: '志愿者招募',
           activityDate: '2020-9-1',
           activityHolder: '组织名称',
@@ -50,14 +50,14 @@ export default {
             '招聘要求：1.无关端正。2.担任干部的经历有限。3.幽默有趣4.写bug多的4.会做菜做得很好吃的',
         },
         {
-          activityBgcSrc: '../../static/image/activity-bgc.png',
+          activityBgcSrc: '../../static/image/activity-bgc.jpeg',
           activityTitle: '志愿者招募',
           activityDate: '2020-9-1',
           activityHolder: '组织名称',
           activitityDes: '招聘要求：1.无关端正。2.担任干部的经历有限。吃的',
         },
         {
-          activityBgcSrc: '../../static/image/activity-bgc.png',
+          activityBgcSrc: '../../static/image/activity-bgc.jpeg',
           activityTitle: '志愿者招募',
           activityDate: '2020-9-1',
           activityHolder: '组织名称',
