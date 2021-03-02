@@ -1,6 +1,6 @@
 <template>
   <view>
-    <view class="user-msg shadow-box">
+    <view class="user-msg shadow-box m-20">
       <image class="avator" :src="avatarUrl"></image>
       <text>{{userInfo.nickName}}</text>
       <text class="self-words">{{comeForm}}</text>
@@ -11,7 +11,7 @@
         </view>
       </view>
     </view>
-    <view class="feature-list shadow-box">
+    <view class="feature-list shadow-box m-20">
       <uni-list-item
       v-for="(item, index) in featureList"
       :title="item"
@@ -117,10 +117,5 @@
       }
     }
   }
-  .shadow-box {
-    box-shadow: 0 4rpx 18rpx 0 #B0BEC5;
-    border-radius: 20rpx;
-    margin: 20rpx;
-    overflow: hidden;
-  }
+  
 </style>

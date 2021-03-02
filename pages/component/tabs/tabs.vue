@@ -18,40 +18,6 @@
         />
       </view>
     </view>
-    <view class="card-list">
-      <view
-        v-for="(item, index) in showDatasource"
-        :key="index"
-        class="card-item"
-      >
-        <view class="card-top">
-          <view class="card-top-left">
-            <image 
-				class="card-img"
-              :src="item.imgPath" 
-              alt="" />
-          </view>
-          <view class="card-top-right">
-            <text>{{ item.titleConfig.value }}</text>
-            <view>{{ item.content.value }}</view>
-          </view>
-        </view>
-        <view class="card-bottom">
-          <view class="icon-publisher">
-            <uni-icons 
-              class="icon" 
-              type="contact" 
-              size="24" />
-            <text class="publisher-name">{{
-              item.publisher.value
-            }}</text>
-          </view>
-          <text class="publish-date">{{
-            item.publishDate.value
-          }}</text>
-        </view>
-      </view>
-    </view>
   </view>
 </template>
 
@@ -59,10 +25,6 @@
 export default {
 	props: {
 		tabsList: {
-			type: Array,
-			default: () => [],
-		},
-		showDatasource: {
 			type: Array,
 			default: () => [],
 		},
@@ -81,5 +43,38 @@ export default {
 </script>
 
 <style lang="less" scope>
-@import "./tabs.less";
+.tab-list-container {
+  position: fixed;
+  top: 0;
+  height: 70rpx;
+  width: 100%;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    filter: blur(8rpx);
+    z-index: -1;
+}
+	.tab-list {
+    height: 100%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		.tab-name {
+			display: block;
+		}
+		.tab-block {
+			display: block;
+			width: 100%;
+			height: 4rpx;
+			background: transparent;
+			border-radius: 4rpx;
+		}
+	}
+}
+
 </style>

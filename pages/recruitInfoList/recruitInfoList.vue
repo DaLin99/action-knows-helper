@@ -4,6 +4,7 @@
       v-for="(item, index) in recruitInfoList"
       :key="index"
       class="recruit-info-item"
+      @click="clickToNav(item)"
     >
       <view class="container-left">
         <view class="left-top">
@@ -46,31 +47,38 @@ export default {
 	data() {
 		return {
 			recruitInfoList: [
-				{
+				{	id:'1',
 					company: '快手科技信息有限公司',
 					workType: '前端工程师-校招实习',
 					salary: '200/天',
 					palce: '北京',
 					requirement: ['在校应届', '本科'],
-					imgPath: '../../static/image/activity-bgc.png',
+					imgPath: '../../static/image/activity-bgc.jpeg',
 					date: '2021-1-2',
 				},
-				{
+				{	id:'2',
 					company: '快手科技信息有限公司',
 					workType: '前端工程师-校招实习',
 					salary: '200/天',
 					palce: '北京',
 					requirement: ['在校应届', '本科'],
-					imgPath: '../../static/image/activity-bgc.png',
+					imgPath: '../../static/image/activity-bgc.jpeg',
 					date: '2021-1-2',
 				},
 			],
 		};
 	},
-	methods: {},
+	methods: {
+		clickToNav(info) {
+			console.log(info);
+			uni.navigateTo({
+				url:`../recruitDetail/recruitDetail?info=${info}`
+			});
+		}
+	},
 };
 </script>
 
 <style lang="less" scope>
-@import "./recruitInfo.less";
+@import "./recruitInfoList.less";
 </style>

@@ -1,71 +1,85 @@
 {
 	"pages": [{
-	    "path" : "pages/userInfo/userInfo",
-	    "style" :                                                                                    
-	    {
-	        "navigationBarTitleText": "我的",
+        "path" : "pages/userInfo/userInfo",
+        "style" : {
+            "navigationBarTitleText": "我的",
+            "enablePullDownRefresh": false
+        }
+    },{
+      "path" : "pages/schoolActivityDetail/schoolActivityDetail",
+	    "style" :{
+	        "navigationBarTitleText": "活动详情",
 	        "enablePullDownRefresh": false
 	    }
-  },{
-      "path" : "pages/schoolActivity/schoolActivity",
-      "style" :                                                                                    
-      {
+    },{
+        "path" : "pages/schoolActivityList/schoolActivityList",
+        "style" :{
           "navigationBarTitleText": "校园活动",
           "enablePullDownRefresh": false
+        }
+    },{
+        "path" : "pages/recruitInfoList/recruitInfoList",
+        "style" :{
+            "navigationBarTitleText": "校园招聘",
+            "enablePullDownRefresh": false
+        }
+
+    },{
+        "path" : "pages/lostAndFoundList/lostAndFoundList",
+        "style" : {
+            "navigationBarTitleText": "失物招领",
+            "enablePullDownRefresh": false
+        }
+    },{
+        "path": "pages/index/index",
+        "style": {
+          "navigationBarTitleText": "uni-app"
+        }
+    },{
+      "path" : "pages/lostInfo/lostInfo",
+      "style" :
+      {
+        "navigationBarTitleText": "寻物启事",
+        "enablePullDownRefresh": false
       }
-  },{
-	    "path" : "pages/recruitInfo/recruitInfo",
-	    "style" :                                                                                    
-	    {
-	        "navigationBarTitleText": "校园招聘",
-	        "enablePullDownRefresh": false
-	    }
-	    
-	},{
-	    "path" : "pages/lostAndFound/lostAndFound",
-	    "style" :                                                                                    
-	    {
-	        "navigationBarTitleText": "失物招领",
-	        "enablePullDownRefresh": false
-	    }
-	},{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
+    },{
+      "path" : "pages/recruitDetail/recruitDetail",
+      "style" :{
+        "navigationBarTitleText": "校招信息",
+        "enablePullDownRefresh": false
       }
-  }
-  ],
+    }],
   "tabBar": {
       "color": "#cccccc",
       "selectedColor": "#6666FF",
       "borderStyle": "black",
       "backgroundColor": "#ffffff",
       "list": [ {
-        "pagePath": "pages/lostAndFound/lostAndFound",
+        "pagePath": "pages/lostAndFoundList/lostAndFoundList",
         "iconPath": "static/image/tabBar/lostAndFound.png",
         "selectedIconPath": "static/image/tabBar/lostAndFound-selected.png",
           "text": "失物招领"
-      }, {
-        "pagePath": "pages/index/index",
-        "iconPath": "static/image/tabBar/forum.png",
-        "selectedIconPath": "static/image/tabBar/forum-selected.png",
-        "text": "校园论坛"
-      }, {
-          "pagePath": "pages/recruitInfo/recruitInfo",
-          "iconPath":"static/image/tabBar/job.png",
-          "selectedIconPath":"static/image/tabBar/job-selected.png",
-          "text": "招聘信息"
-      }, {
-          "pagePath": "pages/schoolActivity/schoolActivity",
-          "iconPath":"static/image/tabBar/activity.png",
-          "selectedIconPath":"static/image/tabBar/activity-selected.png",
-          "text": "学院活动"
-      },{
-          "pagePath": "pages/userInfo/userInfo",
-          "iconPath":"static/image/tabBar/user.png",
-          "selectedIconPath":"static/image/tabBar/user-selected.png",
-          "text": "我的"
-      }]
+        }, {
+          "pagePath": "pages/index/index",
+          "iconPath": "static/image/tabBar/forum.png",
+          "selectedIconPath": "static/image/tabBar/forum-selected.png",
+          "text": "校园论坛"
+        }, {
+            "pagePath": "pages/recruitInfoList/recruitInfoList",
+            "iconPath":"static/image/tabBar/job.png",
+            "selectedIconPath":"static/image/tabBar/job-selected.png",
+            "text": "招聘信息"
+        }, {
+            "pagePath": "pages/schoolActivityList/schoolActivityList",
+            "iconPath":"static/image/tabBar/activity.png",
+            "selectedIconPath":"static/image/tabBar/activity-selected.png",
+            "text": "学院活动"
+        },{
+            "pagePath": "pages/userInfo/userInfo",
+            "iconPath":"static/image/tabBar/user.png",
+            "selectedIconPath":"static/image/tabBar/user-selected.png",
+            "text": "我的"
+        }]
   },
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
