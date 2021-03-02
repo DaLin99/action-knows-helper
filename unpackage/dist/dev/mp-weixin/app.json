@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/schoolActivityDetail/schoolActivityDetail",
+    "pages/submitLost/submitLost",
+    "pages/schoolActivityList/schoolActivityList",
+    "pages/recruitInfoList/recruitInfoList",
+    "pages/lostAndFoundList/lostAndFoundList",
+    "pages/index/index",
+    "pages/lostInfo/lostInfo",
+    "pages/recruitDetail/recruitDetail"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "usingComponents": {}
+}

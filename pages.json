@@ -1,29 +1,47 @@
 {
 	"pages": [{
 	    "path" : "pages/userInfo/userInfo",
-	    "style" :                                                                                    
+	    "style" :
 	    {
 	        "navigationBarTitleText": "我的",
 	        "enablePullDownRefresh": false
 	    }
   },{
-      "path" : "pages/schoolActivity/schoolActivity",
-      "style" :                                                                                    
+      "path" : "pages/schoolActivityDetail/schoolActivityDetail",
+	    "style" :
+	    {
+	        "navigationBarTitleText": "活动详情",
+	        "enablePullDownRefresh": false
+	    }
+
+	},
+	{
+	    "path" : "pages/submitLost/submitLost",
+	    "style" :
+	    {
+	        "navigationBarTitleText": "发布失物信息",
+	        "enablePullDownRefresh": false
+	    }
+
+	},
+	{
+	        "path" : "pages/schoolActivityList/schoolActivityList",
+      "style" :
       {
           "navigationBarTitleText": "校园活动",
           "enablePullDownRefresh": false
       }
   },{
-	    "path" : "pages/recruitInfo/recruitInfo",
-	    "style" :                                                                                    
+	    "path" : "pages/recruitInfoList/recruitInfoList",
+	    "style" :
 	    {
 	        "navigationBarTitleText": "校园招聘",
 	        "enablePullDownRefresh": false
 	    }
-	    
+
 	},{
-	    "path" : "pages/lostAndFound/lostAndFound",
-	    "style" :                                                                                    
+	    "path" : "pages/lostAndFoundList/lostAndFoundList",
+	    "style" :
 	    {
 	        "navigationBarTitleText": "失物招领",
 	        "enablePullDownRefresh": false
@@ -67,6 +85,29 @@
           "text": "我的"
       }]
   },
+			}
+		}
+
+        ,{
+            "path" : "pages/lostInfo/lostInfo",
+            "style" :
+            {
+                "navigationBarTitleText": "寻物启事",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "pages/recruitDetail/recruitDetail",
+            "style" :
+            {
+                "navigationBarTitleText": "校招信息",
+                "enablePullDownRefresh": false
+            }
+
+        }
+
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
