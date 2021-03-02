@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "失物招领",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tabs": "/pages/component/tabs/tabs"
+  }
+}

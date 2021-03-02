@@ -1,0 +1,66 @@
+.recruit-info-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  padding: 0rpx 24rpx;
+}
+.recruit-info-container .recruit-info-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  height: 200rpx;
+  padding: 24rpx;
+  border-bottom: solid 1px #f3e2e2;
+}
+.recruit-info-container .recruit-info-item .container-left {
+  width: 70%;
+  margin-right: 24rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.recruit-info-container .recruit-info-item .container-left .flex-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.recruit-info-container .recruit-info-item .container-left .date {
+  color: #9e9696;
+}
+.recruit-info-container .recruit-info-item .container-right {
+  width: 30%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.recruit-info-container .recruit-info-item .container-right .company-img {
+  width: 100%;
+  height: 100%;
+}
+.recruit-info-container .recruit-info-item:hover {
+  box-shadow: 0px 1px 3px 0px rgba(0, 21, 41, 0.12);
+}
+.recruit-info-container .recruit-info-item:hover .hover-height-light {
+  color: #2291ec;
+}
+
