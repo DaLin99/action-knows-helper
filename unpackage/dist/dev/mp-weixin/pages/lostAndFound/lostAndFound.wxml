@@ -1,1 +1,0 @@
-<view class="lost-found-container"><tabs vue-id="67bda160-1" tabs-list="{{tabsList}}" show-datasource="{{showDatasource}}" active-tab-index="{{activeTabIndex}}" data-event-opts="{{[['^clickTab',[['clcikTab']]]]}}" bind:clickTab="__e" bind:__l="__l"></tabs></view>
