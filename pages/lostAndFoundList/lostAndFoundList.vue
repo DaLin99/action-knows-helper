@@ -1,19 +1,27 @@
 <template>
   <view class="lost-found-container">
     <tabs
+      class="mb10"
       :tabs-list="tabsList"
-      :show-datasource="showDatasource"
       :active-tab-index="activeTabIndex"
       @clickTab="clcikTab"
     />
+    <view class="card-list">
+      <card
+        v-for="(item, index) in showDatasource"
+        :key="index"
+        :item="item"
+      />
+    </view>
   </view>
 </template>
 
 <script>
 import tabs from 'pages/component/tabs/tabs.vue';
+import card from './component/card.vue'
 export default {
 	name: 'HelloWorld',
-	components: { tabs },
+	components: { tabs, card },
 	data() {
 		return {
 			showDatasource: [],
@@ -104,3 +112,10 @@ export default {
 	},
 };
 </script>
+<style lang="less" scoped>
+  
+  .card-list {
+  	margin-top: 24rpx;
+  	padding: 0px 36rpx;
+  }
+</style>

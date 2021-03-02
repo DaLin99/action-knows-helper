@@ -18,40 +18,6 @@
         />
       </view>
     </view>
-    <view class="card-list">
-      <view
-        v-for="(item, index) in showDatasource"
-        :key="index"
-        class="card-item"
-      >
-        <view class="card-top">
-          <view class="card-top-left">
-            <image 
-				class="card-img"
-              :src="item.imgPath" 
-              alt="" />
-          </view>
-          <view class="card-top-right">
-            <text>{{ item.titleConfig.value }}</text>
-            <view>{{ item.content.value }}</view>
-          </view>
-        </view>
-        <view class="card-bottom">
-          <view class="icon-publisher">
-            <uni-icons 
-              class="icon" 
-              type="contact" 
-              size="24" />
-            <text class="publisher-name">{{
-              item.publisher.value
-            }}</text>
-          </view>
-          <text class="publish-date">{{
-            item.publishDate.value
-          }}</text>
-        </view>
-      </view>
-    </view>
   </view>
 </template>
 
@@ -59,10 +25,6 @@
 export default {
 	props: {
 		tabsList: {
-			type: Array,
-			default: () => [],
-		},
-		showDatasource: {
 			type: Array,
 			default: () => [],
 		},
