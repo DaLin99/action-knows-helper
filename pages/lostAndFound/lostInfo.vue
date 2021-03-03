@@ -69,5 +69,18 @@
 </script>
 
 <style lang="less" scoped>
-	@import './lostInfo.less';
+  .lostInfo-container {
+  	padding: 24rpx 36rpx;
+  	.info-item {
+  		display: flex;
+  		justify-content: space-between;
+  		align-items: center;
+  		margin-top: 24rpx;
+  		padding-bottom: 24rpx;
+  		border-bottom: solid 1px #f3f3f3;
+  		.value {
+  			color: #6c6f6f;
+  		}
+  	}
+  }
 </style>

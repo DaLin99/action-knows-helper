@@ -180,5 +180,16 @@ export default {
 </script>
 
 <style lang="less" scope>
-@import "./submitLost.less";
+.submit-info-container {
+	padding: 36rpx 38rpx;
+  .form-item {
+    margin-top: 24rpx;
+    display: flex;
+    // justify-content: space-between;
+	.form-title {
+		width: 180rpx;
+	}
+  }
+}
+
 </style>

@@ -61,7 +61,7 @@ export default {
 	methods: {
 		showDetail(id) {
 			uni.navigateTo({
-				url:`../recruitDetail/recruitDetail?info=${id}`
+				url:`../recruitInfo/recruitDetail?info=${id}`
 			});
 		},
 		// 点击tab-nav-name进行切换

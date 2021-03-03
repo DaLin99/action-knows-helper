@@ -86,5 +86,95 @@
 </script>
 
 <style lang="less">
-@import  './schoolActivityDetail.less';
+.school-activity-detail {
+	width: 100%;
+	height: 100vh;
+	background-color: #ebebf2;
+	.bgc-container {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #ebebf2;
+	}
+	.date-and-btn {
+		display: flex;
+		margin-bottom: 20rpx;
+		.date-container {
+			width: 65%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			background-color: #FFFFFF;
+			padding-left: 36rpx;
+			.date-title {
+				font-size: 24rpx;
+				color: gray;
+			}
+		}
+		.btn-container {
+			width: 35%;
+			background-color: green;
+			color: #FFFFFF;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 12rpx;
+			.retain-nums {
+				font-size: 24rpx;
+			}
+		}
+	}
+	.info-container {
+		background-color: #FFFFFF;
+		padding: 24rpx;
+		border-bottom: solid 1px #f3f3f3;
+		color: #a6a6a6;
+		.info-item {
+			display: flex;
+			margin:16rpx 0rpx ;
+			.label {
+				width: 200rpx;
+			}
+			.flex-box {
+				display: flex;
+				flex-direction: column;
+			}
+		}
+	}
+	// 头像卡片
+	.introduce-box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		background: #ffffff;
+		border: 1pt solid #f7f7f7;
+		border-radius: 5pt;
+		box-shadow: 0pt 4pt 8pt 1pt rgba(10,64,115,0.18); 
+		padding: 36rpx;
+		margin: 48rpx ;
+		.header-img-container{
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			.header-img {
+				border-radius: 50%;
+			}
+		}
+		.company-name{
+			color:#8d8d93 ;
+		}
+	}
+	.des-container {
+		background-color: #FFFFFF;
+		padding-bottom: 240rpx;
+		.des-item {
+			padding: 16rpx 0rpx 12rpx 24rpx;
+			background-color: #FFFFFF;
+		}
+	}
+	
+}
 </style>

@@ -18,7 +18,7 @@
 
 <script>
 import tabs from 'pages/component/tabs/tabs.vue';
-import card from './component/card.vue';
+import card from './components/card.vue';
 export default {
 	name: 'HelloWorld',
 	components: { tabs, card },
