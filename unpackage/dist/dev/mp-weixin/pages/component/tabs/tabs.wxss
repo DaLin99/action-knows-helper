@@ -1,0 +1,40 @@
+.tab-list-container {
+  position: fixed;
+  top: 0;
+  height: 70rpx;
+  width: 100%;
+}
+.tab-list-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  -webkit-filter: blur(8rpx);
+          filter: blur(8rpx);
+  z-index: -1;
+}
+.tab-list-container .tab-list {
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-around;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.tab-list-container .tab-list .tab-name {
+  display: block;
+}
+.tab-list-container .tab-list .tab-block {
+  display: block;
+  width: 100%;
+  height: 4rpx;
+  background: transparent;
+  border-radius: 4rpx;
+}
+

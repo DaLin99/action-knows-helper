@@ -1,0 +1,21 @@
+.lostInfo-container.data-v-1d622529 {
+  padding: 24rpx 36rpx;
+}
+.lostInfo-container .info-item.data-v-1d622529 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  margin-top: 24rpx;
+  padding-bottom: 24rpx;
+  border-bottom: solid 1px #f3f3f3;
+}
+.lostInfo-container .info-item .value.data-v-1d622529 {
+  color: #6c6f6f;
+}
+

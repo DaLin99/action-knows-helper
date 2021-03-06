@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "校园招聘",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tabs": "/pages/component/tabs/tabs",
+    "card": "/pages/recruitInfo/components/card"
+  }
+}

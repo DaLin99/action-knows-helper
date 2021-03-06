@@ -35,13 +35,23 @@ export default {
 							title: '寻找一双鞋子',
 							content: '我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以',
 							publisher: '发布者名字',
-							publishDate: '2021-1-2'
+							publishDate: '2021-1-2',
+							lostType:'手机数码',
+							lostPlace:'北京西路地铁',
+							lostTell:'12342384294',
+							wechat:'32123212',
+							status:'丢失'
 						},{
 							imgPath: require('../../static/image/activity-bgc.jpeg'),
 							title: '寻找一双鞋子',
 							content: '我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以',
 							publisher: '发布者名字',
-							publishDate: '2021-1-2'
+							publishDate: '2021-1-2',
+							lostType:'手机数码',
+							lostPlace:'北京西路地铁',
+							lostTell:'12342384294',
+							wechat:'32123212',
+							status:'丢失'
 						},{
 							imgPath: require('../../static/image/activity-bgc.jpeg'),
 							title: '寻找一双鞋子',

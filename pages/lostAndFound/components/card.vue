@@ -2,7 +2,9 @@
   <view
     class="card-item shadow-box"
   >
-    <view class="card-top">
+    <view 
+      class="card-top" 
+      @click="navgatorToDetail(item)">
       <view class="card-top-left">
         <image 
           :src="item.imgPath"
@@ -38,7 +40,15 @@
       		type: Object,
       		default: () => ({}),
       	},
-    }
+    },
+	methods:{
+		navgatorToDetail(info) {
+			console.log((info));
+			uni.navigateTo({
+				url:`/pages/lostAndFound/lostInfo?info=${JSON.stringify(info)}`
+			});
+		}
+	}
   };
 </script>
 
