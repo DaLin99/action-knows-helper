@@ -6,44 +6,44 @@
             "enablePullDownRefresh": false
         }
     },{
-      "path" : "pages/schoolActivityDetail/schoolActivityDetail",
+      "path" : "pages/schoolActivity/schoolActivityDetail",
 	    "style" :{
 	        "navigationBarTitleText": "活动详情",
 	        "enablePullDownRefresh": false
 	    }
     },{
-        "path" : "pages/schoolActivityList/schoolActivityList",
+        "path" : "pages/schoolActivity/schoolActivityList",
         "style" :{
           "navigationBarTitleText": "校园活动",
           "enablePullDownRefresh": false
         }
     },{
-        "path" : "pages/recruitInfoList/recruitInfoList",
+        "path" : "pages/recruitInfo/recruitInfoList",
         "style" :{
             "navigationBarTitleText": "校园招聘",
             "enablePullDownRefresh": false
         }
 
     },{
-        "path" : "pages/lostAndFoundList/lostAndFoundList",
+        "path" : "pages/lostAndFound/lostAndFoundList",
         "style" : {
             "navigationBarTitleText": "失物招领",
             "enablePullDownRefresh": false
         }
     },{
-        "path": "pages/index/index",
+        "path": "pages/schoolForum/forumList",
         "style": {
-          "navigationBarTitleText": "uni-app"
+          "navigationBarTitleText": "校园论坛"
         }
     },{
-      "path" : "pages/lostInfo/lostInfo",
+      "path" : "pages/lostAndFound/lostInfo",
       "style" :
       {
         "navigationBarTitleText": "寻物启事",
         "enablePullDownRefresh": false
       }
     },{
-      "path" : "pages/recruitDetail/recruitDetail",
+      "path" : "pages/recruitInfo/recruitDetail",
       "style" :{
         "navigationBarTitleText": "校招信息",
         "enablePullDownRefresh": false
@@ -55,22 +55,22 @@
       "borderStyle": "black",
       "backgroundColor": "#ffffff",
       "list": [ {
-        "pagePath": "pages/lostAndFoundList/lostAndFoundList",
+        "pagePath": "pages/lostAndFound/lostAndFoundList",
         "iconPath": "static/image/tabBar/lostAndFound.png",
         "selectedIconPath": "static/image/tabBar/lostAndFound-selected.png",
           "text": "失物招领"
         }, {
-          "pagePath": "pages/index/index",
+          "pagePath": "pages/schoolForum/forumList",
           "iconPath": "static/image/tabBar/forum.png",
           "selectedIconPath": "static/image/tabBar/forum-selected.png",
           "text": "校园论坛"
         }, {
-            "pagePath": "pages/recruitInfoList/recruitInfoList",
+            "pagePath": "pages/recruitInfo/recruitInfoList",
             "iconPath":"static/image/tabBar/job.png",
             "selectedIconPath":"static/image/tabBar/job-selected.png",
             "text": "招聘信息"
         }, {
-            "pagePath": "pages/schoolActivityList/schoolActivityList",
+            "pagePath": "pages/schoolActivity/schoolActivityList",
             "iconPath":"static/image/tabBar/activity.png",
             "selectedIconPath":"static/image/tabBar/activity-selected.png",
             "text": "学院活动"
