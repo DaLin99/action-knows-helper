@@ -11,6 +11,7 @@
         </view>
       </view>
     </view>
+    
     <view class="feature-list shadow-box m-20">
       <uni-list-item
       v-for="(item, index) in featureList"
@@ -24,8 +25,7 @@
 </template>
 
 <script>
-	import {mapMutations} from 'vuex'
-	import {mapState} from 'vuex'
+	import {mapMutations, mapState} from 'vuex'
 	export default {
 		data() {
 			return {
@@ -62,7 +62,8 @@
 		methods: {
       getUserInfo(e){
         console.log(e)
-      }
+      },
+      
 		},
 		computed: {
 			...mapState({
