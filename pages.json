@@ -54,6 +54,12 @@
         "navigationBarTitleText": "校招信息",
         "enablePullDownRefresh": false
       }
+    },{
+      "path" : "pages/userInfo/auth",
+      "style" :{
+        "navigationBarTitleText": "身份认证",
+        "enablePullDownRefresh": false
+      }
     }],
   "tabBar": {
       "color": "#cccccc",
