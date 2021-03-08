@@ -1,5 +1,17 @@
 {
 	"pages": [{
+        "path" : "pages/lostAndFound/lostAndFoundList",
+        "style" : {
+            "navigationBarTitleText": "我的",
+            "enablePullDownRefresh": false
+        }
+    },{
+        "path" : "pages/lostAndFound/submitLost",
+        "style" : {
+            "navigationBarTitleText": "发布失物招领",
+            "enablePullDownRefresh": false
+        }
+    },{
         "path" : "pages/userInfo/userInfo",
         "style" : {
             "navigationBarTitleText": "我的",
@@ -24,12 +36,6 @@
             "enablePullDownRefresh": false
         }
 
-    },{
-        "path" : "pages/lostAndFound/lostAndFoundList",
-        "style" : {
-            "navigationBarTitleText": "失物招领",
-            "enablePullDownRefresh": false
-        }
     },{
         "path": "pages/schoolForum/forumList",
         "style": {
