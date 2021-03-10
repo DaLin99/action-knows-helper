@@ -4,8 +4,6 @@
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
-			this.auth();
-      const userInfo = 2
 		},
 		onShow: function() {
       this.auth();
@@ -22,6 +20,7 @@
 			 * 登陆验证
 			 */
 			async auth() {
+        const that = this;
         uni.getStorage({
             key: 'userInfo',
             success: function (result) {
