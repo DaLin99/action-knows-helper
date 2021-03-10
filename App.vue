@@ -1,12 +1,14 @@
 <script>
 	import api from './common/api'
-	import {mapMutations} from 'vuex'
+	import {mapMutations, mapState} from 'vuex'
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
 			this.auth();
+      const userInfo = 2
 		},
 		onShow: function() {
+      this.auth();
 			console.log('App Show')
 		},
 		onHide: function() {
@@ -20,23 +22,32 @@
 			 * 登陆验证
 			 */
 			async auth() {
-				const that = this;
-        console.log(123)
-				uni.getUserInfo({
-				  provider: 'weixin',
-				  success: function (infoRes) {
-					uni.login({
-					  success: async function (loginRes) {
-						const res = await api.login({code: loginRes.code});
-						console.log(res)
-						that.initUserInfo({
-							...res.data,
-							...infoRes.userInfo
-						})
-					  }
-					}); 
-				  }
-				});
+        uni.getStorage({
+            key: 'userInfo',
+            success: function (result) {
+                uni.getUserInfo({
+                  provider: 'weixin',
+                  success: function (infoRes) {
+                  uni.login({
+                    success: async function (loginRes) {
+                    const res = await api.login({code: loginRes.code});
+                    console.log(res)
+                    that.initUserInfo({
+                      ...res.data,
+                      ...infoRes.userInfo
+                    })
+                    }
+                  }); 
+                  }
+                });
+            },
+            fail(result) {
+              uni.redirectTo({
+                url: 'pages/userInfo/initUserInfo'
+              })
+              console.log('err',result);
+            }
+        });
 			}
 		}
 	}

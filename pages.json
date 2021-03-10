@@ -60,6 +60,12 @@
         "navigationBarTitleText": "身份认证",
         "enablePullDownRefresh": false
       }
+    },{
+      "path": "pages/userInfo/initUserInfo",
+      "style" :{
+        "navigationBarTitleText": "授权",
+        "enablePullDownRefresh": false
+      }
     }],
   "tabBar": {
       "color": "#cccccc",

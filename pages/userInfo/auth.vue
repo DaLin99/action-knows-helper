@@ -5,7 +5,7 @@
       @reset="formReset">
       <view class="uni-form-item uni-column">
         <view class="title">一卡通账号</view>
-        <input 
+        <input
           class="uni-input" 
           name="account" 
           placeholder="请输入账号" >
