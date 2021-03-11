@@ -13,6 +13,12 @@
         :item="item"
       />
     </view>
+    <view class="btn-list">
+      <view 
+        class="publish" 
+        @click="goToPulbish">发布</view>
+      <view class="my">我的</view>
+    </view>
   </view>
 </template>
 
@@ -100,6 +106,11 @@ export default {
 			this.showDatasource = this.tabsList[i].dataSource;
 			console.log(this.activeTabIndex);
 		},
+    goToPulbish(){
+      uni.navigateTo({
+        url: './submitLost'
+      });
+    }
 	},
 };
 </script>
@@ -107,5 +118,24 @@ export default {
   
   .card-list {
   	padding: 0px 36rpx;
+  }
+  .btn-list{
+    position: absolute;
+    right: 0;
+    bottom: 50rpx;
+    .publish, .my {
+      width: 100rpx;
+      height: 100rpx;
+      text-align: center;
+      line-height: 100rpx;
+      border-radius: 50%;
+      color: #fff;
+    }
+    .publish{
+      background-color: #9773ff;
+    }
+    .my{
+      background-color: #82d5e0;
+    }
   }
 </style>

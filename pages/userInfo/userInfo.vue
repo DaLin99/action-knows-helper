@@ -14,11 +14,12 @@
     
     <view class="feature-list shadow-box m-20">
       <uni-list-item
-      v-for="(item, index) in featureList"
-      :title="item"
-      :key="index"
+        v-for="(item, index) in featureList"
+        :title="item.title"
+        :key="index"
+        clickable="true"
+        @click="goToPage(item.url)"
       >
-        item
       </uni-list-item>
     </view>
   </view>
@@ -31,14 +32,26 @@
 			return {
 				title: 'Hello',
         featureList: [
-          '我的消息',
-          '我的失物招领',
-          '收藏的招聘活动',
-          '参与的学院活动',
-          '收藏的帖子',
-          '管理员入口',
-          '意见反馈',
-          '关于'
+          {
+            title: '我的消息',
+            url: 'myMsg'
+          },
+          {
+            title: '身份认证',
+            url: 'auth',
+          },
+          {
+            title: '管理员入口',
+            url: 'admin'
+          },
+          {
+            title: '意见反馈',
+            url: 'feedback',
+          },
+          {
+            title: '关于',
+            url: 'about'
+          }
         ],
         overview: [
           {
@@ -63,7 +76,12 @@
       getUserInfo(e){
         console.log(e)
       },
-      
+      goToPage(url){
+        console.log(url);
+        uni.navigateTo({
+          url,
+        })
+      }
 		},
 		computed: {
 			...mapState({

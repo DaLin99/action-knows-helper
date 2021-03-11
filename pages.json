@@ -1,5 +1,17 @@
 {
 	"pages": [{
+        "path" : "pages/lostAndFound/lostAndFoundList",
+        "style" : {
+            "navigationBarTitleText": "我的",
+            "enablePullDownRefresh": false
+        }
+    },{
+        "path" : "pages/lostAndFound/submitLost",
+        "style" : {
+            "navigationBarTitleText": "发布失物招领",
+            "enablePullDownRefresh": false
+        }
+    },{
         "path" : "pages/userInfo/userInfo",
         "style" : {
             "navigationBarTitleText": "我的",
@@ -25,12 +37,6 @@
         }
 
     },{
-        "path" : "pages/lostAndFound/lostAndFoundList",
-        "style" : {
-            "navigationBarTitleText": "失物招领",
-            "enablePullDownRefresh": false
-        }
-    },{
         "path": "pages/schoolForum/forumList",
         "style": {
           "navigationBarTitleText": "校园论坛"
@@ -46,6 +52,18 @@
       "path" : "pages/recruitInfo/recruitDetail",
       "style" :{
         "navigationBarTitleText": "校招信息",
+        "enablePullDownRefresh": false
+      }
+    },{
+      "path" : "pages/userInfo/auth",
+      "style" :{
+        "navigationBarTitleText": "身份认证",
+        "enablePullDownRefresh": false
+      }
+    },{
+      "path": "pages/userInfo/initUserInfo",
+      "style" :{
+        "navigationBarTitleText": "授权",
         "enablePullDownRefresh": false
       }
     }],
