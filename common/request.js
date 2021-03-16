@@ -11,17 +11,25 @@ import urlConfig from './config.js';
 
 const request = {};
 const headers = {};
-    
+let openId;
+uni.getStorage({
+  key: 'userInfo',
+  success:(res)=>{
+    openId = res?.data?.openid;
+  }
+});
 request.globalRequest = (url, method, data, power) => {
      return new Promise((resolve, reject) => {
 		 return uni.request({
 		         url: urlConfig + url,
 		         method,
-		         data: data,
+		         data: {
+               ...data,
+               userId: openId, // 固定把openid带上
+             },
 		         dataType: 'json',
 		         header: headers
 		     }).then(res => {
-				 console.log(res);
 		         if (res[1].data && res[1].data.code == 1) {
 		             resolve(res[1].data);
 		         } else {

@@ -10,7 +10,7 @@
     </view>
     <view 
       v-for="(item,index) in showLostInfo.filter(item=>item.eName !== 'remarkInfo')"
-      :key="index" 
+      :key="index"
       class="info-item">
       <text class="label">{{ item.label }}</text>
       <text 

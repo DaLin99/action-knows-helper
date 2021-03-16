@@ -13,7 +13,7 @@ const MODULE = 'user';
 
 // 登陆
 const login = async params => {
-	return await request.globalRequest(`${MODULE}/login/`, 'get', params);
+	return await request.globalRequest(`${MODULE}/login/`, 'post', params);
 };
 
 export default {
