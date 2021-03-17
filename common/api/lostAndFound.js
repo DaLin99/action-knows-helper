@@ -11,8 +11,11 @@ import request from '../request.js';
 
 const MODULE = 'lostAndFound';
 
-const fun1 = params => request.globalRequest(`${MODULE}/mobile/signUp` , params, 1);
+const submitLost = params => request.globalRequest(`${MODULE}/submitLost`, 'post', params);
+const getLostList = params => request.globalRequest(`${MODULE}/getLostList`, 'get', params);
 
 export default {
-	fun1, 
+	submitLost, 
+	getLostList, 
+	getLostList, 
 };

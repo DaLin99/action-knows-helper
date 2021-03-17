@@ -6,7 +6,7 @@
       :rules="rules">
       <uni-forms-item
         label="丢失时间" 
-        name="formData.lostTime"
+        name="lostTime"
       >
         <uni-datetime-picker
           v-model="formData.lostTime" 
@@ -73,7 +73,7 @@
           <cover-image 
             v-if="formData.imageUrl"
             :src="formData.imageUrl" 
-            class="image-preview"
+            class="image-preview mb10"
             @click="previewImage(formData.imageUrl)"
           />
           <button
@@ -83,7 +83,6 @@
           </button>
         </view>
       </uni-forms-item>
-      {{ formData.imageUrl }}
       <uni-forms-item 
         label="备注信息" 
         name="remarkInfo">
@@ -107,6 +106,7 @@
 <script>
 import MxDatePicker from '@/components/mx-datepicker/mx-datepicker.vue';
 import COS from 'cos-wx-sdk-v5';
+import api from '../../common/api/index'
 export default {
   components: {
     MxDatePicker,
@@ -191,6 +191,7 @@ export default {
     },
     
     pickFile() {
+      const that = this;
       const Bucket = 'xqbzheng-1300584219';
       const Region = 'ap-guangzhou';
       const SecretId = 'AKIDve9XfEyiRxubz9wmEb8PORElCNQGnw96'; 
@@ -205,28 +206,40 @@ export default {
         success: (res)=>{
           const filePath = res.tempFiles[0].path;
           const filename = filePath.substr(filePath.lastIndexOf('/') + 1);
-          const that = this;
-          cos.postObject({
-             Bucket,
-             Region,
-             Key: 'image/' + filename,
-             FilePath: filePath,
-             onProgress: function(progressData) {
-                 console.log(JSON.stringify(progressData));
-             }
-          }, function(err, data) {
-            console.log(err,data);
-            if(!err) {
-              that.formData.imageUrl = `https://${data.Location}`;
+          uni.compressImage({
+            src:filePath,
+            success(res) {
+              const compressImagePath = res.tempFilePath;
+              cos.postObject({
+                 Bucket,
+                 Region,
+                 Key: 'image/' + filename,
+                 FilePath: filePath,
+                 onProgress: function(progressData) {
+                     console.log(JSON.stringify(progressData));
+                 }
+              }, function(err, data) {
+                  console.log(err,data);
+                if(!err) {
+                  that.formData.imageUrl = `https://${data.Location}`;
+                }
+              });
             }
-          });
+          })
         }
       });
     },
     // 点击发布按钮
     submit() {
        this.$refs.form.submit().then(res=>{
-           console.log('表单数据信息：', res);
+         api.submitLost(res).then(()=>{
+           uni.showToast({
+             title: '发布成功'
+           });
+           // 页面回跳
+           uni.navigateBack();
+         });
+         
        }).catch(err =>{
            console.log('表单错误信息：', err);
        });
@@ -248,7 +261,6 @@ export default {
   }
 }
 .image-picker {
-  height: 180rpx;
   display: flex;
   flex-direction: row;
   button{

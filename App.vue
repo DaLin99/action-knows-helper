@@ -3,10 +3,10 @@
 	import {mapMutations, mapState} from 'vuex'
 	export default {
 		onLaunch: function() {
+      this.auth();
 			console.log('App Launch')
 		},
 		onShow: function() {
-      this.auth();
 			console.log('App Show')
 		},
 		onHide: function() {
@@ -18,7 +18,7 @@
 			]),
 			/**
 			 * 登陆验证
-			 */
+			 */ 
 			async auth() {
         const that = this;
         uni.getStorage({
@@ -29,8 +29,7 @@
                   success: function (infoRes) {
                   uni.login({
                     success: async function (loginRes) {
-                    const res = await api.login({code: loginRes.code});
-                    console.log(res)
+                    const res = await api.login({code: loginRes.code, ...infoRes.userInfo});
                     that.initUserInfo({
                       ...res.data,
                       ...infoRes.userInfo
@@ -42,7 +41,7 @@
             },
             fail(result) {
               uni.redirectTo({
-                url: 'pages/userInfo/initUserInfo'
+                url: './pages/userInfo/initUserInfo'
               })
               console.log('err',result);
             }

@@ -25,6 +25,7 @@
 <script>
 import tabs from 'pages/component/tabs/tabs.vue';
 import card from './components/card.vue';
+import api from '../../common/api/'
 export default {
 	name: 'HelloWorld',
 	components: { tabs, card },
@@ -96,8 +97,9 @@ export default {
 			],
 		};
 	},
-	created() {
+	onLoad() {
 		this.showDatasource = this.tabsList[0].dataSource;
+    this.getList();
 	},
 	methods: {
 		// 点击tab-nav-name进行切换
@@ -110,6 +112,10 @@ export default {
       uni.navigateTo({
         url: './submitLost'
       });
+    },
+    async getList(){
+      const res = await api.getLostList();
+      this.showDatasource = res?.data;
     }
 	},
 };
@@ -120,7 +126,7 @@ export default {
   	padding: 0px 36rpx;
   }
   .btn-list{
-    position: absolute;
+    position: fixed;
     right: 0;
     bottom: 50rpx;
     .publish, .my {

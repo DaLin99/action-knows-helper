@@ -21,34 +21,36 @@
 			]),
       async onGetUserInfo(res){
         const userInfo = res?.detail?.userInfo
+        console.log(userInfo)
         if(userInfo) {
           const that = this;
           uni.login({
             success: async function (loginRes) {
-          	const res = await api.login({code: loginRes.code});
-          	console.log(res)
-          	that.initUserInfo({
-          		...res.data,
-          		...userInfo
-          	})
-            uni.setStorage({
-              key: 'userInfo',
-              data: {
+              const res = await api.login({code: loginRes.code, ...userInfo});
+              console.log(res)
+              debugger
+              that.initUserInfo({
                 ...res.data,
                 ...userInfo
-              },
-              success() {
-                console.log('success');
-              }
-            });
+              })
+              uni.setStorage({
+                key: 'userInfo',
+                data: {
+                  ...res.data,
+                  ...userInfo
+                },
+              });
+              that.goBackToHome();
             }
           });
         }
+      },
+      goBackToHome(){
+        uni.redirectTo({
+          url:'pages/lostAndFound/lostAndFoundList',
+        });
       }
     },
-    onLoad() {
-      this.onGetUserInfo();
-    }
   };
 </script>
 
