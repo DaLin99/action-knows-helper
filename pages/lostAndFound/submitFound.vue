@@ -232,7 +232,7 @@ export default {
     // 点击发布按钮
     submit() {
        this.$refs.form.submit().then(res=>{
-         api.submitLost(res).then(()=>{
+         api.submitLost({...res, type: 'found'}).then(()=>{
            uni.showToast({
              title: '发布成功'
            });

@@ -110,10 +110,11 @@ export default {
      * @param {String}  i 索引
      */
 		async clcikTab(i) {
+      console.log(i);
 			this.activeTabIndex = i;
 			// this.showDatasource = this.tabsList[i].dataSource;
       const params = {
-        type: i === 1 ? 'lost' : 'found'
+        type: i === 0 ? 'lost' : 'found'
       };
       const res = await api.getLostAndFoundList(params);
       this.showDatasource = res?.data;
