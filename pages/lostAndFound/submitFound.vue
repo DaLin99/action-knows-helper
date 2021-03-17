@@ -5,7 +5,7 @@
       :value="formData" 
       :rules="rules">
       <uni-forms-item
-        label="丢失时间" 
+        label="拾到时间" 
         name="lostTime"
       >
         <uni-datetime-picker
@@ -16,13 +16,13 @@
           return-type="timestamp"/>
       </uni-forms-item> 
       <uni-forms-item
-        label="丢失地点"
+        label="拾到地点"
         name="lostPlace"
       >
         <input
           v-model="formData.lostPlace"
           type="text"
-          placeholder="请填写丢失地点"
+          placeholder="请填写拾到地点"
           class="mt12"
         >
       </uni-forms-item>
@@ -117,13 +117,13 @@ export default {
     const arr = [
       {
         name:'lostTime',
-        label:'丢失时间',
+        label:'拾到时间',
       },{
         name:'lostPlace',
-        label:'丢失地点',
+        label:'拾到地点',
       },{
         name:'lostName',
-        label:'物品名称',
+        label:'名称',
       },{
         name:'lostType',
         label:'物品分类',
@@ -232,7 +232,7 @@ export default {
     // 点击发布按钮
     submit() {
        this.$refs.form.submit().then(res=>{
-         api.submitLost({...res, type:'lost'}).then(()=>{
+         api.submitLost({...res, type: 'found'}).then(()=>{
            uni.showToast({
              title: '发布成功'
            });

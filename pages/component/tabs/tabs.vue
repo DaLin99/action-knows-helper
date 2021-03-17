@@ -56,7 +56,6 @@ export default {
     width: 100%;
     height: 100%;
     background-color: #fff;
-    filter: blur(8rpx);
     z-index: -1;
 }
 	.tab-list {
