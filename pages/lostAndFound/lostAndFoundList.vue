@@ -99,14 +99,20 @@ export default {
 	},
 	onLoad() {
 		this.showDatasource = this.tabsList[0].dataSource;
-    this.getList();
 	},
+  onShow() {
+    this.getList();
+  },
 	methods: {
 		// 点击tab-nav-name进行切换
-		clcikTab(i) {
+		async clcikTab(i) {
 			this.activeTabIndex = i;
-			this.showDatasource = this.tabsList[i].dataSource;
-			console.log(this.activeTabIndex);
+			// this.showDatasource = this.tabsList[i].dataSource;
+      const params = {
+        type: i === 1 ? 'lost' : 'found'
+      };
+      const res = await api.getLostAndFoundList(params);
+      this.showDatasource = res?.data;
 		},
     goToPulbish(){
       uni.navigateTo({
@@ -114,8 +120,12 @@ export default {
       });
     },
     async getList(){
-      const res = await api.getLostList();
+      const params = {
+        type: this.activeTabIndex === 1 ? 'lost' : 'found'
+      };
+      const res = await api.getLostAndFoundList(params);
       this.showDatasource = res?.data;
+      console.log(res.data)
     }
 	},
 };
