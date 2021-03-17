@@ -11,6 +11,7 @@
         v-for="(item, index) in showDatasource"
         :key="index"
         :item="item"
+        @onClick="goToDetail(item.id)"
       />
     </view>
     <view class="btn-list">
@@ -104,7 +105,10 @@ export default {
     this.getList();
   },
 	methods: {
-		// 点击tab-nav-name进行切换
+		/**
+     * 点击tab-nav-name进行切换
+     * @param {String}  i 索引
+     */
 		async clcikTab(i) {
 			this.activeTabIndex = i;
 			// this.showDatasource = this.tabsList[i].dataSource;
@@ -114,18 +118,40 @@ export default {
       const res = await api.getLostAndFoundList(params);
       this.showDatasource = res?.data;
 		},
+    /**
+     * 前往发布 0丢失1拾到
+     */
     goToPulbish(){
-      uni.navigateTo({
-        url: './submitLost'
-      });
+      console.log(this.activeTabIndex);
+      if(this.activeTabIndex === 0) {
+        uni.navigateTo({
+          url: './submitLost',
+        });
+      } else {
+        uni.navigateTo({
+          url: './submitFound',
+        });
+      }
     },
+    /**
+     * 获取列表
+     */
     async getList(){
       const params = {
-        type: this.activeTabIndex === 1 ? 'lost' : 'found'
+        type: this.activeTabIndex === 0 ? 'lost' : 'found'
       };
       const res = await api.getLostAndFoundList(params);
       this.showDatasource = res?.data;
       console.log(res.data)
+    },
+    /**
+     * 查看详情
+     */
+    goToDetail(index) {
+      console.log(index);
+      uni.navigateTo({
+        url: `./detail?id=${index}`,
+      });
     }
 	},
 };

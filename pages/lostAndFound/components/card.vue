@@ -1,6 +1,7 @@
 <template>
   <view
     class="card-item shadow-box"
+    @click="$emit('onClick')"
   >
     <view class="card-top">
       <view class="card-top-left">

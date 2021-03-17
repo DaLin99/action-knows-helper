@@ -19,4 +19,4 @@ if(process.env.NODE_ENV === 'development'){
     urlConfig = 'http://127.0.0.1:8000/';
 }
 
-export default urlConfig;
+export default urlConfig;  
