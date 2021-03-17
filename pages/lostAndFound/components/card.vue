@@ -16,10 +16,7 @@
     </view>
     <view class="card-bottom">
       <view class="icon-publisher">
-        <uni-icons 
-          class="icon" 
-          type="contact" 
-          size="18" />
+        <image :src="item.avator" class="publisher-avator"></image>
         <text class="publisher-name ml10">{{
           item.publisher
         }}</text>
@@ -102,6 +99,10 @@
   				color: #c9c6c6;
           font-size: 26rpx;
   			}
+        .publisher-avator {
+          height: 40rpx;
+          width: 40rpx;
+        }
   		}
   		.publish-date {
   			color: #7763ce;

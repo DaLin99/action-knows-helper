@@ -12,10 +12,9 @@ import request from '../request.js';
 const MODULE = 'lostAndFound';
 
 const submitLost = params => request.globalRequest(`${MODULE}/submitLost`, 'post', params);
-const getLostList = params => request.globalRequest(`${MODULE}/getLostList`, 'get', params);
+const getLostAndFoundList = params => request.globalRequest(`${MODULE}/list`, 'get', params);
 
 export default {
 	submitLost, 
-	getLostList, 
-	getLostList, 
+	getLostAndFoundList, 
 };
