@@ -45,11 +45,11 @@
 					},{
 						label:'丢失地点',
 						value:'北京西路地铁',
-						eName:'lostPlace'
+						eName:'place'
 					},{
 						label:'联系方式',
 						value:'12342384294',
-						eName:'lostTell'
+						eName:'losttell'
 					},{
 						label:'wechat',
 						value:'32123212',

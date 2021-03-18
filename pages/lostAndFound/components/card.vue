@@ -26,6 +26,10 @@
         item.publishDate
       }}</text>
     </view>
+    <view class="label">
+      <view v-if="item.type === 'lost'">丢失</view>
+      <view v-else>拾到</view>
+    </view>
   </view>
 </template>
 
@@ -42,6 +46,7 @@
 
 <style lang="less">
   .card-item {
+    position: relative;
     box-shadow: 0;
   	padding: 32rpx 32rpx 20rpx 32rpx;
   	margin-top: 20rpx;
@@ -110,6 +115,11 @@
         font-size: 24rpx;
   		}
   	}
+    .label {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
   }
   .card-item:hover {
   	box-shadow: 0px 1px 3px 0px rgba(0, 21, 41, 0.12);

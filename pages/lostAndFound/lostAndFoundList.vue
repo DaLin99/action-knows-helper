@@ -18,7 +18,10 @@
       <view 
         class="publish" 
         @click="goToPulbish">发布</view>
-      <view class="my">我的</view>
+      <view
+      class="my"
+      @click="goToMyList"
+      >我的</view>
     </view>
   </view>
 </template>
@@ -152,6 +155,15 @@ export default {
       console.log(index);
       uni.navigateTo({
         url: `./detail?id=${index}`,
+      });
+    },
+    /**
+     * 查看详情
+     */
+    goToMyList(index) {
+      console.log(index);
+      uni.navigateTo({
+        url: './myList',
       });
     }
 	},

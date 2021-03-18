@@ -17,10 +17,10 @@
       </uni-forms-item> 
       <uni-forms-item
         label="拾到地点"
-        name="lostPlace"
+        name="place"
       >
         <input
-          v-model="formData.lostPlace"
+          v-model="formData.place"
           type="text"
           placeholder="请填写拾到地点"
           class="mt12"
@@ -46,12 +46,11 @@
         >{{ lostTypeList[formData.lostType] || '请选择分类' }}</picker>
       </uni-forms-item>
       <uni-forms-item 
-        name="losterTell" 
+        name="tell"
         label="联系方式"
         class="mt12">
         <input
-          v-model="formData.losterTell" 
-          type="text" 
+          v-model="formData.tell"       type="text" 
           placeholder="请填写联系方式" 
           class="mt12">
       </uni-forms-item>
@@ -119,7 +118,7 @@ export default {
         name:'lostTime',
         label:'拾到时间',
       },{
-        name:'lostPlace',
+        name:'place',
         label:'拾到地点',
       },{
         name:'lostName',
@@ -128,7 +127,7 @@ export default {
         name:'lostType',
         label:'物品分类',
       },{
-        name:'losterTell',
+        name:'tell',
         label:'联系方式',
       }
       ,{

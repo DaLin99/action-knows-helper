@@ -6,10 +6,10 @@
       :rules="rules">
       <uni-forms-item
         label="丢失时间" 
-        name="lostTime"
+        name="time"
       >
         <uni-datetime-picker
-          v-model="formData.lostTime" 
+          v-model="formData.time" 
           type="date" 
           start="2000-06-01 06:30:30" 
           end="2030-6-1" 
@@ -17,10 +17,10 @@
       </uni-forms-item> 
       <uni-forms-item
         label="丢失地点"
-        name="lostPlace"
+        name="place"
       >
         <input
-          v-model="formData.lostPlace"
+          v-model="formData.place"
           type="text"
           placeholder="请填写丢失地点"
           class="mt12"
@@ -28,10 +28,10 @@
       </uni-forms-item>
       <uni-forms-item 
         label="物品名称"
-        name="lostName"
+        name="title"
         class="mt12">
         <input 
-          v-model="formData.lostName" 
+          v-model="formData.title" 
           type="text" 
           placeholder="请填写物品名称" >
       </uni-forms-item>
@@ -46,21 +46,21 @@
         >{{ lostTypeList[formData.lostType] || '请选择分类' }}</picker>
       </uni-forms-item>
       <uni-forms-item 
-        name="losterTell" 
+        name="tell"
         label="联系方式"
         class="mt12">
         <input
-          v-model="formData.losterTell" 
+          v-model="formData.tell"
           type="text" 
           placeholder="请填写联系方式" 
           class="mt12">
       </uni-forms-item>
       <uni-forms-item 
         label="Wechat" 
-        name="losterWechat"
+        name="wechat"
         class="mt12">
         <input
-          v-model="formData.losterWechat" 
+          v-model="formData.wechat" 
           type="text" 
           class="mt12"
           placeholder="请填写Wechat" >
@@ -85,16 +85,21 @@
       </uni-forms-item>
       <uni-forms-item 
         label="备注信息" 
-        name="remarkInfo">
+        name="content">
         <textarea
-          v-model="formData.remarkInfo" 
+          v-model="formData.content" 
           placeholder="请填写备注信息"
           class="mt12"/>
       </uni-forms-item>
     </uni-forms>
     <button 
+      v-if="!isEdit"
       type="primary" 
       @click="submit">发布</button>
+    <button 
+      v-else
+      type="primary" 
+      @click="submitEdit">提交修改</button>
     <view 
       v-for="(item, index) in Object.keys(formData)" 
       :key="index">
@@ -116,26 +121,26 @@ export default {
     let formRules = {} ;
     const arr = [
       {
-        name:'lostTime',
+        name:'time',
         label:'丢失时间',
       },{
-        name:'lostPlace',
+        name:'place',
         label:'丢失地点',
       },{
-        name:'lostName',
+        name:'title',
         label:'物品名称',
       },{
         name:'lostType',
         label:'物品分类',
       },{
-        name:'losterTell',
+        name:'tell',
         label:'联系方式',
       }
       ,{
-        name:'losterWechat',
+        name:'wechat',
         label:'wechat',
       },{
-        name:'remarkInfo',
+        name:'content',
         label:'备注信息',
       },{
         name:'imageUrl',
@@ -153,17 +158,29 @@ export default {
         ]
       };
     });
-    this.rules = formRules;
-    this.formData = formData;
     return {
       lostTypeList:['日用品', '学习书籍', '其他'],
       showPicker: false,
-      formData: formData,
-      rules: formRules
+      formData,
+      rules: formRules,
+      isEdit: false,
     };
   },
   
   created() {
+  },
+  onLoad(obj) {
+    if(obj.dataItem) {
+      const res = JSON.parse(obj.dataItem);
+      res.imageUrl = res.imgPath
+      Object.assign(this.formData, res)
+      this.isEdit = true;
+      // this.formData = {
+      //   ...this.formData,
+      //   ...res,
+      //   imageUrl: res.imgPath
+      // }
+    }
   },
   methods: {
     onShowDatePicker(type) {
@@ -238,6 +255,26 @@ export default {
            });
            // 页面回跳
            uni.navigateBack();
+         });
+         
+       }).catch(err =>{
+           console.log('表单错误信息：', err);
+       });
+    },
+    // 点击提交编辑按钮
+    submitEdit() {
+       this.$refs.form.submit().then(res=>{
+         console.log(res)
+         api.submitLost({...res, id: this.formData.id}).then(()=>{
+           uni.showToast({
+             title: '修改成功',
+             success() {
+               // 页面回跳
+               uni.navigateBack({
+                 delta:2,
+               });
+             }
+           });
          });
          
        }).catch(err =>{
