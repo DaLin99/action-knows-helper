@@ -72,15 +72,22 @@
         "navigationBarTitleText": "授权",
         "enablePullDownRefresh": false
       }
-    }    ,{
-            "path" : "pages/lostAndFound/detail",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
+    } ,{
+        "path" : "pages/lostAndFound/detail",
+        "style" :                                                                                    
+        {
+            "navigationBarTitleText": "",
+            "enablePullDownRefresh": false
         }
+      }
+      ,{
+          "path" : "pages/lostAndFound/myList",
+          "style" :                                                                                    
+          {
+              "navigationBarTitleText": "",
+              "enablePullDownRefresh": false
+          }
+      }
     ],
   "tabBar": {
       "color": "#cccccc",
