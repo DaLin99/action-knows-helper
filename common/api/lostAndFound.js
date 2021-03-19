@@ -13,10 +13,12 @@ const MODULE = 'lostAndFound';
 
 const submitLost = params => request.globalRequest(`${MODULE}/submitLost`, 'post', params);
 const getLostAndFoundList = params => request.globalRequest(`${MODULE}/list`, 'get', params);
+const getUserLostAndFoundList = params => request.globalRequest(`${MODULE}/userList`, 'get', params);
 const getdetail = params => request.globalRequest(`${MODULE}/detail`, 'get', params);
 
 export default {
 	submitLost, 
 	getLostAndFoundList, 
+	getUserLostAndFoundList, 
 	getdetail, 
 };
