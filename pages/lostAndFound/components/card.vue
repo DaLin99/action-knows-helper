@@ -22,6 +22,10 @@
           item.publisher
         }}</text>
       </view>
+      <view class="check-times">
+        <image :src="eyesImg"></image>
+        <text>{{item.checkTimes}}</text>
+      </view>
       <text class="publish-date">{{
         item.publishDate
       }}</text>
@@ -40,6 +44,11 @@
       		type: Object,
       		default: () => ({}),
       	},
+    },
+    data() {
+      return {
+        eyesImg: 'https://xqbzheng-1300584219.cos.ap-guangzhou.myqcloud.com/eyes.svg'
+      }
     }
   };
 </script>
@@ -93,6 +102,7 @@
   		}
   	}
   	.card-bottom {
+      position: relative;
   		display: flex;
   		justify-content: space-between;
   		align-items: center;
@@ -114,6 +124,19 @@
   			color: #7763ce;
         font-size: 24rpx;
   		}
+    .check-times {
+      display: flex;
+      position: absolute;
+      right: 40%;
+      image {
+        height: 40rpx;
+        width: 50rpx;
+      }
+      text {
+        color: #ccc;
+        font-size: 24rpx;
+      }
+    }
   	}
     .label {
       position: absolute;

@@ -146,7 +146,7 @@ export default {
       };
       const res = await api.getLostAndFoundList(params);
       this.showDatasource = res?.data;
-      console.log(res.data)
+      console.log(res)
     },
     /**
      * 查看详情
