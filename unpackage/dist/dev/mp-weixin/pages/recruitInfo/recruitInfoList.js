@@ -159,33 +159,43 @@ __webpack_require__.r(__webpack_exports__);
     return {
       recruitInfoList: [
       {
-        id: '1',
-        company: '快手科技信息有限公司',
-        workType: '前端工程师-校招实习',
-        salary: '200/天',
-        palce: '北京',
-        requirement: ['在校应届', '本科'],
-        imgPath: __webpack_require__(/*! ../../static/image/activity-bgc.jpeg */ 27),
-        date: '2021-1-2' },
+        id: "1",
+        company: "快手科技信息有限公司",
+        workType: "前端工程师-校招实习",
+        salary: "200/天",
+        palce: "北京",
+        requirement: ["在校应届", "本科"],
+        imgPath: __webpack_require__(/*! ../../static/image/kuaishou.png */ 270),
+        date: "2021-3-12" },
 
       {
-        id: '2',
-        company: '快手科技信息有限公司',
-        workType: '前端工程师-校招实习',
-        salary: '200/天',
-        palce: '北京',
-        requirement: ['在校应届', '本科'],
-        imgPath: __webpack_require__(/*! ../../static/image/activity-bgc.jpeg */ 27),
-        date: '2021-1-2' }],
+        id: "2",
+        company: "腾讯有限公司",
+        workType: "前端工程师-校招实习",
+        salary: "5000/月",
+        palce: "深圳",
+        requirement: ["在校应届", "本科", "Vue"],
+        imgPath: __webpack_require__(/*! ../../static/image/tengxun.png */ 271),
+        date: "2021-3-2" },
+
+      {
+        id: "3",
+        company: "滴滴有限公司",
+        workType: "后端开发-校招实习",
+        salary: "4000/月",
+        palce: "杭州",
+        requirement: ["在校应届", "本科", "Java"],
+        imgPath: __webpack_require__(/*! ../../static/image/didi.jpeg */ 269),
+        date: "2021-4-2" }],
 
 
       activeTabIndex: 0,
       tabsList: [
       {
-        tabName: '最新招聘' },
+        tabName: "最新招聘" },
 
       {
-        tabName: '我的收藏' }] };
+        tabName: "我的收藏" }] };
 
 
 

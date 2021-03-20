@@ -1,9 +1,9 @@
 {
   "pages": [
     {
-      "path": "pages/schoolForum/submitForum",
+      "path": "pages/recruitInfo/recruitInfoList",
       "style": {
-        "navigationBarTitleText": "发布论坛",
+        "navigationBarTitleText": "校园招聘",
         "enablePullDownRefresh": false
       }
     },
@@ -14,6 +14,14 @@
         "enablePullDownRefresh": false
       }
     },
+    {
+      "path": "pages/schoolForum/submitForum",
+      "style": {
+        "navigationBarTitleText": "发布论坛",
+        "enablePullDownRefresh": false
+      }
+    },
+
     {
       "path": "pages/lostAndFound/lostAndFoundList",
       "style": {
@@ -65,13 +73,7 @@
         "enablePullDownRefresh": false
       }
     },
-    {
-      "path": "pages/recruitInfo/recruitInfoList",
-      "style": {
-        "navigationBarTitleText": "校园招聘",
-        "enablePullDownRefresh": false
-      }
-    },
+
     {
       "path": "pages/schoolForum/forumList",
       "style": {

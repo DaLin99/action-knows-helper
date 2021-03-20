@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/schoolForum/submitForum",
+    "pages/recruitInfo/recruitInfoList",
     "pages/schoolForum/forumDetail",
+    "pages/schoolForum/submitForum",
     "pages/lostAndFound/lostAndFoundList",
     "pages/lostAndFound/myList",
     "pages/schoolActivity/schoolActivityDetail",
@@ -9,7 +10,6 @@
     "pages/lostAndFound/submitLost",
     "pages/userInfo/userInfo",
     "pages/schoolActivity/schoolActivityList",
-    "pages/recruitInfo/recruitInfoList",
     "pages/schoolForum/forumList",
     "pages/lostAndFound/lostInfo",
     "pages/recruitInfo/recruitDetail",
