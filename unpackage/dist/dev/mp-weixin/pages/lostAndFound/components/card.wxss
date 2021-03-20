@@ -61,6 +61,7 @@
   -webkit-line-clamp: 1;
 }
 .card-item .card-bottom {
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -90,6 +91,21 @@
 }
 .card-item .card-bottom .publish-date {
   color: #7763ce;
+  font-size: 24rpx;
+}
+.card-item .card-bottom .check-times {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  position: absolute;
+  right: 40%;
+}
+.card-item .card-bottom .check-times image {
+  height: 40rpx;
+  width: 50rpx;
+}
+.card-item .card-bottom .check-times text {
+  color: #ccc;
   font-size: 24rpx;
 }
 .card-item .label {

@@ -149,12 +149,23 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
+//
+//
+//
 var _default2 =
 {
   props: {
     item: {
       type: Object,
-      default: function _default() {return {};} } } };exports.default = _default2;
+      default: function _default() {return {};} } },
+
+
+  data: function data() {
+    return {
+      eyesImg: 'https://xqbzheng-1300584219.cos.ap-guangzhou.myqcloud.com/eyes.svg' };
+
+  } };exports.default = _default2;
 
 /***/ }),
 

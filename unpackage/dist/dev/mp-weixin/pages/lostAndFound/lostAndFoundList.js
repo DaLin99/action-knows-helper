@@ -278,7 +278,7 @@ var _api = _interopRequireDefault(__webpack_require__(/*! ../../common/api/ */ 1
 
                   _api.default.getLostAndFoundList(params));case 3:res = _context2.sent;
                 _this2.showDatasource = res === null || res === void 0 ? void 0 : res.data;
-                console.log(res.data);case 6:case "end":return _context2.stop();}}}, _callee2);}))();
+                console.log(res);case 6:case "end":return _context2.stop();}}}, _callee2);}))();
     },
     /**
         * 查看详情

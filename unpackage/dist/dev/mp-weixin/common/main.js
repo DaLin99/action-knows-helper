@@ -119,9 +119,10 @@ var _vuex = __webpack_require__(/*! vuex */ 16);function _interopRequireDefault(
                         uni.login({
                           success: function () {var _success = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(loginRes) {var res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
                                         _api.default.login(_objectSpread({ code: loginRes.code }, infoRes.userInfo)));case 2:res = _context.sent;
+                                      console.log(res);
                                       that.initUserInfo(_objectSpread(_objectSpread({},
                                       res.data),
-                                      infoRes.userInfo));case 4:case "end":return _context.stop();}}}, _callee);}));function success(_x) {return _success.apply(this, arguments);}return success;}() });
+                                      infoRes.userInfo));case 5:case "end":return _context.stop();}}}, _callee);}));function success(_x) {return _success.apply(this, arguments);}return success;}() });
 
 
 

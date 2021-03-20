@@ -2603,39 +2603,39 @@ var _config = _interopRequireDefault(__webpack_require__(/*! ./config.js */ 14))
 
 var request = {};
 var headers = {};
+var openId;
+uni.getStorage({
+  key: "userInfo",
+  success: function success(res) {var _res$data;
+    openId = res === null || res === void 0 ? void 0 : (_res$data = res.data) === null || _res$data === void 0 ? void 0 : _res$data.openid;
+  } });
+
 
 request.globalRequest = function (url, method, data, power) {
-  var openId;
-  uni.getStorage({
-    key: "userInfo",
-    success: function success(res) {var _res$data;
-      openId = res === null || res === void 0 ? void 0 : (_res$data = res.data) === null || _res$data === void 0 ? void 0 : _res$data.openid;
-      return new Promise(function (resolve, reject) {
-        return uni.
-        request({
-          url: _config.default + url,
-          method: method,
-          data: _objectSpread(_objectSpread({},
-          data), {}, {
-            userId: openId // 固定把openid带上
-          }),
-          dataType: "json",
-          header: headers }).
+  return new Promise(function (resolve, reject) {
+    return uni.
+    request({
+      url: _config.default + url,
+      method: method,
+      data: _objectSpread(_objectSpread({},
+      data), {}, {
+        userId: openId // 固定把openid带上
+      }),
+      dataType: "json",
+      header: headers }).
 
-        then(function (res) {
-          if (res[1].data && res[1].data.code == 1) {
-            resolve(res[1].data);
-          } else {
-            reject(res[1].data);
-          }
-        }).
-        catch(function (parmas) {
-          console.warn(parmas);
-          reject("小程序后台发生位置异常");
-        });
-      });
-    } });
-
+    then(function (res) {
+      if (res[1].data && res[1].data.code == 1) {
+        resolve(res[1].data);
+      } else {
+        reject(res[1].data);
+      }
+    }).
+    catch(function (parmas) {
+      console.warn(parmas);
+      reject("小程序后台发生位置异常");
+    });
+  });
 };var _default =
 request;exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
