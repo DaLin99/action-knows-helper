@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/schoolForum/submitForum",
     "pages/schoolForum/forumDetail",
     "pages/lostAndFound/lostAndFoundList",
     "pages/lostAndFound/myList",

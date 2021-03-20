@@ -1,9 +1,16 @@
 {
   "pages": [
     {
+      "path": "pages/schoolForum/submitForum",
+      "style": {
+        "navigationBarTitleText": "发布论坛",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/schoolForum/forumDetail",
       "style": {
-        "navigationBarTitleText": "全部",
+        "navigationBarTitleText": "论坛详情",
         "enablePullDownRefresh": false
       }
     },
