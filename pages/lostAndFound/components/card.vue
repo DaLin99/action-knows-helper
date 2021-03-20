@@ -102,6 +102,7 @@
   		}
   	}
   	.card-bottom {
+      position: relative;
   		display: flex;
   		justify-content: space-between;
   		align-items: center;
@@ -123,14 +124,10 @@
   			color: #7763ce;
         font-size: 24rpx;
   		}
-  	}
-    .label {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
     .check-times {
       display: flex;
+      position: absolute;
+      right: 40%;
       image {
         height: 40rpx;
         width: 50rpx;
@@ -139,6 +136,12 @@
         color: #ccc;
         font-size: 24rpx;
       }
+    }
+  	}
+    .label {
+      position: absolute;
+      right: 0;
+      top: 0;
     }
   }
   .card-item:hover {
