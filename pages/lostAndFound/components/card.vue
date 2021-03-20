@@ -22,6 +22,10 @@
           item.publisher
         }}</text>
       </view>
+      <view class="check-times">
+        <image :src="eyesImg"></image>
+        <text>{{item.checkTimes}}</text>
+      </view>
       <text class="publish-date">{{
         item.publishDate
       }}</text>
@@ -40,6 +44,11 @@
       		type: Object,
       		default: () => ({}),
       	},
+    },
+    data() {
+      return {
+        eyesImg: 'https://xqbzheng-1300584219.cos.ap-guangzhou.myqcloud.com/eyes.svg'
+      }
     }
   };
 </script>
@@ -119,6 +128,17 @@
       position: absolute;
       right: 0;
       top: 0;
+    }
+    .check-times {
+      display: flex;
+      image {
+        height: 40rpx;
+        width: 50rpx;
+      }
+      text {
+        color: #ccc;
+        font-size: 24rpx;
+      }
     }
   }
   .card-item:hover {

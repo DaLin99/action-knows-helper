@@ -30,6 +30,7 @@
                   uni.login({
                     success: async function (loginRes) {
                     const res = await api.login({code: loginRes.code, ...infoRes.userInfo});
+                    console.log(res);
                     that.initUserInfo({
                       ...res.data,
                       ...infoRes.userInfo
