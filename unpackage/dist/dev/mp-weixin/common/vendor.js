@@ -2587,9 +2587,88 @@ var login = /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PURE__*
   !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/request.js ***!
   \********************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/request.js: Unexpected token (15:1)\n\n  13 | const request = {};\n  14 | const headers = {};\n> 15 | <<<<<<< HEAD\n     |  ^\n  16 | let openId;\n  17 | uni.getStorage({\n  18 |   key: 'userInfo',\n    at Object._raise (/Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@babel/parser/lib/index.js:746:17)\n    at Object.raiseWithData (/Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@babel/parser/lib/index.js:739:17)\n    at Object.raise (/Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@babel/parser/lib/index.js:733:17)\n    at Object.unexpected (/Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@babel/parser/lib/index.js:8807:16)\n    at Object.jsxParseIdentifier (/Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@babel/parser/lib/index.js:4412:12)\n    at Object.jsxParseNamespacedName (/Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@babel/parser/lib/index.js:4422:23)\n    at Object.jsxParseElementName (/Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@babel/parser/lib/index.js:4433:21)\n    at Object.jsxParseOpeningElementAt (/Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@babel/parser/lib/index.js:4519:22)\n    at Object.jsxParseElementAt (/Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@babel/parser/lib/index.js:4552:33)\n    at Object.jsxParseElement (/Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@babel/parser/lib/index.js:4626:17)\n    at Object.parseExprAtom (/Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@babel/parser/lib/index.js:4633:19)\n    at Object.parseExprSubscripts (/Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@babel/parser/lib/index.js:9656:23)\n    at Object.parseMaybeUnary (/Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@babel/parser/lib/index.js:9636:21)\n    at Object.parseExprOps (/Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@babel/parser/lib/index.js:9506:23)\n    at Object.parseMaybeConditional (/Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@babel/parser/lib/index.js:9479:23)\n    at Object.parseMaybeAssign (/Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@babel/parser/lib/index.js:9434:21)");
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+
+
+
+var _config = _interopRequireDefault(__webpack_require__(/*! ./config.js */ 14));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+var request = {};
+var headers = {};
+
+request.globalRequest = function (url, method, data, power) {
+  var openId;
+  uni.getStorage({
+    key: "userInfo",
+    success: function success(res) {var _res$data;
+      openId = res === null || res === void 0 ? void 0 : (_res$data = res.data) === null || _res$data === void 0 ? void 0 : _res$data.openid;
+      return new Promise(function (resolve, reject) {
+        return uni.
+        request({
+          url: _config.default + url,
+          method: method,
+          data: _objectSpread(_objectSpread({},
+          data), {}, {
+            userId: openId // 固定把openid带上
+          }),
+          dataType: "json",
+          header: headers }).
+
+        then(function (res) {
+          if (res[1].data && res[1].data.code == 1) {
+            resolve(res[1].data);
+          } else {
+            reject(res[1].data);
+          }
+        }).
+        catch(function (parmas) {
+          console.warn(parmas);
+          reject("小程序后台发生位置异常");
+        });
+      });
+    } });
+
+};var _default =
+request;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 14:
+/*!*******************************************************************************************!*\
+  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/config.js ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; /**
+                                                                                                      * config.js  请求地址
+                                                                                                      * config.js  请求地址
+                                                                                                      * @Author: xqbzheng
+                                                                                                      * @Date: 2021-2-21
+                                                                                                      * @LastEditTime: 
+                                                                                                      * @LastEditors: xqbzheng
+                                                                                                      * @Description:
+                                                                                                      */
+
+var urlConfig = '';
+
+if (true) {
+  // 开发环境
+  // urlConfig = 'http://127.0.0.1:8000/';
+  urlConfig = 'http://47.112.174.173/';
+} else {}var _default =
+
+urlConfig;exports.default = _default;
 
 /***/ }),
 
