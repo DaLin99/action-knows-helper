@@ -1,0 +1,110 @@
+
+.forum-detail-container.data-v-68a4c167 {
+  padding: 48rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.flex-top.data-v-68a4c167 {
+  margin-bottom: 48rpx;
+}
+.avator-name-container.data-v-68a4c167 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  margin-bottom: 16rpx;
+}
+.avator.data-v-68a4c167 {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 16rpx;
+}
+.date.data-v-68a4c167 {
+  color: rgb(71, 70, 68);
+  opacity: 0.5;
+}
+.content-container.data-v-68a4c167 {
+  padding: 24rpx 0rpx;
+  border-top: solid 1px #f3f3f3;
+  border-bottom: solid 1px #f3f3f3;
+  opacity: 0.6;
+  margin-bottom: 24rpx;
+}
+.icon-nums-container.data-v-68a4c167 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.thumbs-up.data-v-68a4c167,
+.see.data-v-68a4c167 {
+  width: 40rpx;
+  height: 40rpx;
+}
+.thumbs-up-nums.data-v-68a4c167,
+.see-nums.data-v-68a4c167 {
+  font-size: 12px;
+  margin: 0rpx 16rpx;
+}
+.comment-container.data-v-68a4c167 {
+  margin-top: 36rpx;
+  padding: 16rpx 0rpx;
+  border-top: solid 1px #f3f3f3;
+}
+.comment-item-container.data-v-68a4c167 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  color: rgb(59, 56, 56);
+  border-bottom: solid 1px #f3f3f3;
+  padding: 16rpx 0rpx;
+  opacity: 0.7;
+}
+.left.data-v-68a4c167 {
+  margin-right: 16rpx;
+}
+.comment.data-v-68a4c167 {
+  font-size: 14px;
+}
+.name.data-v-68a4c167 {
+  color: rgb(1, 2, 2);
+  margin-right: 16rpx;
+}
+.input-container.data-v-68a4c167 {
+  width: 100%;
+  background: rgb(180, 236, 206);
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  z-index: 3;
+  padding: 24rpx 0;
+}
+.input-comment.data-v-68a4c167 {
+  width: 600rpx;
+  border: solid 1px black;
+  border-radius: 20rpx;
+}
+.input-btn.data-v-68a4c167 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.btn.data-v-68a4c167 {
+}
+

@@ -28,7 +28,7 @@
             success: async function (loginRes) {
               const res = await api.login({code: loginRes.code, ...userInfo});
               console.log(res)
-              debugger
+              // debugger
               that.initUserInfo({
                 ...res.data,
                 ...userInfo

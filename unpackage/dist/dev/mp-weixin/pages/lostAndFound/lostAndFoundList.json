@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "全部",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tabs": "/pages/component/tabs/tabs",
+    "card": "/pages/lostAndFound/components/card"
+  }
+}

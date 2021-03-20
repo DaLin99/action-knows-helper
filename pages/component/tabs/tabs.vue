@@ -48,6 +48,7 @@ export default {
   top: 0;
   height: 70rpx;
   width: 100%;
+  z-index: 9;
   &::before {
     content: "";
     position: absolute;

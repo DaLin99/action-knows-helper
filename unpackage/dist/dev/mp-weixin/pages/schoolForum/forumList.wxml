@@ -1,0 +1,1 @@
+<view><view class="forum-list"><block wx:for="{{forumList}}" wx:for-item="item" wx:for-index="index" wx:key="index"><card class="mt20" vue-id="{{'2512c4d2-1-'+index}}" item="{{item}}" bind:__l="__l"></card></block></view></view>

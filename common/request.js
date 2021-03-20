@@ -9,14 +9,16 @@
 
 import urlConfig from './config.js';
 
+
 const request = {};
 const headers = {};
 let openId;
 uni.getStorage({
   key: 'userInfo',
   success:(res)=>{
-    openId = res?.data?.openid;
-  }
+    openId = res?.data?.openid ;
+  },
+  fail:(err) => console.log(err)
 });
 request.globalRequest = (url, method, data, power) => {
      return new Promise((resolve, reject) => {
@@ -25,7 +27,7 @@ request.globalRequest = (url, method, data, power) => {
 		         method,
 		         data: {
                ...data,
-               userId: openId, // 固定把openid带上
+               userId: openId || 'omT555Ir3WC75sVelWS0gR4OQVJA', // 固定把openid带上
              },
 		         dataType: 'json',
 		         header: headers

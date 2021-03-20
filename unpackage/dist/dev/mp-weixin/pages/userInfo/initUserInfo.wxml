@@ -1,0 +1,1 @@
+<view class="get-authority-page"><button class="btn" type="primary" open-type="getUserInfo" data-event-opts="{{[['getuserinfo',[['onGetUserInfo',['$event']]]]]}}" bindgetuserinfo="__e">授权登陆</button></view>

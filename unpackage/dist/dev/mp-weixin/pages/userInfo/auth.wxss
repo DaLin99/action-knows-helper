@@ -1,0 +1,11 @@
+
+.auth-form{
+  margin-top: 40%;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  border: 4rpx;
+}
+.uni-form-item .title {
+      padding: 20rpx 0;
+}
+

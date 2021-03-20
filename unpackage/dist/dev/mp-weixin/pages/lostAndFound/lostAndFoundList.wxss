@@ -1,0 +1,24 @@
+.card-list.data-v-a7eb29b8 {
+  padding: 0px 36rpx;
+}
+.btn-list.data-v-a7eb29b8 {
+  position: fixed;
+  right: 0;
+  bottom: 50rpx;
+}
+.btn-list .publish.data-v-a7eb29b8,
+.btn-list .my.data-v-a7eb29b8 {
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  border-radius: 50%;
+  color: #fff;
+}
+.btn-list .publish.data-v-a7eb29b8 {
+  background-color: #9773ff;
+}
+.btn-list .my.data-v-a7eb29b8 {
+  background-color: #82d5e0;
+}
+

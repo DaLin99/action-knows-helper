@@ -1,0 +1,130 @@
+.school-activity-detail {
+  width: 100%;
+  height: 100vh;
+  background-color: #ebebf2;
+}
+.school-activity-detail .bgc-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  background-color: #ebebf2;
+}
+.school-activity-detail .date-and-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.school-activity-detail .date-and-btn .date-container {
+  width: 65%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  background-color: #FFFFFF;
+  padding-left: 36rpx;
+}
+.school-activity-detail .date-and-btn .date-container .date-title {
+  font-size: 24rpx;
+  color: gray;
+}
+.school-activity-detail .date-and-btn .btn-container {
+  width: 35%;
+  background-color: green;
+  color: #FFFFFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  padding: 12rpx;
+}
+.school-activity-detail .date-and-btn .btn-container .retain-nums {
+  font-size: 24rpx;
+}
+.school-activity-detail .info-container {
+  background-color: #FFFFFF;
+  padding: 24rpx;
+  border-bottom: solid 1px #f3f3f3;
+  color: #a6a6a6;
+}
+.school-activity-detail .info-container .info-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  margin: 16rpx 0rpx ;
+}
+.school-activity-detail .info-container .info-item .label {
+  width: 200rpx;
+}
+.school-activity-detail .info-container .info-item .flex-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+}
+.school-activity-detail .introduce-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  background: #ffffff;
+  border: 1pt solid #f7f7f7;
+  border-radius: 5pt;
+  box-shadow: 0pt 4pt 8pt 1pt rgba(10, 64, 115, 0.18);
+  padding: 36rpx;
+  margin: 48rpx ;
+}
+.school-activity-detail .introduce-box .header-img-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.school-activity-detail .introduce-box .header-img-container .header-img {
+  border-radius: 50%;
+}
+.school-activity-detail .introduce-box .company-name {
+  color: #8d8d93;
+}
+.school-activity-detail .des-container {
+  background-color: #FFFFFF;
+  padding-bottom: 240rpx;
+}
+.school-activity-detail .des-container .des-item {
+  padding: 16rpx 0rpx 12rpx 24rpx;
+  background-color: #FFFFFF;
+}
+

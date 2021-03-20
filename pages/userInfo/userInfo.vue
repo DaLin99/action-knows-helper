@@ -31,22 +31,41 @@
 		data() {
 			return {
 				title: 'Hello',
-        featureList: [
-          {
-            title: '我的消息',
-            url: 'myMsg'
-          },
+				featureList: [
+          // {
+          //   title: '我的消息',
+          //   url: 'myMsg'
+          // },
           {
             title: '身份认证',
             url: 'auth',
           },
-          {
+		  {
+		    title: '正在审核的失物招领',
+		    url: 'auth',
+		  },
+		  {
+		    title: '已发布的失物招领',
+		    url: 'auth',
+		  },
+			{
+		    title: '收藏的失物招领',
+		    url: 'auth',
+		  }, {
+		    title: '已发布的论坛',
+		    url: 'auth',
+		  },
+		  {
+		    title: '收藏的招聘信息',
+		    url: 'auth',
+		  },
+		  {
+		    title: '报名的学院活动',
+		    url: 'auth',
+		  },
+		{
             title: '管理员入口',
             url: 'admin'
-          },
-          {
-            title: '意见反馈',
-            url: 'feedback',
           },
           {
             title: '关于',
@@ -109,7 +128,9 @@
     .avator {
       height: 170rpx;
       width: 170rpx;
-    }
+      margin-top: 24rpx;
+	  border-radius: 50%;
+	}
     .self-words{
       font-size: 30rpx;
       color: #263238;
