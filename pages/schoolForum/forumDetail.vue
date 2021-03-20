@@ -11,7 +11,7 @@
           时间过得太快了，没想到我们即将离开大学的校园，走入社会，现在有些紧张和焦虑的心情，有朋友也是这样的吗？我们如何过渡这个身份的转变呢？有朋友愿意分享吗？
         </div>
       </div>
-      <div class="icon-nums-container">
+      <div class="icon-nums-container" @click="thumbUp(true)">
         <img src="../../static/thumbs-up.svg" alt="" class="thumbs-up" />
         <span class="thumbs-up-nums">312</span>
         <img src="../../static/see.svg" alt="" class="see" />
@@ -77,8 +77,8 @@ export default {
         },
         {
           avator: "../../static/logo.png",
-          name: "林子",
-          comment: "如果心里有不开心的还是需要找朋友们聊聊天，开心才是最重要~",
+          name: "林同学",
+          comment: "好好学习天天向上！",
           date: "2021-3-13",
         },
         {
@@ -90,6 +90,22 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    thumbUp(isBoolean) {
+      uni.showToast({
+        title: isBoolean ? "取消点赞成功" : "点赞成功",
+        duration: 20000,
+        icon: "success",
+      });
+    },
+    show() {
+      uni.showToast({
+        title: "评论成功",
+        duration: 20000,
+        icon: "success",
+      });
+    },
   },
 };
 </script>

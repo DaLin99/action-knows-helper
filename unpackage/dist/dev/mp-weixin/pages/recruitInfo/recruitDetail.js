@@ -8,10 +8,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -76,38 +73,47 @@ var _default =
   data: function data() {
     return {
       info: {
-        id: '1',
-        company: '快手科技信息有限公司',
-        workType: '前端工程师-校招实习',
-        salary: '200/天',
-        palce: '北京',
-        requirement: ['在校应届', '本科'],
-        imgPath: '../../static/image/activity-bgc.png',
-        date: '2021-1-2',
-        skills: ['前端开发', 'Node.js', 'WEB开发', 'Vue', 'Webpack'],
-        email: '921859239@qq.com',
+        id: "1",
+        company: "快手科技信息有限公司",
+        workType: "前端工程师-校招实习",
+        salary: "200/天",
+        palce: "北京",
+        requirement: ["在校应届", "本科"],
+        imgPath: "../../static/image/activity-bgc.png",
+        date: "2021-1-2",
+        skills: ["前端开发", "Node.js", "WEB开发", "Vue", "Webpack"],
+        email: "921859239@qq.com",
         workReq: [
-        '1.2 年以上的工作经验',
-        '2.较为扎实的计算机基础和前端基础知识',
-        '3.独立完成模块或一般难度子系统的设计和开发',
-        '4.对前端工程化方面，能够掌握业内常用工程化工具的使用（例如webpack，fis，rollup等',
-        '5.对前端安全性有较为全面的掌握（xss、csrf等），开发过程中能够有意识的规避安全风险',
-        '6.熟悉node，能够使用node搭建工具，提高效率',
-        '7.熟悉目前比较流行的框架，如 react、vue 等'],
+        "1.2 年以上的工作经验",
+        "2.较为扎实的计算机基础和前端基础知识",
+        "3.独立完成模块或一般难度子系统的设计和开发",
+        "4.对前端工程化方面，能够掌握业内常用工程化工具的使用（例如webpack，fis，rollup等",
+        "5.对前端安全性有较为全面的掌握（xss、csrf等），开发过程中能够有意识的规避安全风险",
+        "6.熟悉node，能够使用node搭建工具，提高效率",
+        "7.熟悉目前比较流行的框架，如 react、vue 等"],
 
         workRes: [
-        '1. 负责前端开发工作，关注用户体验，综合产品逻辑和技术实现的考虑，推动产品用户体验的提升',
-        '2. 对前端性能优化有深入的认知，能够根据项目特性选择合适的性能优化方案',
-        '3. 能够根据需求，提前预测产品开发过程中的风险，确定排期计划',
-        '4. 能够独立负责业务子项目研发进程或中项目团队主力，能够发现并解决技术问题'] } };
+        "1. 负责前端开发工作，关注用户体验，综合产品逻辑和技术实现的考虑，推动产品用户体验的提升",
+        "2. 对前端性能优化有深入的认知，能够根据项目特性选择合适的性能优化方案",
+        "3. 能够根据需求，提前预测产品开发过程中的风险，确定排期计划",
+        "4. 能够独立负责业务子项目研发进程或中项目团队主力，能够发现并解决技术问题"],
 
+        isCollect: true } };
 
 
   },
   created: function created(options) {
     console.log(options);
   },
-  methods: {} };exports.default = _default;
+  methods: {
+    handleCollect: function handleCollect(isCollect) {
+      uni.showToast({
+        title: isCollect ? "取消收藏成功" : "收藏",
+        duration: 20000,
+        icon: "success" });
+
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

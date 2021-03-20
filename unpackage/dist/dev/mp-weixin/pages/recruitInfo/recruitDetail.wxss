@@ -6,7 +6,7 @@
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
           flex-direction: column;
-  padding: 12rpx ;
+  padding: 12rpx;
 }
 .recruit-detail-container .card {
   display: -webkit-box;
@@ -16,8 +16,8 @@
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
           flex-direction: column;
-  padding: 24rpx ;
-  color: #FFFFFF;
+  padding: 24rpx;
+  color: #ffffff;
   background-color: #54cebc;
   box-shadow: 0px 10px 30px 0px rgba(0, 21, 41, 0.12);
 }
@@ -45,7 +45,7 @@
   margin: 24rpx 0rpx;
 }
 .recruit-detail-container .card .requiredment-tags .requiredment-tag {
-  border-right: solid 1px #FFFFFF;
+  border-right: solid 1px #ffffff;
   padding: 0px 24rpx;
 }
 .recruit-detail-container .card .requiredment-tags .requiredment-tag:first-child {
@@ -62,7 +62,7 @@
 }
 .recruit-detail-container .card .skill-item-container .skill-item {
   padding: 4rpx 16rpx;
-  border: solid 1px #FFFFFF;
+  border: solid 1px #ffffff;
   border-radius: 24rpx;
   display: -webkit-box;
   display: -webkit-flex;

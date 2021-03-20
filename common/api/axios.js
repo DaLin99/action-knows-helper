@@ -7,10 +7,10 @@
  * @Description:
  */
 
-import user from './user.js';
-import lostAndFound from './lostAndFound.js';
+import user from "./user.js";
+import lostAndFound from "./lostAndFound.js";
 
 export default {
-	...user,
-	...lostAndFound,
+  ...user,
+  ...lostAndFound,
 };

@@ -146,7 +146,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -225,8 +225,8 @@ var _default =
 
       {
         avator: "../../static/logo.png",
-        name: "林子",
-        comment: "如果心里有不开心的还是需要找朋友们聊聊天，开心才是最重要~",
+        name: "林同学",
+        comment: "好好学习天天向上！",
         date: "2021-3-13" },
 
       {
@@ -238,7 +238,23 @@ var _default =
 
 
 
-  } };exports.default = _default;
+  },
+  methods: {
+    thumbUp: function thumbUp(isBoolean) {
+      uni.showToast({
+        title: isBoolean ? "取消点赞成功" : "点赞成功",
+        duration: 20000,
+        icon: "success" });
+
+    },
+    show: function show() {
+      uni.showToast({
+        title: "评论成功",
+        duration: 20000,
+        icon: "success" });
+
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

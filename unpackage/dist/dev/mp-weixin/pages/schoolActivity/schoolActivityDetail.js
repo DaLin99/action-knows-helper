@@ -130,13 +130,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -196,22 +190,30 @@ var _default =
 {
   data: function data() {
     return {
-      imgPath: '../../static/image/activity-bgc.png',
-      organizer: '马玉',
+      imgPath: "/static/image/avator3.png",
+      organizer: "马玉",
       date: {
-        start: '2021年2月2日 周日 14：00',
-        end: '2021年2月2日 周日 18：00' },
+        start: "2021年2月2日 周日 14：00",
+        end: "2021年2月2日 周日 18：00" },
 
-      place: '亿万中国上海总部',
-      publisher: '梅子',
+      place: "亿万中国上海总部",
+      publisher: "梅子",
       des: [
-      '1.负责人是食品安全第一责任人，应当依照法律、法规和食品安全标准组织开展食品经营活动。',
-      '2.经营食品应当符合环境卫生要求，具备食品销售、储存、运输和装卸的卫生条件。',
-      '3.从事食品经营的人员应当遵守卫生要求，不符合法律规定健康要求的人员，不得参加接触直接入口食品的'] };
+      "1.负责人是食品安全第一责任人，应当依照法律、法规和食品安全标准组织开展食品经营活动。",
+      "2.经营食品应当符合环境卫生要求，具备食品销售、储存、运输和装卸的卫生条件。",
+      "3.从事食品经营的人员应当遵守卫生要求，不符合法律规定健康要求的人员，不得参加接触直接入口食品的"] };
 
 
   },
-  methods: {} };exports.default = _default;
+  methods: {
+    handle: function handle(isEnter) {
+      uni.showToast({
+        title: isEnter ? "取消报名成功" : "报名成功",
+        duration: 20000,
+        icon: "success" });
+
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

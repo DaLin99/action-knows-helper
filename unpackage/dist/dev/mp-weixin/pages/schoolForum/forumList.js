@@ -130,7 +130,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
 
 
 
@@ -161,43 +163,51 @@ var _vuex = __webpack_require__(/*! vuex */ 16);function ownKeys(object, enumera
   components: { card: card },
   data: function data() {
     return {
-      title: 'Hello',
+      title: "Hello",
       forumList: [
       {
         id: 1,
-        title: '昨天为啥停水了',
-        latestResponse: '听说爆水管了。。。。楼主不要慌',
-        date: '2020-01-01' },
+        title: "即将毕业的我们会怎么样",
+        latestResponse: "顺利答辩结束是第一步，接下来好好工作",
+        date: "2021-03-15" },
+
       {
         id: 1,
-        title: '昨天为啥停水了',
-        latestResponse: '听说爆水管了。。。。楼主不要慌',
-        date: '2020-01-01' },
+        title: "昨天为啥停水了",
+        latestResponse: "听说爆水管了。。。。楼主不要慌",
+        date: "2021-04-01" },
+
       {
         id: 1,
-        title: '昨天为啥停水了',
-        latestResponse: '',
-        date: '2020-01-01' }] };
+        title: "出校园需要带请假条吗",
+        latestResponse: "需要的，司机会检查",
+        date: "2021-03-01" }] };
 
 
 
   },
-  onLoad: function onLoad() {
-
-  },
+  onLoad: function onLoad() {},
   methods: {
     getUserInfo: function getUserInfo(e) {
       console.log(e);
+    },
+    showDetail: function showDetail(id) {
+      console.log(id);
+      uni.navigateTo({
+        url: "../schoolForum/forumDetail?info=".concat(id) });
+
     } },
+
 
   computed: _objectSpread(_objectSpread({},
   (0, _vuex.mapState)({
-    'userInfo': function userInfo(state) {return state.userInfo;} })), {}, {
+    userInfo: function userInfo(state) {return state.userInfo;} })), {}, {
 
     // 头像地址
     avatarUrl: function avatarUrl() {var _this$userInfo;
       return (_this$userInfo = this.userInfo) === null || _this$userInfo === void 0 ? void 0 : _this$userInfo.avatarUrl;
     } }) };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

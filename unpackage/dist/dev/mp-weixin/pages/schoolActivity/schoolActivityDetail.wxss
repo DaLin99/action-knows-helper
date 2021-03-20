@@ -34,7 +34,7 @@
   -webkit-box-pack: center;
   -webkit-justify-content: center;
           justify-content: center;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding-left: 36rpx;
 }
 .school-activity-detail .date-and-btn .date-container .date-title {
@@ -44,7 +44,7 @@
 .school-activity-detail .date-and-btn .btn-container {
   width: 35%;
   background-color: green;
-  color: #FFFFFF;
+  color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -64,7 +64,7 @@
   font-size: 24rpx;
 }
 .school-activity-detail .info-container {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 24rpx;
   border-bottom: solid 1px #f3f3f3;
   color: #a6a6a6;
@@ -73,7 +73,7 @@
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  margin: 16rpx 0rpx ;
+  margin: 16rpx 0rpx;
 }
 .school-activity-detail .info-container .info-item .label {
   width: 200rpx;
@@ -106,7 +106,7 @@
   border-radius: 5pt;
   box-shadow: 0pt 4pt 8pt 1pt rgba(10, 64, 115, 0.18);
   padding: 36rpx;
-  margin: 48rpx ;
+  margin: 48rpx;
 }
 .school-activity-detail .introduce-box .header-img-container {
   width: 100%;
@@ -120,11 +120,11 @@
   color: #8d8d93;
 }
 .school-activity-detail .des-container {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding-bottom: 240rpx;
 }
 .school-activity-detail .des-container .des-item {
   padding: 16rpx 0rpx 12rpx 24rpx;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 

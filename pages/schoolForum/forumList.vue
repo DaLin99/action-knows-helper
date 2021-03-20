@@ -1,11 +1,13 @@
 <template>
-	<view>
+  <view>
     <view class="forum-list">
       <card
-      class="mt20"
-      v-for="(item, index) in forumList"
-      :item="item"
-      :key="index" />
+        class="mt20"
+        v-for="(item, index) in forumList"
+        :item="item"
+        :key="index"
+        @click="showDetail(item.id)"
+      />
     </view>
     <!-- <button open-type="getUserInfo">ss</button>
 		<image class="logo" :src="avatarUrl"></image>
@@ -18,91 +20,98 @@
 				{{key}}: {{userInfo[key]}}
 			</text>
 		</text> -->
-	</view>
+  </view>
 </template>
 
 <script>
-	import {mapMutations} from 'vuex'
-	import {mapState} from 'vuex'
-  import card from './components/card.vue';
-	export default {
-    components:{card},
-		data() {
-			return {
-				title: 'Hello',
-        forumList: [
-          {
-            id: 1,
-            title: '昨天为啥停水了',
-            latestResponse: '听说爆水管了。。。。楼主不要慌',
-            date: '2020-01-01'
-          },{
-            id: 1,
-            title: '昨天为啥停水了',
-            latestResponse: '听说爆水管了。。。。楼主不要慌',
-            date: '2020-01-01'
-          },{
-            id: 1,
-            title: '昨天为啥停水了',
-            latestResponse: '',
-            date: '2020-01-01'
-          },
-        ]
-			}
-		},
-		onLoad() {
+import { mapMutations } from "vuex";
+import { mapState } from "vuex";
+import card from "./components/card.vue";
+export default {
+  components: { card },
+  data() {
+    return {
+      title: "Hello",
+      forumList: [
+        {
+          id: 1,
+          title: "即将毕业的我们会怎么样",
+          latestResponse: "顺利答辩结束是第一步，接下来好好工作",
+          date: "2021-03-15",
+        },
+        {
+          id: 1,
+          title: "昨天为啥停水了",
+          latestResponse: "听说爆水管了。。。。楼主不要慌",
+          date: "2021-04-01",
+        },
+        {
+          id: 1,
+          title: "出校园需要带请假条吗",
+          latestResponse: "需要的，司机会检查",
+          date: "2021-03-01",
+        },
+      ],
+    };
+  },
+  onLoad() {},
+  methods: {
+    getUserInfo(e) {
+      console.log(e);
+    },
+    showDetail(id) {
+      console.log(id);
+      uni.navigateTo({
+        url: `../schoolForum/forumDetail?info=${id}`,
+      });
+    },
+  },
 
-		},
-		methods: {
-      getUserInfo(e){
-        console.log(e)
-      }
-		},
-		computed: {
-			...mapState({
-				'userInfo': state=>state.userInfo
-			}),
-			// 头像地址
-			avatarUrl() {
-				return this.userInfo?.avatarUrl
-			}
-		}
-	}
+  computed: {
+    ...mapState({
+      userInfo: (state) => state.userInfo,
+    }),
+    // 头像地址
+    avatarUrl() {
+      return this.userInfo?.avatarUrl;
+    },
+  },
+};
 </script>
 
 <style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
+.logo {
+  height: 200rpx;
+  width: 200rpx;
+  margin-top: 200rpx;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50rpx;
+}
 
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
+.text-area {
+  display: flex;
+  justify-content: center;
+}
 
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
-	.user-info {
-		display: flex;
-		flex-direction: column;
-		font-size: .5rem;
-		align-self: flex-start;
-	}
-  .forum-list{
-    padding: 0 50rpx;
-  }
+.title {
+  font-size: 36rpx;
+  color: #8f8f94;
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.5rem;
+  align-self: flex-start;
+}
+.forum-list {
+  padding: 0 50rpx;
+}
 </style>
