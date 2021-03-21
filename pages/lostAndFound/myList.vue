@@ -61,7 +61,7 @@ export default {
       this.activeTabIndex = i;
 			// this.showDatasource = this.tabsList[i].dataSource;
       const params = {
-        publish_status: this.types[i]
+        publishStatus: this.types[i]
       };
       const res = await api.getUserLostAndFoundList(params);
       this.showDatasource = res?.data;
@@ -71,7 +71,7 @@ export default {
      */
     async getList(){
       const params = {
-        publish_status: this.types[this.activeTabIndex]
+        publishStatus: this.types[this.activeTabIndex]
       };
       const res = await api.getUserLostAndFoundList(params);
       this.showDatasource = res?.data;

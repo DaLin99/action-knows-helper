@@ -14,7 +14,8 @@
       <text >{{itemDetail.content}}</text>
     </view>
      <button v-if="userInfo.openid === itemDetail.publisherId" type="primary" class="mt40" @click="edit">修改</button>
-     <button v-else type="primary" class="mt40">收藏</button>
+     <button v-else-if="itemDetail.favorite === 0" type="primary" class="mt40" @click="addFavorite">收藏</button>
+     <button v-else="itemDetail.favorite === 1" type="primary" class="mt40" @click="cancelFavorite">取消收藏</button>
 	</view>
 </template>
 
@@ -51,7 +52,28 @@
             url: './submitLost?dataItem=' +JSON.stringify(this.itemDetail)
           })
         }
-      }
+      },
+      async addFavorite() {
+        console.log(api);
+        const res = await api.addFavorite({
+          contentType: 0, // 0为失物招领， 1 论坛 2 招聘 3 校园活动
+          contentId: this.itemDetail.id,
+        });
+        uni.showToast({
+          title: res.message,
+        })
+        this.getDetail(this.itemDetail.id);
+      },
+      async cancelFavorite() {
+        const res = await api.cancelFavorite({
+          contentType: 0, // 0为失物招领， 1 论坛 2 招聘 3 校园活动
+          contentId: this.itemDetail.id,
+        });
+        uni.showToast({
+          title: res.message,
+        })
+        this.getDetail(this.itemDetail.id);
+      },
     },
     computed:{
       	...mapState({
