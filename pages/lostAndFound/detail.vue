@@ -42,9 +42,15 @@
         this.itemDetail = res?.data[0];
       },
       edit() {
-        uni.navigateTo({
-          url: './submitLost?dataItem=' +JSON.stringify(this.itemDetail)
-        })
+        if(this.itemDetail.type === 'found') {
+          uni.navigateTo({
+            url: './submitFound?dataItem=' +JSON.stringify(this.itemDetail)
+          })
+        } else {
+          uni.navigateTo({
+            url: './submitLost?dataItem=' +JSON.stringify(this.itemDetail)
+          })
+        }
       }
     },
     computed:{

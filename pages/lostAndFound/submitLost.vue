@@ -100,11 +100,14 @@
       v-else
       type="primary" 
       @click="submitEdit">提交修改</button>
+    <!-- <button 
+      type="primary" 
+      @click="mockBtn">mock</button>
     <view 
       v-for="(item, index) in Object.keys(formData)" 
       :key="index">
       {{ item }}: {{ formData[item] }}
-    </view>
+    </view> -->
   </view>
 </template>
 
@@ -175,11 +178,6 @@ export default {
       res.imageUrl = res.imgPath
       Object.assign(this.formData, res)
       this.isEdit = true;
-      // this.formData = {
-      //   ...this.formData,
-      //   ...res,
-      //   imageUrl: res.imgPath
-      // }
     }
   },
   methods: {
@@ -281,6 +279,20 @@ export default {
            console.log('表单错误信息：', err);
        });
     },
+    mockBtn() {
+     const data = {"time":1616256000000,"place":"123","title":"11","lostType":"0","tell":"123","wechat":"123","imageUrl":"https://xqbzheng-1300584219.cos.ap-guangzhou.myqcloud.com/image/DzhAsb7wQC3Pae4cda8e885eff9157f7b377563d6c9b.jpg","content":"123123","type":"lost","userId":"omT555KQGwEZOtSyfm9XH2bN4wm4"};
+     api.submitLost(data).then(()=>{
+       uni.showToast({
+         title: '修改成功',
+         success() {
+           // 页面回跳
+           uni.navigateBack({
+             delta:2,
+           });
+         }
+       });
+     });
+    }
   },
 };
 </script>
