@@ -215,9 +215,10 @@ export default {
         SecretId,
         SecretKey,
       });
-      uni.chooseMessageFile({
+      uni.chooseImage({
         count: 1,
-        type: 'image',
+        sizeType: ['original', 'compressed'], // original 原图，compressed 压缩图，默认二者都有
+        sourceType: ['album', 'camera'],
         success: (res)=>{
           const filePath = res.tempFiles[0].path;
           const filename = filePath.substr(filePath.lastIndexOf('/') + 1);
