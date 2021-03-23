@@ -1,5 +1,11 @@
 <template>
   <view class="lost-found-container">
+    <tabs
+      :tabs-list="tabsList"
+      :active-tab-index="activeTabIndex"
+      class="mb10"
+      @clickTab="clcikTab"
+    />
     <view class="card-list mt80">
       <card
         v-for="(item, index) in showDatasource"
@@ -13,14 +19,32 @@
 </template>
 
 <script>
+  import tabs from 'pages/component/tabs/tabs.vue';
 import card from './components/card.vue';
 import api from '../../common/api/'
 export default {
 	name: 'HelloWorld',
-	components: { card },
+	components: { card, tabs },
 	data() {
 		return {
 			showDatasource: [],
+      activeTabIndex: 0,
+      tabsList: [
+        {
+          tabName: '已发布',
+        },
+        {
+          tabName: '审核中',
+        },
+        {
+          tabName: '收藏',
+        }
+      ],
+      types: {
+        0: 'published',
+        1: 'unpublish',
+        2: 'favorite'
+      }
     };
 	},
 	onLoad() {
@@ -29,12 +53,25 @@ export default {
     this.getList();
   },
 	methods: {
+		/**
+     * 点击tab-nav-name进行切换
+     * @param {String}  i 索引
+     */
+		async clcikTab(i) {
+      this.activeTabIndex = i;
+			// this.showDatasource = this.tabsList[i].dataSource;
+      const params = {
+        publishStatus: this.types[i]
+      };
+      const res = await api.getUserLostAndFoundList(params);
+      this.showDatasource = res?.data;
+		},
     /**
      * 获取列表
      */
     async getList(){
       const params = {
-        type: this.activeTabIndex === 0 ? 'lost' : 'found'
+        publishStatus: this.types[this.activeTabIndex]
       };
       const res = await api.getUserLostAndFoundList(params);
       this.showDatasource = res?.data;

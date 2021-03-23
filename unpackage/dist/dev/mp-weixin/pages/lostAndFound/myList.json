@@ -2,6 +2,7 @@
   "navigationBarTitleText": "我的失物招领",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "card": "/pages/lostAndFound/components/card"
+    "card": "/pages/lostAndFound/components/card",
+    "tabs": "/pages/component/tabs/tabs"
   }
 }

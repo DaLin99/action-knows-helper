@@ -41,16 +41,8 @@
             url: 'auth',
           },
 		  {
-		    title: '正在审核的失物招领',
-		    url: 'auth',
-		  },
-		  {
-		    title: '已发布的失物招领',
-		    url: 'auth',
-		  },
-			{
-		    title: '收藏的失物招领',
-		    url: 'auth',
+		    title: '我的失物招领',
+		    url: '../lostAndFound/myList',
 		  }, {
 		    title: '已发布的论坛',
 		    url: 'auth',
@@ -96,7 +88,6 @@
         console.log(e)
       },
       goToPage(url){
-        console.log(url);
         uni.navigateTo({
           url,
         })

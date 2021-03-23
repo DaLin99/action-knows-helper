@@ -6,10 +6,10 @@
       :rules="rules">
       <uni-forms-item
         label="拾到时间" 
-        name="lostTime"
+        name="time"
       >
         <uni-datetime-picker
-          v-model="formData.lostTime" 
+          v-model="formData.time" 
           type="date" 
           start="2000-06-01 06:30:30" 
           end="2030-6-1" 
@@ -28,10 +28,10 @@
       </uni-forms-item>
       <uni-forms-item 
         label="物品名称"
-        name="lostName"
+        name="title"
         class="mt12">
         <input 
-          v-model="formData.lostName" 
+          v-model="formData.title" 
           type="text" 
           placeholder="请填写物品名称" >
       </uni-forms-item>
@@ -50,16 +50,17 @@
         label="联系方式"
         class="mt12">
         <input
-          v-model="formData.tell"       type="text" 
+          v-model="formData.tell"
+          type="text" 
           placeholder="请填写联系方式" 
           class="mt12">
       </uni-forms-item>
       <uni-forms-item 
         label="Wechat" 
-        name="losterWechat"
+        name="wechat"
         class="mt12">
         <input
-          v-model="formData.losterWechat" 
+          v-model="formData.wechat" 
           type="text" 
           class="mt12"
           placeholder="请填写Wechat" >
@@ -84,21 +85,29 @@
       </uni-forms-item>
       <uni-forms-item 
         label="备注信息" 
-        name="remarkInfo">
+        name="content">
         <textarea
-          v-model="formData.remarkInfo" 
+          v-model="formData.content" 
           placeholder="请填写备注信息"
           class="mt12"/>
       </uni-forms-item>
     </uni-forms>
     <button 
+      v-if="!isEdit"
       type="primary" 
       @click="submit">发布</button>
+    <button 
+      v-else
+      type="primary" 
+      @click="submitEdit">提交修改</button>
+   <!-- <button 
+      type="primary" 
+      @click="mockBtn">mock</button>
     <view 
       v-for="(item, index) in Object.keys(formData)" 
       :key="index">
       {{ item }}: {{ formData[item] }}
-    </view>
+    </view> -->
   </view>
 </template>
 
@@ -115,14 +124,14 @@ export default {
     let formRules = {} ;
     const arr = [
       {
-        name:'lostTime',
-        label:'拾到时间',
+        name:'time',
+        label:'丢失时间',
       },{
         name:'place',
-        label:'拾到地点',
+        label:'丢失地点',
       },{
-        name:'lostName',
-        label:'名称',
+        name:'title',
+        label:'物品名称',
       },{
         name:'lostType',
         label:'物品分类',
@@ -131,10 +140,10 @@ export default {
         label:'联系方式',
       }
       ,{
-        name:'losterWechat',
+        name:'wechat',
         label:'wechat',
       },{
-        name:'remarkInfo',
+        name:'content',
         label:'备注信息',
       },{
         name:'imageUrl',
@@ -152,17 +161,24 @@ export default {
         ]
       };
     });
-    this.rules = formRules;
-    this.formData = formData;
     return {
       lostTypeList:['日用品', '学习书籍', '其他'],
       showPicker: false,
-      formData: formData,
-      rules: formRules
+      formData,
+      rules: formRules,
+      isEdit: false,
     };
   },
   
   created() {
+  },
+  onLoad(obj) {
+    if(obj.dataItem) {
+      const res = JSON.parse(obj.dataItem);
+      res.imageUrl = res.imgPath
+      Object.assign(this.formData, res)
+      this.isEdit = true;
+    }
   },
   methods: {
     onShowDatePicker(type) {
@@ -199,9 +215,10 @@ export default {
         SecretId,
         SecretKey,
       });
-      uni.chooseMessageFile({
+      uni.chooseImage({
         count: 1,
-        type: 'image',
+        sizeType: ['original', 'compressed'], // original 原图，compressed 压缩图，默认二者都有
+        sourceType: ['album', 'camera'],
         success: (res)=>{
           const filePath = res.tempFiles[0].path;
           const filename = filePath.substr(filePath.lastIndexOf('/') + 1);
@@ -231,7 +248,7 @@ export default {
     // 点击发布按钮
     submit() {
        this.$refs.form.submit().then(res=>{
-         api.submitLost({...res, type: 'found'}).then(()=>{
+         api.submitLost({...res, type:'lost'}).then(()=>{
            uni.showToast({
              title: '发布成功'
            });
@@ -243,6 +260,40 @@ export default {
            console.log('表单错误信息：', err);
        });
     },
+    // 点击提交编辑按钮
+    submitEdit() {
+       this.$refs.form.submit().then(res=>{
+         console.log(res)
+         api.submitLost({...res, id: this.formData.id}).then(()=>{
+           uni.showToast({
+             title: '修改成功',
+             success() {
+               // 页面回跳
+               uni.navigateBack({
+                 delta:2,
+               });
+             }
+           });
+         });
+         
+       }).catch(err =>{
+           console.log('表单错误信息：', err);
+       });
+    },
+    mockBtn() {
+     const data = {"time":1616256000000,"place":"123","title":"11","lostType":"0","tell":"123","wechat":"123","imageUrl":"https://xqbzheng-1300584219.cos.ap-guangzhou.myqcloud.com/image/DzhAsb7wQC3Pae4cda8e885eff9157f7b377563d6c9b.jpg","content":"123123","type":"lost","userId":"omT555KQGwEZOtSyfm9XH2bN4wm4"};
+     api.submitLost(data).then(()=>{
+       uni.showToast({
+         title: '修改成功',
+         success() {
+           // 页面回跳
+           uni.navigateBack({
+             delta:2,
+           });
+         }
+       });
+     });
+    }
   },
 };
 </script>
