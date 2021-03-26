@@ -17,8 +17,11 @@ uni.getStorage({
   success: (res) => {
     openId = res?.data?.openid;
   },
+  fail: () => {
+    openId = "mock";
+  },
 });
-
+console.log(openId);
 request.globalRequest = (url, method, data, power) => {
   return new Promise((resolve, reject) => {
     return uni

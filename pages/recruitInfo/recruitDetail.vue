@@ -3,12 +3,13 @@
     <!-- 卡片信息 -->
     <view class="card">
       <view class="workType-salary">
-        <text>{{ info.workType }}</text>
+        {{ info.isCollect }}
+        <text>{{ info.jobType }}</text>
         <text class="salary">{{ info.salary }}</text>
       </view>
       <view class="requiredment-tags">
         <view
-          v-for="(item, index) in info.requirement"
+          v-for="(item, index) in info.educationRequirement.split('，')"
           :key="index"
           class="requiredment-tag"
         >
@@ -17,7 +18,7 @@
       </view>
       <view class="skill-item-container">
         <view
-          v-for="(skillItem, index) in info.skills"
+          v-for="(skillItem, index) in info.skillTagList.split('，')"
           :key="index"
           class="skill-item"
         >
@@ -25,40 +26,58 @@
         </view>
       </view>
       <view class="update-time">
-        <text>更新于：{{ info.date }}</text>
+        <text
+          >更新于：{{ info.publisher }}-{{
+            info.publishDate.split(" ")[0]
+          }}</text
+        >
       </view>
     </view>
     <!-- 投递方式 -->
     <view class="email-box">
       简历投递Email：
-      <text class="email">{{ info.email }}</text>
+      <text class="email">{{ info.eMail }}</text>
     </view>
-
+    <div class="company">
+      <p>公司名：{{ info.company }}</p>
+      <p>地点： {{ info.address }}</p>
+    </div>
     <!-- 职位描述 -->
     <text class="work-title">职位描述</text>
     <!-- 任职要求 -->
     <view class="work-requiredments">
       <text>任职要求</text>
-      <view v-for="(workReqItem, index) in info.workReq" :key="index">
+      <view
+        v-for="(workReqItem, index) in info.jobDescription.split('，')"
+        :key="index"
+      >
         {{ workReqItem }}
       </view>
     </view>
 
     <view class="work-responsibility">
       <text>岗位责任</text>
-      <view v-for="(workResItem, index) in info.workRes" :key="index">
+      <view
+        v-for="(workResItem, index) in info.jobResponsibility.split('，')"
+        :key="index"
+      >
         {{ workResItem }}
       </view>
     </view>
     <view class="btn-container">
-      <button @click="handleCollect" class="collect-btn" type="primary">
-        {{ info.isCollect ? "取消收藏" : "收藏" }}
+      <button
+        @click="handleCollect(info.isCollect)"
+        class="collect-btn"
+        type="primary"
+      >
+        {{ info.isCollect === "1" ? "取消收藏" : "收藏" }}
       </button>
     </view>
   </view>
 </template>
 
 <script>
+import api from "../../common/api/";
 export default {
   data() {
     return {
@@ -92,16 +111,36 @@ export default {
       },
     };
   },
-  created(options) {
-    console.log(options);
+  onLoad(opt) {
+    console.log(opt.id);
+    this.getDetail(opt.id);
   },
   methods: {
-    handleCollect(isCollect) {
-      uni.showToast({
-        title: isCollect ? "取消收藏成功" : "收藏",
-        duration: 20000,
-        icon: "success",
+    async handleCollect(isCollect) {
+      const res = await api.postCollectRecruitInfo({
+        id: this.info.id,
+        isCollect: isCollect === 1 ? "0" : "1",
       });
+      console.log(isCollect, this.info.isCollect === 1 ? 0 : 1);
+      if (res.code === 1) {
+        uni.showToast({
+          title: isCollect === 1 ? "取消收藏成功" : "收藏成功",
+          duration: 2000,
+          icon: "success",
+        });
+        this.getDetail(this.info.id);
+      } else {
+        uni.showToast({
+          title: "失败",
+          duration: 2000,
+          icon: "fail",
+        });
+      }
+    },
+    async getDetail(id) {
+      const res = await api.getRecruitInfoDetail({ id });
+      this.info = res?.data[0];
+      console.log("res:", res);
     },
   },
 };
@@ -170,6 +209,9 @@ export default {
     .email {
       color: #434e6b;
     }
+  }
+  .company {
+    margin-top: 24rpx;
   }
   .work-title {
     margin: 24rpx 0rpx;

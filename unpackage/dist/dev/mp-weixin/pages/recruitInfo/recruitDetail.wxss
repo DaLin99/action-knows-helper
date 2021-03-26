@@ -90,6 +90,9 @@
 .recruit-detail-container .email-box .email {
   color: #434e6b;
 }
+.recruit-detail-container .company {
+  margin-top: 24rpx;
+}
 .recruit-detail-container .work-title {
   margin: 24rpx 0rpx;
 }

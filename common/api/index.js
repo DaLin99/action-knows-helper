@@ -7,12 +7,14 @@
  * @Description:
  */
 
-import user from './user.js';
-import lostAndFound from './lostAndFound.js';
-import favorite from './favorite.js';
+import user from "./user.js";
+import lostAndFound from "./lostAndFound.js";
+import recruitInfo from "./recruitInfo.js";
+import favorite from "./favorite.js";
 
 export default {
-	...user,
-	...lostAndFound,
-	...favorite,
+  ...user,
+  ...lostAndFound,
+  ...favorite,
+  ...recruitInfo,
 };
