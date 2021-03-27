@@ -1,13 +1,16 @@
 <template>
   <view class="get-authority-page">
-    <button 
-      type="primary"
-      class="btn"
-      open-type="getUserInfo"
-      @getuserinfo="onGetUserInfo"
-    >
-      授权登陆
-    </button>
+    <uni-popup ref="popup" type="bottom"  class="pop-up">
+      <button 
+        type="primary"
+        class="btn"
+        open-type="getUserInfo"
+        @getuserinfo="onGetUserInfo"
+      >
+        授权登陆
+      </button>
+    </uni-popup>
+
   </view>
 </template>
 
@@ -46,11 +49,12 @@
         }
       },
       goBackToHome(){
-        uni.redirectTo({
-          url:'pages/lostAndFound/lostAndFoundList',
-        });
+        uni.navigateBack()
       }
     },
+    onShow() {
+     this.$refs.popup.open()
+    }
   };
 </script>
 
@@ -61,5 +65,8 @@
     justify-content: center;
     height: 100vh;
     width: 100vw;
+  }
+  .pop-up {
+    background-color: #fff;
   }
 </style>

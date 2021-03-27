@@ -22,10 +22,14 @@
 import tabs from "../component/tabs/tabs.vue";
 import card from "./components/card.vue";
 import api from "../../common/api/";
+import {mapMutations, mapState} from 'vuex'
 export default {
   components: { tabs, card },
   created() {
     this.getList();
+  },
+  onShow() {
+    this.auth();
   },
   data() {
     return {
@@ -76,6 +80,28 @@ export default {
     };
   },
   methods: {
+    ...mapMutations([
+      'initUserInfo',
+    ]),
+    /**
+     * 登陆验证
+     */ 
+    async auth() {
+      const that = this;
+      uni.getStorage({
+          key: 'userInfo',
+          success: function (result) {
+            that.initUserInfo({
+              ...result.data
+            })
+          },
+          fail(result) {
+            uni.navigateTo({
+              url: '/pages/userInfo/initUserInfo'
+            })
+          }
+      });
+    },
     async getList() {
       const res = await api.getRecruitInfoList();
       this.recruitInfoList = res.data.filter((item) => item.status === "1");

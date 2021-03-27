@@ -30,9 +30,18 @@
 import tabs from 'pages/component/tabs/tabs.vue';
 import card from './components/card.vue';
 import api from '../../common/api/'
+import {mapMutations, mapState} from 'vuex'
 export default {
 	name: 'HelloWorld',
 	components: { tabs, card },
+  onShow() {
+    login(123)
+    this.auth();
+  },
+  onLoad() {
+    console.log(223);
+    this.auth();
+  },
 	data() {
 		return {
 			showDatasource: [],
@@ -108,6 +117,28 @@ export default {
     this.getList();
   },
 	methods: {
+    ...mapMutations([
+      'initUserInfo',
+    ]),
+    /**
+     * 登陆验证
+     */ 
+    async auth() {
+      const that = this;
+      uni.getStorage({
+          key: 'userInfo',
+          success: function (result) {
+            that.initUserInfo({
+              ...result.data
+            })
+          },
+          fail(result) {
+            uni.navigateTo({
+              url: '/pages/userInfo/initUserInfo'
+            })
+          }
+      });
+    },
 		/**
      * 点击tab-nav-name进行切换
      * @param {String}  i 索引
