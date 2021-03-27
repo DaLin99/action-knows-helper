@@ -20,12 +20,12 @@
           <text
             v-for="(
               requirementItem, requirementIndex
-            ) in item.educationRequirement.split('，')"
+            ) in requirements"
             :key="requirementIndex"
           >
             {{ requirementItem }}
           </text>
-          <text class="date">{{ item.publishDate.split(" ")[0] }}</text>
+          <!-- <text class="date">{{ item.publishDate.split(" ")[0] }}</text> -->
         </view>
       </view>
     </view>
@@ -43,6 +43,11 @@ export default {
       default: () => ({}),
     },
   },
+  computed: {
+    requirements() {
+      return this.item.educationRequirement?.split('，') || []
+    }
+  }
 };
 </script>
 

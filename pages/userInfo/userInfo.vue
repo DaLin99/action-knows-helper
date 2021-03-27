@@ -50,9 +50,9 @@ export default {
         },
         {
           title: "收藏的招聘信息",
-          url: "/pages/recruitInfo/recruitInfoList",
+          url: "../recruitInfo/myList",
         },
-        {
+        { 
           title: "报名的学院活动",
           url: "auth",
         },
@@ -84,17 +84,10 @@ export default {
   onLoad() {},
   methods: {
     getUserInfo(e) {
-      console.log(e);
     },
     goToPage(url) {
-      console.log(url);
-      if (url.indexOf("recruitInfoList")) {
-        uni.switchTab(url);
-      } else {
-        console.log("no");
-      }
       uni.navigateTo({
-        url,
+        url:url,
       });
     },
   },

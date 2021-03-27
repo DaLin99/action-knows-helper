@@ -25,14 +25,9 @@ import api from "../../common/api/";
 import { mapMutations } from "vuex";
 export default {
   components: { tabs, card },
-  onload(opt) {
-    console.log(opt);
-  },
-  created() {
-    this.getList();
-  },
   onShow() {
     this.auth();
+    this.getList();
   },
   data() {
     return {
@@ -106,8 +101,7 @@ export default {
     },
     async getList() {
       const res = await api.getRecruitInfoList();
-      this.recruitInfoList = res.data.filter((item) => item.status === "1");
-      
+      this.recruitInfoList = res.data.filter((item) => item.status === "1" && item.isCollect === 1);
     },
     showDetail(id) {
       uni.navigateTo({
@@ -116,6 +110,7 @@ export default {
     },
     // 点击tab-nav-name进行切换
     clcikTab(i) {
+      console.log(22);
       this.activeTabIndex = i;
       // this.showDatasource = this.tabsList[i].dataSource;
     },
