@@ -2751,11 +2751,16 @@ var getRecruitInfoDetail = function getRecruitInfoDetail(params) {return (
     _request.default.globalRequest("".concat(MODULE, "/detail"), "get", params));};
 // 收藏
 var postCollectRecruitInfo = function postCollectRecruitInfo(data) {return (
-    _request.default.globalRequest("".concat(MODULE, "/favoriteEdit"), "post", data));};var _default =
+    _request.default.globalRequest("".concat(MODULE, "/favoriteEdit"), "post", data));};
+// 点赞
+var postThumpUp = function postThumpUp(data) {return (
+    _request.default.globalRequest("".concat(MODULE, "/thumbUp"), "post", data));};var _default =
+
 {
   getRecruitInfoList: getRecruitInfoList,
   getRecruitInfoDetail: getRecruitInfoDetail,
-  postCollectRecruitInfo: postCollectRecruitInfo };exports.default = _default;
+  postCollectRecruitInfo: postCollectRecruitInfo,
+  postThumpUp: postThumpUp };exports.default = _default;
 
 /***/ }),
 

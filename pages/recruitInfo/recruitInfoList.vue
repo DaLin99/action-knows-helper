@@ -1,12 +1,12 @@
 <template>
   <view>
-    <tabs
+    <!-- <tabs
       :tabs-list="tabsList"
       :active-tab-index="activeTabIndex"
       class="mb10"
       @clickTab="clcikTab"
-    />
-    <view class="mt80 recruit-info-container">
+    /> -->
+    <view class="recruit-info-container">
       <card
         v-for="(item, index) in recruitInfoList"
         :item="item"
@@ -22,9 +22,12 @@
 import tabs from "../component/tabs/tabs.vue";
 import card from "./components/card.vue";
 import api from "../../common/api/";
-import {mapMutations, mapState} from 'vuex'
+import { mapMutations } from "vuex";
 export default {
   components: { tabs, card },
+  onload(opt) {
+    console.log(opt);
+  },
   created() {
     this.getList();
   },
@@ -80,26 +83,24 @@ export default {
     };
   },
   methods: {
-    ...mapMutations([
-      'initUserInfo',
-    ]),
+    ...mapMutations(["initUserInfo"]),
     /**
      * 登陆验证
-     */ 
+     */
     async auth() {
       const that = this;
       uni.getStorage({
-          key: 'userInfo',
-          success: function (result) {
-            that.initUserInfo({
-              ...result.data
-            })
-          },
-          fail(result) {
-            uni.navigateTo({
-              url: '/pages/userInfo/initUserInfo'
-            })
-          }
+        key: "userInfo",
+        success: function (result) {
+          that.initUserInfo({
+            ...result.data,
+          });
+        },
+        fail(result) {
+          uni.navigateTo({
+            url: "/pages/userInfo/initUserInfo",
+          });
+        },
       });
     },
     async getList() {

@@ -1,1 +1,1 @@
-<view class="get-authority-page"><button class="btn" type="primary" open-type="getUserInfo" data-event-opts="{{[['getuserinfo',[['onGetUserInfo',['$event']]]]]}}" bindgetuserinfo="__e">授权登陆</button></view>
+<view class="get-authority-page"><uni-popup class="pop-up vue-ref" vue-id="bdcfcb20-1" type="bottom" data-ref="popup" bind:__l="__l" vue-slots="{{['default']}}"><button class="btn" type="primary" open-type="getUserInfo" data-event-opts="{{[['getuserinfo',[['onGetUserInfo',['$event']]]]]}}" bindgetuserinfo="__e">授权登陆</button></uni-popup></view>

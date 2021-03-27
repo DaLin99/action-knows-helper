@@ -1,5 +1,4 @@
 {
   "navigationBarTitleText": "校招信息",
-  "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "enablePullDownRefresh": false
 }

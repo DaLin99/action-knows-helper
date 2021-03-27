@@ -153,11 +153,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _api = _interopRequireDefault(__webpack_require__(/*! ../../common/api/ */ 11));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var tabs = function tabs() {__webpack_require__.e(/*! require.ensure | pages/component/tabs/tabs */ "pages/component/tabs/tabs").then((function () {return resolve(__webpack_require__(/*! ../component/tabs/tabs.vue */ 156));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var card = function card() {__webpack_require__.e(/*! require.ensure | pages/recruitInfo/components/card */ "pages/recruitInfo/components/card").then((function () {return resolve(__webpack_require__(/*! ./components/card.vue */ 163));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+var _api = _interopRequireDefault(__webpack_require__(/*! ../../common/api/ */ 11));
+var _vuex = __webpack_require__(/*! vuex */ 18);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var tabs = function tabs() {__webpack_require__.e(/*! require.ensure | pages/component/tabs/tabs */ "pages/component/tabs/tabs").then((function () {return resolve(__webpack_require__(/*! ../component/tabs/tabs.vue */ 156));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var card = function card() {__webpack_require__.e(/*! require.ensure | pages/recruitInfo/components/card */ "pages/recruitInfo/components/card").then((function () {return resolve(__webpack_require__(/*! ./components/card.vue */ 163));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   components: { tabs: tabs, card: card },
+  onload: function onload(opt) {
+    console.log(opt);
+  },
   created: function created() {
     this.getList();
+  },
+  onShow: function onShow() {
+    this.auth();
   },
   data: function data() {
     return {
@@ -207,11 +214,31 @@ var _api = _interopRequireDefault(__webpack_require__(/*! ../../common/api/ */ 1
 
 
   },
-  methods: {
-    getList: function getList() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
-                  _api.default.getRecruitInfoList());case 2:res = _context.sent;
-                _this.recruitInfoList = res.data.filter(function (item) {return item.status === "1";});
-                console.log(res);case 5:case "end":return _context.stop();}}}, _callee);}))();
+  methods: _objectSpread(_objectSpread({},
+  (0, _vuex.mapMutations)(["initUserInfo"])), {}, {
+    /**
+                                                     * 登陆验证
+                                                     */
+    auth: function auth() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var that;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+                that = _this;
+                uni.getStorage({
+                  key: "userInfo",
+                  success: function success(result) {
+                    that.initUserInfo(_objectSpread({},
+                    result.data));
+
+                  },
+                  fail: function fail(result) {
+                    uni.navigateTo({
+                      url: "/pages/userInfo/initUserInfo" });
+
+                  } });case 2:case "end":return _context.stop();}}}, _callee);}))();
+
+    },
+    getList: function getList() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
+                  _api.default.getRecruitInfoList());case 2:res = _context2.sent;
+                _this2.recruitInfoList = res.data.filter(function (item) {return item.status === "1";});
+                console.log(res);case 5:case "end":return _context2.stop();}}}, _callee2);}))();
     },
     showDetail: function showDetail(id) {
       uni.navigateTo({
@@ -223,7 +250,7 @@ var _api = _interopRequireDefault(__webpack_require__(/*! ../../common/api/ */ 1
       console.log(22);
       this.activeTabIndex = i;
       // this.showDatasource = this.tabsList[i].dataSource;
-    } } };exports.default = _default;
+    } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

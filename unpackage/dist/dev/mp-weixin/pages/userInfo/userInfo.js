@@ -185,64 +185,69 @@ var _vuex = __webpack_require__(/*! vuex */ 18);function ownKeys(object, enumera
 {
   data: function data() {
     return {
-      title: 'Hello',
+      title: "Hello",
       featureList: [
       // {
       //   title: '我的消息',
       //   url: 'myMsg'
       // },
       {
-        title: '身份认证',
-        url: 'auth' },
+        title: "身份认证",
+        url: "auth" },
 
       {
-        title: '我的失物招领',
-        url: '../lostAndFound/myList' },
-      {
-        title: '已发布的论坛',
-        url: 'auth' },
+        title: "我的失物招领",
+        url: "../lostAndFound/myList" },
 
       {
-        title: '收藏的招聘信息',
-        url: 'auth' },
+        title: "已发布的论坛",
+        url: "auth" },
 
       {
-        title: '报名的学院活动',
-        url: 'auth' },
+        title: "收藏的招聘信息",
+        url: "/pages/recruitInfo/recruitInfoList" },
 
       {
-        title: '管理员入口',
-        url: 'admin' },
+        title: "报名的学院活动",
+        url: "auth" },
 
       {
-        title: '关于',
-        url: 'about' }],
+        title: "管理员入口",
+        url: "admin" },
+
+      {
+        title: "关于",
+        url: "about" }],
 
 
       overview: [
       {
-        title: '评论',
+        title: "评论",
         count: 2 },
 
       {
-        title: '点赞',
+        title: "点赞",
         count: 2 },
 
       {
-        title: '收藏',
+        title: "收藏",
         count: 2 }] };
 
 
 
   },
-  onLoad: function onLoad() {
-
-  },
+  onLoad: function onLoad() {},
   methods: {
     getUserInfo: function getUserInfo(e) {
       console.log(e);
     },
     goToPage: function goToPage(url) {
+      console.log(url);
+      if (url.indexOf("recruitInfoList")) {
+        uni.switchTab(url);
+      } else {
+        console.log("no");
+      }
       uni.navigateTo({
         url: url });
 
@@ -250,7 +255,7 @@ var _vuex = __webpack_require__(/*! vuex */ 18);function ownKeys(object, enumera
 
   computed: _objectSpread(_objectSpread({},
   (0, _vuex.mapState)({
-    'userInfo': function userInfo(state) {return state.userInfo;} })), {}, {
+    userInfo: function userInfo(state) {return state.userInfo;} })), {}, {
 
     // 头像地址
     avatarUrl: function avatarUrl() {var _this$userInfo;
@@ -258,7 +263,7 @@ var _vuex = __webpack_require__(/*! vuex */ 18);function ownKeys(object, enumera
     },
     // 头像地址
     comeForm: function comeForm() {
-      return "\u6765\u81EA".concat(this.userInfo.province || '神秘星球', "\u7684\u7528\u6237");
+      return "\u6765\u81EA".concat(this.userInfo.province || "神秘星球", "\u7684\u7528\u6237");
     } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
