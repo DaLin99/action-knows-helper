@@ -1794,6 +1794,65 @@ uni$1;exports.default = _default;
 /***/ }),
 
 /***/ 10:
+/*!**********************************************************!*\
+  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! regenerator-runtime */ 11);
+
+/***/ }),
+
+/***/ 11:
+/*!************************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+// This method of obtaining a reference to the global object needs to be
+// kept identical to the way it is obtained in runtime.js
+var g = (function() {
+  return this || (typeof self === "object" && self);
+})() || Function("return this")();
+
+// Use `getOwnPropertyNames` because not all browsers support calling
+// `hasOwnProperty` on the global `self` object in a worker. See #183.
+var hadRuntime = g.regeneratorRuntime &&
+  Object.getOwnPropertyNames(g).indexOf("regeneratorRuntime") >= 0;
+
+// Save the old regeneratorRuntime in case it needs to be restored later.
+var oldRuntime = hadRuntime && g.regeneratorRuntime;
+
+// Force reevalutation of runtime.js.
+g.regeneratorRuntime = undefined;
+
+module.exports = __webpack_require__(/*! ./runtime */ 12);
+
+if (hadRuntime) {
+  // Restore the original runtime.
+  g.regeneratorRuntime = oldRuntime;
+} else {
+  // Remove the global property added by runtime.js.
+  try {
+    delete g.regeneratorRuntime;
+  } catch(e) {
+    g.regeneratorRuntime = undefined;
+  }
+}
+
+
+/***/ }),
+
+/***/ 12:
 /*!*****************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime.js ***!
   \*****************************************************/
@@ -2525,71 +2584,10 @@ uni$1;exports.default = _default;
 
 /***/ }),
 
-/***/ 11:
-/*!**********************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/index.js ***!
-  \**********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
-
-
-
-
-
-
-
-
-var _user = _interopRequireDefault(__webpack_require__(/*! ./user.js */ 12));
-var _lostAndFound = _interopRequireDefault(__webpack_require__(/*! ./lostAndFound.js */ 15));
-var _recruitInfo = _interopRequireDefault(__webpack_require__(/*! ./recruitInfo.js */ 16));
-var _favorite = _interopRequireDefault(__webpack_require__(/*! ./favorite.js */ 17));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default = _objectSpread(_objectSpread(_objectSpread(_objectSpread({},
-
-
-_user.default),
-_lostAndFound.default),
-_favorite.default),
-_recruitInfo.default);exports.default = _default;
-
-/***/ }),
-
-/***/ 12:
-/*!*********************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/user.js ***!
-  \*********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 8));
-
-
-
-
-
-
-
-
-var _request = _interopRequireDefault(__webpack_require__(/*! ../request.js */ 13));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
-
-var MODULE = 'user';
-
-// 登陆
-var login = /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(params) {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
-              _request.default.globalRequest("".concat(MODULE, "/login/"), 'post', params));case 2:return _context.abrupt("return", _context.sent);case 3:case "end":return _context.stop();}}}, _callee);}));return function login(_x) {return _ref.apply(this, arguments);};}();var _default =
-
-
-{
-  login: login };exports.default = _default;
-
-/***/ }),
-
 /***/ 13:
-/*!********************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/request.js ***!
-  \********************************************************************************************/
+/*!*****************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/request.js ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2633,11 +2631,15 @@ request.globalRequest = function (url, method, data, power) {
       if (res[1].data && res[1].data.code == 1) {
         resolve(res[1].data);
       } else {
+        uni.showToast({
+          title: res[1].data.message,
+          icon: 'none',
+          duration: 3000 });
+
         reject(res[1].data);
       }
     }).
     catch(function (parmas) {
-      console.warn(parmas);
       reject("小程序后台发生位置异常");
     });
   });
@@ -2648,9 +2650,9 @@ request;exports.default = _default;
 /***/ }),
 
 /***/ 14:
-/*!*******************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/config.js ***!
-  \*******************************************************************************************/
+/*!****************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/config.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2669,9 +2671,9 @@ var urlConfig = '';
 
 if (true) {
   // 开发环境
-  // urlConfig = 'http://127.0.0.1:8000/';
+  urlConfig = 'http://127.0.0.1:8000/';
   // urlConfig = 'http://47.112.174.173/';
-  urlConfig = 'https://www.xiaoqingb.top/';
+  // urlConfig = 'https://www.xiaoqingb.top/';
 } else {}var _default =
 
 urlConfig;exports.default = _default;
@@ -2679,9 +2681,9 @@ urlConfig;exports.default = _default;
 /***/ }),
 
 /***/ 15:
-/*!*****************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/lostAndFound.js ***!
-  \*****************************************************************************************************/
+/*!**************************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/api/lostAndFound.js ***!
+  \**************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2731,9 +2733,9 @@ var getdetail = function getdetail(params) {return (
 /***/ }),
 
 /***/ 16:
-/*!****************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/recruitInfo.js ***!
-  \****************************************************************************************************/
+/*!*************************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/api/recruitInfo.js ***!
+  \*************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2763,9 +2765,9 @@ var postThumpUp = function postThumpUp(data) {return (
 /***/ }),
 
 /***/ 17:
-/*!*************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/favorite.js ***!
-  \*************************************************************************************************/
+/*!**********************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/api/favorite.js ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2789,489 +2791,6 @@ var _request = _interopRequireDefault(__webpack_require__(/*! ../request.js */ 1
                                                                                                                                                                */var MODULE = 'favorite';var addFavorite = function addFavorite(params) {return _request.default.globalRequest("".concat(MODULE, "/add"), 'post', params);};var cancelFavorite = function cancelFavorite(params) {return _request.default.globalRequest("".concat(MODULE, "/cancel"), 'post', params);};var _default = {
   addFavorite: addFavorite,
   cancelFavorite: cancelFavorite };exports.default = _default;
-
-/***/ }),
-
-/***/ 175:
-/*!*********************************************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/uni_modules/uni-forms/components/uni-forms/validate.js ***!
-  \*********************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 8));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = _getPrototypeOf(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = _getPrototypeOf(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return _possibleConstructorReturn(this, result);};}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));return true;} catch (e) {return false;}}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}
-var pattern = {
-  email: /^\S+?@\S+?\.\S+?$/,
-  idcard: /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/,
-  url: new RegExp("^(?!mailto:)(?:(?:http|https|ftp)://|//)(?:\\S+(?::\\S*)?@)?(?:(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[0-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-*)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-*)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))|localhost)(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?$", 'i') };
-
-
-var FORMAT_MAPPING = {
-  "int": 'integer',
-  "bool": 'boolean',
-  "double": 'number',
-  "long": 'number',
-  "password": 'string'
-  // "fileurls": 'array'
-};
-
-function formatMessage(args) {var resources = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-  var defaultMessage = ['label'];
-  defaultMessage.forEach(function (item) {
-    if (args[item] === undefined) {
-      args[item] = '';
-    }
-  });
-
-  var str = resources;
-  for (var key in args) {
-    var reg = new RegExp('{' + key + '}');
-    str = str.replace(reg, args[key]);
-  }
-  return str;
-}
-
-function isEmptyValue(value, type) {
-  if (value === undefined || value === null) {
-    return true;
-  }
-
-  if (typeof value === 'string' && !value) {
-    return true;
-  }
-
-  if (Array.isArray(value) && !value.length) {
-    return true;
-  }
-
-  if (type === 'object' && !Object.keys(value).length) {
-    return true;
-  }
-
-  return false;
-}
-
-var types = {
-  integer: function integer(value) {
-    return types.number(value) && parseInt(value, 10) === value;
-  },
-  string: function string(value) {
-    return typeof value === 'string';
-  },
-  number: function number(value) {
-    if (isNaN(value)) {
-      return false;
-    }
-    return typeof value === 'number';
-  },
-  "boolean": function boolean(value) {
-    return typeof value === 'boolean';
-  },
-  "float": function float(value) {
-    return types.number(value) && !types.integer(value);
-  },
-  array: function array(value) {
-    return Array.isArray(value);
-  },
-  object: function object(value) {
-    return typeof value === 'object' && !types.array(value);
-  },
-  date: function date(value) {
-    return value instanceof Date;
-  },
-  timestamp: function timestamp(value) {
-    if (!this.integer(value) || Math.abs(value).toString().length > 16) {
-      return false;
-    }
-    return true;
-  },
-  file: function file(value) {
-    return typeof value.url === 'string';
-  },
-  email: function email(value) {
-    return typeof value === 'string' && !!value.match(pattern.email) && value.length < 255;
-  },
-  url: function url(value) {
-    return typeof value === 'string' && !!value.match(pattern.url);
-  },
-  pattern: function pattern(reg, value) {
-    try {
-      return new RegExp(reg).test(value);
-    } catch (e) {
-      return false;
-    }
-  },
-  method: function method(value) {
-    return typeof value === 'function';
-  },
-  idcard: function idcard(value) {
-    return typeof value === 'string' && !!value.match(pattern.idcard);
-  },
-  'url-https': function urlHttps(value) {
-    return this.url(value) && value.startsWith('https://');
-  },
-  'url-scheme': function urlScheme(value) {
-    return value.startsWith('://');
-  },
-  'url-web': function urlWeb(value) {
-    return false;
-  } };var
-
-
-RuleValidator = /*#__PURE__*/function () {
-
-  function RuleValidator(message) {_classCallCheck(this, RuleValidator);
-    this._message = message;
-  }_createClass(RuleValidator, [{ key: "validateRule", value: function () {var _validateRule = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(
-
-      fieldKey, fieldValue, value, data, allData) {var result, rules, hasRequired, message, i, rule, vt, now, resultExpr;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
-                result = null;
-
-                rules = fieldValue.rules;
-
-                hasRequired = rules.findIndex(function (item) {
-                  return item.required;
-                });if (!(
-                hasRequired < 0)) {_context.next = 8;break;}if (!(
-                value === null || value === undefined)) {_context.next = 6;break;}return _context.abrupt("return",
-                result);case 6:if (!(
-
-                typeof value === 'string' && !value.length)) {_context.next = 8;break;}return _context.abrupt("return",
-                result);case 8:
-
-
-
-                message = this._message;if (!(
-
-                rules === undefined)) {_context.next = 11;break;}return _context.abrupt("return",
-                message['default']);case 11:
-
-
-                i = 0;case 12:if (!(i < rules.length)) {_context.next = 35;break;}
-                rule = rules[i];
-                vt = this._getValidateType(rule);
-
-                Object.assign(rule, {
-                  label: fieldValue.label || "[\"".concat(fieldKey, "\"]") });if (!
-
-
-                RuleValidatorHelper[vt]) {_context.next = 20;break;}
-                result = RuleValidatorHelper[vt](rule, value, message);if (!(
-                result != null)) {_context.next = 20;break;}return _context.abrupt("break", 35);case 20:if (!
-
-
-
-
-                rule.validateExpr) {_context.next = 26;break;}
-                now = Date.now();
-                resultExpr = rule.validateExpr(value, allData, now);if (!(
-                resultExpr === false)) {_context.next = 26;break;}
-                result = this._getMessage(rule, rule.errorMessage || this._message['default']);return _context.abrupt("break", 35);case 26:if (!
-
-
-
-
-                rule.validateFunction) {_context.next = 32;break;}_context.next = 29;return (
-                  this.validateFunction(rule, value, data, allData, vt));case 29:result = _context.sent;if (!(
-                result !== null)) {_context.next = 32;break;}return _context.abrupt("break", 35);case 32:i++;_context.next = 12;break;case 35:
-
-
-
-
-
-                if (result !== null) {
-                  result = message.TAG + result;
-                }return _context.abrupt("return",
-
-                result);case 37:case "end":return _context.stop();}}}, _callee, this);}));function validateRule(_x, _x2, _x3, _x4, _x5) {return _validateRule.apply(this, arguments);}return validateRule;}() }, { key: "validateFunction", value: function () {var _validateFunction = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(
-
-
-      rule, value, data, allData, vt) {var result, callbackMessage, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
-                result = null;_context2.prev = 1;
-
-                callbackMessage = null;_context2.next = 5;return (
-                  rule.validateFunction(rule, value, allData || data, function (message) {
-                    callbackMessage = message;
-                  }));case 5:res = _context2.sent;
-                if (callbackMessage || typeof res === 'string' && res || res === false) {
-                  result = this._getMessage(rule, callbackMessage || res, vt);
-                }_context2.next = 12;break;case 9:_context2.prev = 9;_context2.t0 = _context2["catch"](1);
-
-                result = this._getMessage(rule, _context2.t0.message, vt);case 12:return _context2.abrupt("return",
-
-                result);case 13:case "end":return _context2.stop();}}}, _callee2, this, [[1, 9]]);}));function validateFunction(_x6, _x7, _x8, _x9, _x10) {return _validateFunction.apply(this, arguments);}return validateFunction;}() }, { key: "_getMessage", value: function _getMessage(
-
-
-    rule, message, vt) {
-      return formatMessage(rule, message || rule.errorMessage || this._message[vt] || message['default']);
-    } }, { key: "_getValidateType", value: function _getValidateType(
-
-    rule) {
-      // TODO
-      var result = '';
-      if (rule.required) {
-        result = 'required';
-      } else if (rule.format) {
-        result = 'format';
-      } else if (rule.arrayType) {
-        result = 'arrayTypeFormat';
-      } else if (rule.range) {
-        result = 'range';
-      } else if (rule.maximum || rule.minimum) {
-        result = 'rangeNumber';
-      } else if (rule.maxLength || rule.minLength) {
-        result = 'rangeLength';
-      } else if (rule.pattern) {
-        result = 'pattern';
-      } else if (rule.validateFunction) {
-        result = 'validateFunction';
-      }
-      return result;
-    } }]);return RuleValidator;}();
-
-
-var RuleValidatorHelper = {
-  required: function required(rule, value, message) {
-    if (rule.required && isEmptyValue(value, rule.format || typeof value)) {
-      return formatMessage(rule, rule.errorMessage || message.required);
-    }
-
-    return null;
-  },
-
-  range: function range(rule, value, message) {var
-    range = rule.range,errorMessage = rule.errorMessage;
-
-    var list = new Array(range.length);
-    for (var i = 0; i < range.length; i++) {
-      var item = range[i];
-      if (types.object(item) && item.value !== undefined) {
-        list[i] = item.value;
-      } else {
-        list[i] = item;
-      }
-    }
-
-    var result = false;
-    if (Array.isArray(value)) {
-      result = new Set(value.concat(list)).size === list.length;
-    } else {
-      if (list.indexOf(value) > -1) {
-        result = true;
-      }
-    }
-
-    if (!result) {
-      return formatMessage(rule, errorMessage || message['enum']);
-    }
-
-    return null;
-  },
-
-  rangeNumber: function rangeNumber(rule, value, message) {
-    if (!types.number(value)) {
-      return formatMessage(rule, rule.errorMessage || message.pattern.mismatch);
-    }var
-
-    minimum = rule.minimum,maximum = rule.maximum,exclusiveMinimum = rule.exclusiveMinimum,exclusiveMaximum = rule.exclusiveMaximum;
-    var min = exclusiveMinimum ? value <= minimum : value < minimum;
-    var max = exclusiveMaximum ? value >= maximum : value > maximum;
-
-    if (minimum !== undefined && min) {
-      return formatMessage(rule, rule.errorMessage || message['number'][exclusiveMinimum ? 'exclusiveMinimum' : 'minimum']);
-    } else if (maximum !== undefined && max) {
-      return formatMessage(rule, rule.errorMessage || message['number'][exclusiveMaximum ? 'exclusiveMaximum' : 'maximum']);
-    } else if (minimum !== undefined && maximum !== undefined && (min || max)) {
-      return formatMessage(rule, rule.errorMessage || message['number'].range);
-    }
-
-    return null;
-  },
-
-  rangeLength: function rangeLength(rule, value, message) {
-    if (!types.string(value) && !types.array(value)) {
-      return formatMessage(rule, rule.errorMessage || message.pattern.mismatch);
-    }
-
-    var min = rule.minLength;
-    var max = rule.maxLength;
-    var val = value.length;
-
-    if (min !== undefined && val < min) {
-      return formatMessage(rule, rule.errorMessage || message['length'].minLength);
-    } else if (max !== undefined && val > max) {
-      return formatMessage(rule, rule.errorMessage || message['length'].maxLength);
-    } else if (min !== undefined && max !== undefined && (val < min || val > max)) {
-      return formatMessage(rule, rule.errorMessage || message['length'].range);
-    }
-
-    return null;
-  },
-
-  pattern: function pattern(rule, value, message) {
-    if (!types['pattern'](rule.pattern, value)) {
-      return formatMessage(rule, rule.errorMessage || message.pattern.mismatch);
-    }
-
-    return null;
-  },
-
-  format: function format(rule, value, message) {
-    var customTypes = Object.keys(types);
-    var format = FORMAT_MAPPING[rule.format] ? FORMAT_MAPPING[rule.format] : rule.format || rule.arrayType;
-
-    if (customTypes.indexOf(format) > -1) {
-      if (!types[format](value)) {
-        return formatMessage(rule, rule.errorMessage || message.typeError);
-      }
-    }
-
-    return null;
-  },
-
-  arrayTypeFormat: function arrayTypeFormat(rule, value, message) {
-    if (!Array.isArray(value)) {
-      return formatMessage(rule, rule.errorMessage || message.typeError);
-    }
-
-    for (var i = 0; i < value.length; i++) {
-      var element = value[i];
-      var formatResult = this.format(rule, element, message);
-      if (formatResult !== null) {
-        return formatResult;
-      }
-    }
-
-    return null;
-  } };var
-
-
-SchemaValidator = /*#__PURE__*/function (_RuleValidator) {_inherits(SchemaValidator, _RuleValidator);var _super = _createSuper(SchemaValidator);
-
-  function SchemaValidator(schema, options) {var _this;_classCallCheck(this, SchemaValidator);
-    _this = _super.call(this, SchemaValidator.message);
-
-    _this._schema = schema;
-    _this._options = options || null;return _this;
-  }_createClass(SchemaValidator, [{ key: "updateSchema", value: function updateSchema(
-
-    schema) {
-      this._schema = schema;
-    } }, { key: "validate", value: function () {var _validate = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3(
-
-      data, allData) {var result;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
-                result = this._checkFieldInSchema(data);if (
-                result) {_context3.next = 5;break;}_context3.next = 4;return (
-                  this.invokeValidate(data, false, allData));case 4:result = _context3.sent;case 5:return _context3.abrupt("return",
-
-                result.length ? result[0] : null);case 6:case "end":return _context3.stop();}}}, _callee3, this);}));function validate(_x11, _x12) {return _validate.apply(this, arguments);}return validate;}() }, { key: "validateAll", value: function () {var _validateAll = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4(
-
-
-      data, allData) {var result;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:
-                result = this._checkFieldInSchema(data);if (
-                result) {_context4.next = 5;break;}_context4.next = 4;return (
-                  this.invokeValidate(data, true, allData));case 4:result = _context4.sent;case 5:return _context4.abrupt("return",
-
-                result);case 6:case "end":return _context4.stop();}}}, _callee4, this);}));function validateAll(_x13, _x14) {return _validateAll.apply(this, arguments);}return validateAll;}() }, { key: "validateUpdate", value: function () {var _validateUpdate = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5(
-
-
-      data, allData) {var result;return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0:
-                result = this._checkFieldInSchema(data);if (
-                result) {_context5.next = 5;break;}_context5.next = 4;return (
-                  this.invokeValidateUpdate(data, false, allData));case 4:result = _context5.sent;case 5:return _context5.abrupt("return",
-
-                result.length ? result[0] : null);case 6:case "end":return _context5.stop();}}}, _callee5, this);}));function validateUpdate(_x15, _x16) {return _validateUpdate.apply(this, arguments);}return validateUpdate;}() }, { key: "invokeValidate", value: function () {var _invokeValidate = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6(
-
-
-      data, all, allData) {var result, schema, key, value, errorMessage;return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:
-                result = [];
-                schema = this._schema;_context6.t0 = _regenerator.default.keys(
-                schema);case 3:if ((_context6.t1 = _context6.t0()).done) {_context6.next = 15;break;}key = _context6.t1.value;
-                value = schema[key];_context6.next = 8;return (
-                  this.validateRule(key, value, data[key], data, allData));case 8:errorMessage = _context6.sent;if (!(
-                errorMessage != null)) {_context6.next = 13;break;}
-                result.push({
-                  key: key,
-                  errorMessage: errorMessage });if (
-
-                all) {_context6.next = 13;break;}return _context6.abrupt("break", 15);case 13:_context6.next = 3;break;case 15:return _context6.abrupt("return",
-
-
-                result);case 16:case "end":return _context6.stop();}}}, _callee6, this);}));function invokeValidate(_x17, _x18, _x19) {return _invokeValidate.apply(this, arguments);}return invokeValidate;}() }, { key: "invokeValidateUpdate", value: function () {var _invokeValidateUpdate = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee7(
-
-
-      data, all, allData) {var result, key, errorMessage;return _regenerator.default.wrap(function _callee7$(_context7) {while (1) {switch (_context7.prev = _context7.next) {case 0:
-                result = [];_context7.t0 = _regenerator.default.keys(
-                data);case 2:if ((_context7.t1 = _context7.t0()).done) {_context7.next = 13;break;}key = _context7.t1.value;_context7.next = 6;return (
-                  this.validateRule(key, this._schema[key], data[key], data, allData));case 6:errorMessage = _context7.sent;if (!(
-                errorMessage != null)) {_context7.next = 11;break;}
-                result.push({
-                  key: key,
-                  errorMessage: errorMessage });if (
-
-                all) {_context7.next = 11;break;}return _context7.abrupt("break", 13);case 11:_context7.next = 2;break;case 13:return _context7.abrupt("return",
-
-
-                result);case 14:case "end":return _context7.stop();}}}, _callee7, this);}));function invokeValidateUpdate(_x20, _x21, _x22) {return _invokeValidateUpdate.apply(this, arguments);}return invokeValidateUpdate;}() }, { key: "_checkFieldInSchema", value: function _checkFieldInSchema(
-
-
-    data) {
-      var keys = Object.keys(data);
-      var keys2 = Object.keys(this._schema);
-      if (new Set(keys.concat(keys2)).size === keys2.length) {
-        return '';
-      }
-
-      var noExistFields = keys.filter(function (key) {return keys2.indexOf(key) < 0;});
-      var errorMessage = formatMessage({
-        field: JSON.stringify(noExistFields) },
-      SchemaValidator.message.TAG + SchemaValidator.message['defaultInvalid']);
-      return [{
-        key: 'invalid',
-        errorMessage: errorMessage }];
-
-    } }]);return SchemaValidator;}(RuleValidator);
-
-
-function Message() {
-  return {
-    TAG: "",
-    default: '验证错误',
-    defaultInvalid: '提交的字段{field}在数据库中并不存在',
-    validateFunction: '验证无效',
-    required: '{label}必填',
-    'enum': '{label}超出范围',
-    timestamp: '{label}格式无效',
-    whitespace: '{label}不能为空',
-    typeError: '{label}类型无效',
-    date: {
-      format: '{label}日期{value}格式无效',
-      parse: '{label}日期无法解析,{value}无效',
-      invalid: '{label}日期{value}无效' },
-
-    length: {
-      minLength: '{label}长度不能少于{minLength}',
-      maxLength: '{label}长度不能超过{maxLength}',
-      range: '{label}必须介于{minLength}和{maxLength}之间' },
-
-    number: {
-      minimum: '{label}不能小于{minimum}',
-      maximum: '{label}不能大于{maximum}',
-      exclusiveMinimum: '{label}不能小于等于{minimum}',
-      exclusiveMaximum: '{label}不能大于等于{maximum}',
-      range: '{label}必须介于{minimum}and{maximum}之间' },
-
-    pattern: {
-      mismatch: '{label}格式不匹配' } };
-
-
-}
-
-
-SchemaValidator.message = new Message();var _default =
-
-SchemaValidator;exports.default = _default;
 
 /***/ }),
 
@@ -4385,6 +3904,489 @@ var index = {
 
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ 3)))
+
+/***/ }),
+
+/***/ 183:
+/*!******************************************************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/uni_modules/uni-forms/components/uni-forms/validate.js ***!
+  \******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 10));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = _getPrototypeOf(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = _getPrototypeOf(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return _possibleConstructorReturn(this, result);};}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));return true;} catch (e) {return false;}}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}
+var pattern = {
+  email: /^\S+?@\S+?\.\S+?$/,
+  idcard: /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/,
+  url: new RegExp("^(?!mailto:)(?:(?:http|https|ftp)://|//)(?:\\S+(?::\\S*)?@)?(?:(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[0-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-*)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-*)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))|localhost)(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?$", 'i') };
+
+
+var FORMAT_MAPPING = {
+  "int": 'integer',
+  "bool": 'boolean',
+  "double": 'number',
+  "long": 'number',
+  "password": 'string'
+  // "fileurls": 'array'
+};
+
+function formatMessage(args) {var resources = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+  var defaultMessage = ['label'];
+  defaultMessage.forEach(function (item) {
+    if (args[item] === undefined) {
+      args[item] = '';
+    }
+  });
+
+  var str = resources;
+  for (var key in args) {
+    var reg = new RegExp('{' + key + '}');
+    str = str.replace(reg, args[key]);
+  }
+  return str;
+}
+
+function isEmptyValue(value, type) {
+  if (value === undefined || value === null) {
+    return true;
+  }
+
+  if (typeof value === 'string' && !value) {
+    return true;
+  }
+
+  if (Array.isArray(value) && !value.length) {
+    return true;
+  }
+
+  if (type === 'object' && !Object.keys(value).length) {
+    return true;
+  }
+
+  return false;
+}
+
+var types = {
+  integer: function integer(value) {
+    return types.number(value) && parseInt(value, 10) === value;
+  },
+  string: function string(value) {
+    return typeof value === 'string';
+  },
+  number: function number(value) {
+    if (isNaN(value)) {
+      return false;
+    }
+    return typeof value === 'number';
+  },
+  "boolean": function boolean(value) {
+    return typeof value === 'boolean';
+  },
+  "float": function float(value) {
+    return types.number(value) && !types.integer(value);
+  },
+  array: function array(value) {
+    return Array.isArray(value);
+  },
+  object: function object(value) {
+    return typeof value === 'object' && !types.array(value);
+  },
+  date: function date(value) {
+    return value instanceof Date;
+  },
+  timestamp: function timestamp(value) {
+    if (!this.integer(value) || Math.abs(value).toString().length > 16) {
+      return false;
+    }
+    return true;
+  },
+  file: function file(value) {
+    return typeof value.url === 'string';
+  },
+  email: function email(value) {
+    return typeof value === 'string' && !!value.match(pattern.email) && value.length < 255;
+  },
+  url: function url(value) {
+    return typeof value === 'string' && !!value.match(pattern.url);
+  },
+  pattern: function pattern(reg, value) {
+    try {
+      return new RegExp(reg).test(value);
+    } catch (e) {
+      return false;
+    }
+  },
+  method: function method(value) {
+    return typeof value === 'function';
+  },
+  idcard: function idcard(value) {
+    return typeof value === 'string' && !!value.match(pattern.idcard);
+  },
+  'url-https': function urlHttps(value) {
+    return this.url(value) && value.startsWith('https://');
+  },
+  'url-scheme': function urlScheme(value) {
+    return value.startsWith('://');
+  },
+  'url-web': function urlWeb(value) {
+    return false;
+  } };var
+
+
+RuleValidator = /*#__PURE__*/function () {
+
+  function RuleValidator(message) {_classCallCheck(this, RuleValidator);
+    this._message = message;
+  }_createClass(RuleValidator, [{ key: "validateRule", value: function () {var _validateRule = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(
+
+      fieldKey, fieldValue, value, data, allData) {var result, rules, hasRequired, message, i, rule, vt, now, resultExpr;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+                result = null;
+
+                rules = fieldValue.rules;
+
+                hasRequired = rules.findIndex(function (item) {
+                  return item.required;
+                });if (!(
+                hasRequired < 0)) {_context.next = 8;break;}if (!(
+                value === null || value === undefined)) {_context.next = 6;break;}return _context.abrupt("return",
+                result);case 6:if (!(
+
+                typeof value === 'string' && !value.length)) {_context.next = 8;break;}return _context.abrupt("return",
+                result);case 8:
+
+
+
+                message = this._message;if (!(
+
+                rules === undefined)) {_context.next = 11;break;}return _context.abrupt("return",
+                message['default']);case 11:
+
+
+                i = 0;case 12:if (!(i < rules.length)) {_context.next = 35;break;}
+                rule = rules[i];
+                vt = this._getValidateType(rule);
+
+                Object.assign(rule, {
+                  label: fieldValue.label || "[\"".concat(fieldKey, "\"]") });if (!
+
+
+                RuleValidatorHelper[vt]) {_context.next = 20;break;}
+                result = RuleValidatorHelper[vt](rule, value, message);if (!(
+                result != null)) {_context.next = 20;break;}return _context.abrupt("break", 35);case 20:if (!
+
+
+
+
+                rule.validateExpr) {_context.next = 26;break;}
+                now = Date.now();
+                resultExpr = rule.validateExpr(value, allData, now);if (!(
+                resultExpr === false)) {_context.next = 26;break;}
+                result = this._getMessage(rule, rule.errorMessage || this._message['default']);return _context.abrupt("break", 35);case 26:if (!
+
+
+
+
+                rule.validateFunction) {_context.next = 32;break;}_context.next = 29;return (
+                  this.validateFunction(rule, value, data, allData, vt));case 29:result = _context.sent;if (!(
+                result !== null)) {_context.next = 32;break;}return _context.abrupt("break", 35);case 32:i++;_context.next = 12;break;case 35:
+
+
+
+
+
+                if (result !== null) {
+                  result = message.TAG + result;
+                }return _context.abrupt("return",
+
+                result);case 37:case "end":return _context.stop();}}}, _callee, this);}));function validateRule(_x, _x2, _x3, _x4, _x5) {return _validateRule.apply(this, arguments);}return validateRule;}() }, { key: "validateFunction", value: function () {var _validateFunction = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(
+
+
+      rule, value, data, allData, vt) {var result, callbackMessage, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+                result = null;_context2.prev = 1;
+
+                callbackMessage = null;_context2.next = 5;return (
+                  rule.validateFunction(rule, value, allData || data, function (message) {
+                    callbackMessage = message;
+                  }));case 5:res = _context2.sent;
+                if (callbackMessage || typeof res === 'string' && res || res === false) {
+                  result = this._getMessage(rule, callbackMessage || res, vt);
+                }_context2.next = 12;break;case 9:_context2.prev = 9;_context2.t0 = _context2["catch"](1);
+
+                result = this._getMessage(rule, _context2.t0.message, vt);case 12:return _context2.abrupt("return",
+
+                result);case 13:case "end":return _context2.stop();}}}, _callee2, this, [[1, 9]]);}));function validateFunction(_x6, _x7, _x8, _x9, _x10) {return _validateFunction.apply(this, arguments);}return validateFunction;}() }, { key: "_getMessage", value: function _getMessage(
+
+
+    rule, message, vt) {
+      return formatMessage(rule, message || rule.errorMessage || this._message[vt] || message['default']);
+    } }, { key: "_getValidateType", value: function _getValidateType(
+
+    rule) {
+      // TODO
+      var result = '';
+      if (rule.required) {
+        result = 'required';
+      } else if (rule.format) {
+        result = 'format';
+      } else if (rule.arrayType) {
+        result = 'arrayTypeFormat';
+      } else if (rule.range) {
+        result = 'range';
+      } else if (rule.maximum || rule.minimum) {
+        result = 'rangeNumber';
+      } else if (rule.maxLength || rule.minLength) {
+        result = 'rangeLength';
+      } else if (rule.pattern) {
+        result = 'pattern';
+      } else if (rule.validateFunction) {
+        result = 'validateFunction';
+      }
+      return result;
+    } }]);return RuleValidator;}();
+
+
+var RuleValidatorHelper = {
+  required: function required(rule, value, message) {
+    if (rule.required && isEmptyValue(value, rule.format || typeof value)) {
+      return formatMessage(rule, rule.errorMessage || message.required);
+    }
+
+    return null;
+  },
+
+  range: function range(rule, value, message) {var
+    range = rule.range,errorMessage = rule.errorMessage;
+
+    var list = new Array(range.length);
+    for (var i = 0; i < range.length; i++) {
+      var item = range[i];
+      if (types.object(item) && item.value !== undefined) {
+        list[i] = item.value;
+      } else {
+        list[i] = item;
+      }
+    }
+
+    var result = false;
+    if (Array.isArray(value)) {
+      result = new Set(value.concat(list)).size === list.length;
+    } else {
+      if (list.indexOf(value) > -1) {
+        result = true;
+      }
+    }
+
+    if (!result) {
+      return formatMessage(rule, errorMessage || message['enum']);
+    }
+
+    return null;
+  },
+
+  rangeNumber: function rangeNumber(rule, value, message) {
+    if (!types.number(value)) {
+      return formatMessage(rule, rule.errorMessage || message.pattern.mismatch);
+    }var
+
+    minimum = rule.minimum,maximum = rule.maximum,exclusiveMinimum = rule.exclusiveMinimum,exclusiveMaximum = rule.exclusiveMaximum;
+    var min = exclusiveMinimum ? value <= minimum : value < minimum;
+    var max = exclusiveMaximum ? value >= maximum : value > maximum;
+
+    if (minimum !== undefined && min) {
+      return formatMessage(rule, rule.errorMessage || message['number'][exclusiveMinimum ? 'exclusiveMinimum' : 'minimum']);
+    } else if (maximum !== undefined && max) {
+      return formatMessage(rule, rule.errorMessage || message['number'][exclusiveMaximum ? 'exclusiveMaximum' : 'maximum']);
+    } else if (minimum !== undefined && maximum !== undefined && (min || max)) {
+      return formatMessage(rule, rule.errorMessage || message['number'].range);
+    }
+
+    return null;
+  },
+
+  rangeLength: function rangeLength(rule, value, message) {
+    if (!types.string(value) && !types.array(value)) {
+      return formatMessage(rule, rule.errorMessage || message.pattern.mismatch);
+    }
+
+    var min = rule.minLength;
+    var max = rule.maxLength;
+    var val = value.length;
+
+    if (min !== undefined && val < min) {
+      return formatMessage(rule, rule.errorMessage || message['length'].minLength);
+    } else if (max !== undefined && val > max) {
+      return formatMessage(rule, rule.errorMessage || message['length'].maxLength);
+    } else if (min !== undefined && max !== undefined && (val < min || val > max)) {
+      return formatMessage(rule, rule.errorMessage || message['length'].range);
+    }
+
+    return null;
+  },
+
+  pattern: function pattern(rule, value, message) {
+    if (!types['pattern'](rule.pattern, value)) {
+      return formatMessage(rule, rule.errorMessage || message.pattern.mismatch);
+    }
+
+    return null;
+  },
+
+  format: function format(rule, value, message) {
+    var customTypes = Object.keys(types);
+    var format = FORMAT_MAPPING[rule.format] ? FORMAT_MAPPING[rule.format] : rule.format || rule.arrayType;
+
+    if (customTypes.indexOf(format) > -1) {
+      if (!types[format](value)) {
+        return formatMessage(rule, rule.errorMessage || message.typeError);
+      }
+    }
+
+    return null;
+  },
+
+  arrayTypeFormat: function arrayTypeFormat(rule, value, message) {
+    if (!Array.isArray(value)) {
+      return formatMessage(rule, rule.errorMessage || message.typeError);
+    }
+
+    for (var i = 0; i < value.length; i++) {
+      var element = value[i];
+      var formatResult = this.format(rule, element, message);
+      if (formatResult !== null) {
+        return formatResult;
+      }
+    }
+
+    return null;
+  } };var
+
+
+SchemaValidator = /*#__PURE__*/function (_RuleValidator) {_inherits(SchemaValidator, _RuleValidator);var _super = _createSuper(SchemaValidator);
+
+  function SchemaValidator(schema, options) {var _this;_classCallCheck(this, SchemaValidator);
+    _this = _super.call(this, SchemaValidator.message);
+
+    _this._schema = schema;
+    _this._options = options || null;return _this;
+  }_createClass(SchemaValidator, [{ key: "updateSchema", value: function updateSchema(
+
+    schema) {
+      this._schema = schema;
+    } }, { key: "validate", value: function () {var _validate = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3(
+
+      data, allData) {var result;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
+                result = this._checkFieldInSchema(data);if (
+                result) {_context3.next = 5;break;}_context3.next = 4;return (
+                  this.invokeValidate(data, false, allData));case 4:result = _context3.sent;case 5:return _context3.abrupt("return",
+
+                result.length ? result[0] : null);case 6:case "end":return _context3.stop();}}}, _callee3, this);}));function validate(_x11, _x12) {return _validate.apply(this, arguments);}return validate;}() }, { key: "validateAll", value: function () {var _validateAll = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4(
+
+
+      data, allData) {var result;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:
+                result = this._checkFieldInSchema(data);if (
+                result) {_context4.next = 5;break;}_context4.next = 4;return (
+                  this.invokeValidate(data, true, allData));case 4:result = _context4.sent;case 5:return _context4.abrupt("return",
+
+                result);case 6:case "end":return _context4.stop();}}}, _callee4, this);}));function validateAll(_x13, _x14) {return _validateAll.apply(this, arguments);}return validateAll;}() }, { key: "validateUpdate", value: function () {var _validateUpdate = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5(
+
+
+      data, allData) {var result;return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0:
+                result = this._checkFieldInSchema(data);if (
+                result) {_context5.next = 5;break;}_context5.next = 4;return (
+                  this.invokeValidateUpdate(data, false, allData));case 4:result = _context5.sent;case 5:return _context5.abrupt("return",
+
+                result.length ? result[0] : null);case 6:case "end":return _context5.stop();}}}, _callee5, this);}));function validateUpdate(_x15, _x16) {return _validateUpdate.apply(this, arguments);}return validateUpdate;}() }, { key: "invokeValidate", value: function () {var _invokeValidate = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6(
+
+
+      data, all, allData) {var result, schema, key, value, errorMessage;return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:
+                result = [];
+                schema = this._schema;_context6.t0 = _regenerator.default.keys(
+                schema);case 3:if ((_context6.t1 = _context6.t0()).done) {_context6.next = 15;break;}key = _context6.t1.value;
+                value = schema[key];_context6.next = 8;return (
+                  this.validateRule(key, value, data[key], data, allData));case 8:errorMessage = _context6.sent;if (!(
+                errorMessage != null)) {_context6.next = 13;break;}
+                result.push({
+                  key: key,
+                  errorMessage: errorMessage });if (
+
+                all) {_context6.next = 13;break;}return _context6.abrupt("break", 15);case 13:_context6.next = 3;break;case 15:return _context6.abrupt("return",
+
+
+                result);case 16:case "end":return _context6.stop();}}}, _callee6, this);}));function invokeValidate(_x17, _x18, _x19) {return _invokeValidate.apply(this, arguments);}return invokeValidate;}() }, { key: "invokeValidateUpdate", value: function () {var _invokeValidateUpdate = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee7(
+
+
+      data, all, allData) {var result, key, errorMessage;return _regenerator.default.wrap(function _callee7$(_context7) {while (1) {switch (_context7.prev = _context7.next) {case 0:
+                result = [];_context7.t0 = _regenerator.default.keys(
+                data);case 2:if ((_context7.t1 = _context7.t0()).done) {_context7.next = 13;break;}key = _context7.t1.value;_context7.next = 6;return (
+                  this.validateRule(key, this._schema[key], data[key], data, allData));case 6:errorMessage = _context7.sent;if (!(
+                errorMessage != null)) {_context7.next = 11;break;}
+                result.push({
+                  key: key,
+                  errorMessage: errorMessage });if (
+
+                all) {_context7.next = 11;break;}return _context7.abrupt("break", 13);case 11:_context7.next = 2;break;case 13:return _context7.abrupt("return",
+
+
+                result);case 14:case "end":return _context7.stop();}}}, _callee7, this);}));function invokeValidateUpdate(_x20, _x21, _x22) {return _invokeValidateUpdate.apply(this, arguments);}return invokeValidateUpdate;}() }, { key: "_checkFieldInSchema", value: function _checkFieldInSchema(
+
+
+    data) {
+      var keys = Object.keys(data);
+      var keys2 = Object.keys(this._schema);
+      if (new Set(keys.concat(keys2)).size === keys2.length) {
+        return '';
+      }
+
+      var noExistFields = keys.filter(function (key) {return keys2.indexOf(key) < 0;});
+      var errorMessage = formatMessage({
+        field: JSON.stringify(noExistFields) },
+      SchemaValidator.message.TAG + SchemaValidator.message['defaultInvalid']);
+      return [{
+        key: 'invalid',
+        errorMessage: errorMessage }];
+
+    } }]);return SchemaValidator;}(RuleValidator);
+
+
+function Message() {
+  return {
+    TAG: "",
+    default: '验证错误',
+    defaultInvalid: '提交的字段{field}在数据库中并不存在',
+    validateFunction: '验证无效',
+    required: '{label}必填',
+    'enum': '{label}超出范围',
+    timestamp: '{label}格式无效',
+    whitespace: '{label}不能为空',
+    typeError: '{label}类型无效',
+    date: {
+      format: '{label}日期{value}格式无效',
+      parse: '{label}日期无法解析,{value}无效',
+      invalid: '{label}日期{value}无效' },
+
+    length: {
+      minLength: '{label}长度不能少于{minLength}',
+      maxLength: '{label}长度不能超过{maxLength}',
+      range: '{label}必须介于{minLength}和{maxLength}之间' },
+
+    number: {
+      minimum: '{label}不能小于{minimum}',
+      maximum: '{label}不能大于{maximum}',
+      exclusiveMinimum: '{label}不能小于等于{minimum}',
+      exclusiveMaximum: '{label}不能大于等于{maximum}',
+      range: '{label}必须介于{minimum}and{maximum}之间' },
+
+    pattern: {
+      mismatch: '{label}格式不匹配' } };
+
+
+}
+
+
+SchemaValidator.message = new Message();var _default =
+
+SchemaValidator;exports.default = _default;
 
 /***/ }),
 
@@ -10565,10 +10567,48 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 218:
-/*!******************************************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/uni_modules/uni-icons/components/uni-icons/icons.js ***!
-  \******************************************************************************************************************************/
+/***/ 22:
+/*!**************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/store/index.js ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 18));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+_vue.default.use(_vuex.default);
+
+var store = new _vuex.default.Store({
+  state: {
+    hasLogin: false,
+    userInfo: {} },
+
+
+  mutations: {
+    initUserInfo: function initUserInfo(state, userInfo) {
+      state.hasLogin = true;
+      state.userInfo = userInfo;
+      uni.setStorage({ //缓存用户登陆状态
+        key: 'userInfo',
+        data: userInfo });
+
+    } },
+
+  actions: {} });var _default =
+
+
+
+store;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 226:
+/*!***************************************************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/uni_modules/uni-icons/components/uni-icons/icons.js ***!
+  \***************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10707,44 +10747,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 22:
-/*!*****************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/store/index.js ***!
-  \*****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 18));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-_vue.default.use(_vuex.default);
-
-var store = new _vuex.default.Store({
-  state: {
-    hasLogin: false,
-    userInfo: {} },
-
-
-  mutations: {
-    initUserInfo: function initUserInfo(state, userInfo) {
-      state.hasLogin = true;
-      state.userInfo = userInfo;
-      uni.setStorage({ //缓存用户登陆状态
-        key: 'userInfo',
-        data: userInfo });
-
-    } },
-
-  actions: {} });var _default =
-
-
-
-store;exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
 /***/ 3:
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -10776,10 +10778,21 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 35:
-/*!******************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/static/logo.png ***!
-  \******************************************************************************************/
+/***/ 4:
+/*!**********************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/pages.json ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ 43:
+/*!***************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/static/logo.png ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -10787,10 +10800,10 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAAEi
 
 /***/ }),
 
-/***/ 36:
-/*!***********************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/static/thumbs-up.svg ***!
-  \***********************************************************************************************/
+/***/ 44:
+/*!********************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/static/thumbs-up.svg ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10798,10 +10811,10 @@ module.exports = __webpack_require__.p + "static/img/thumbs-up.310a0682.svg";
 
 /***/ }),
 
-/***/ 37:
-/*!*****************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/static/see.svg ***!
-  \*****************************************************************************************/
+/***/ 45:
+/*!**************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/static/see.svg ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10809,21 +10822,10 @@ module.exports = __webpack_require__.p + "static/img/see.36130429.svg";
 
 /***/ }),
 
-/***/ 4:
-/*!*************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/pages.json ***!
-  \*************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ 48:
-/*!*******************************************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/node_modules/cos-wx-sdk-v5/demo/lib/cos-wx-sdk-v5.js ***!
-  \*******************************************************************************************************************************/
+/***/ 56:
+/*!****************************************************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/node_modules/cos-wx-sdk-v5/demo/lib/cos-wx-sdk-v5.js ***!
+  \****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10831,10 +10833,10 @@ module.exports = __webpack_require__.p + "static/img/see.36130429.svg";
 
 /***/ }),
 
-/***/ 57:
-/*!*********************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/static/image/activity-bgc.jpeg ***!
-  \*********************************************************************************************************/
+/***/ 65:
+/*!******************************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/static/image/activity-bgc.jpeg ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -10843,61 +10845,68 @@ module.exports = "/static/image/activity-bgc.jpeg";
 /***/ }),
 
 /***/ 8:
-/*!**********************************************************!*\
-  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
-  \**********************************************************/
+/*!*******************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/api/index.js ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! regenerator-runtime */ 9);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+
+
+
+var _user = _interopRequireDefault(__webpack_require__(/*! ./user.js */ 9));
+var _lostAndFound = _interopRequireDefault(__webpack_require__(/*! ./lostAndFound.js */ 15));
+var _recruitInfo = _interopRequireDefault(__webpack_require__(/*! ./recruitInfo.js */ 16));
+var _favorite = _interopRequireDefault(__webpack_require__(/*! ./favorite.js */ 17));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default = _objectSpread(_objectSpread(_objectSpread(_objectSpread({},
+
+
+_user.default),
+_lostAndFound.default),
+_favorite.default),
+_recruitInfo.default);exports.default = _default;
 
 /***/ }),
 
 /***/ 9:
-/*!************************************************************!*\
-  !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
-  \************************************************************/
+/*!******************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/api/user.js ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 10));
 
-// This method of obtaining a reference to the global object needs to be
-// kept identical to the way it is obtained in runtime.js
-var g = (function() {
-  return this || (typeof self === "object" && self);
-})() || Function("return this")();
 
-// Use `getOwnPropertyNames` because not all browsers support calling
-// `hasOwnProperty` on the global `self` object in a worker. See #183.
-var hadRuntime = g.regeneratorRuntime &&
-  Object.getOwnPropertyNames(g).indexOf("regeneratorRuntime") >= 0;
 
-// Save the old regeneratorRuntime in case it needs to be restored later.
-var oldRuntime = hadRuntime && g.regeneratorRuntime;
 
-// Force reevalutation of runtime.js.
-g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(/*! ./runtime */ 10);
 
-if (hadRuntime) {
-  // Restore the original runtime.
-  g.regeneratorRuntime = oldRuntime;
-} else {
-  // Remove the global property added by runtime.js.
-  try {
-    delete g.regeneratorRuntime;
-  } catch(e) {
-    g.regeneratorRuntime = undefined;
-  }
-}
 
+
+var _request = _interopRequireDefault(__webpack_require__(/*! ../request.js */ 13));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
+
+var MODULE = 'user';
+
+// 登陆
+var login = /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(params) {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
+              _request.default.globalRequest("".concat(MODULE, "/login/"), 'post', params));case 2:return _context.abrupt("return", _context.sent);case 3:case "end":return _context.stop();}}}, _callee);}));return function login(_x) {return _ref.apply(this, arguments);};}();
+
+
+var loginByCard = /*#__PURE__*/function () {var _ref2 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(params) {return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
+              _request.default.globalRequest("".concat(MODULE, "/loginByCard"), 'post', params));case 2:return _context2.abrupt("return", _context2.sent);case 3:case "end":return _context2.stop();}}}, _callee2);}));return function loginByCard(_x2) {return _ref2.apply(this, arguments);};}();var _default =
+
+
+{
+  login: login,
+  loginByCard: loginByCard };exports.default = _default;
 
 /***/ })
 

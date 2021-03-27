@@ -8,6 +8,13 @@
       }
     },
     {
+      "path": "pages/recruitInfo/myList",
+      "style": {
+        "navigationBarTitleText": "收藏的校园招聘",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/schoolForum/forumDetail",
       "style": {
         "navigationBarTitleText": "论坛详情",

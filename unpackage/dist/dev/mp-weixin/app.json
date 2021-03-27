@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/recruitInfo/recruitInfoList",
+    "pages/recruitInfo/myList",
     "pages/schoolForum/forumDetail",
     "pages/schoolForum/submitForum",
     "pages/lostAndFound/lostAndFoundList",

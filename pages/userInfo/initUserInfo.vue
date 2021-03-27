@@ -1,6 +1,6 @@
 <template>
   <view class="get-authority-page">
-    <uni-popup ref="popup" type="bottom"  class="pop-up">
+    <view v-if="authpWindow" class="gray-bg">
       <button 
         type="primary"
         class="btn"
@@ -9,15 +9,25 @@
       >
         授权登陆
       </button>
-    </uni-popup>
-
+    </view>
+    <auth class="auth" v-if="initOpenId"/>
   </view>
 </template>
 
 <script>
 	import api from '../../common/api';
 	import {mapMutations, mapState} from 'vuex';
+  import auth from './auth.vue'
   export default {
+    components:{
+      auth,
+    },
+    data(){
+      return{
+        initOpenId: false,
+        authpWindow: true,
+      }
+    },
     methods:{
 			...mapMutations([
 				'initUserInfo',
@@ -30,7 +40,6 @@
             success: async function (loginRes) {
               const res = await api.login({code: loginRes.code, ...userInfo});
               console.log(res)
-              // debugger
               that.initUserInfo({
                 ...res.data,
                 ...userInfo
@@ -43,18 +52,13 @@
                   ...userInfo
                 },
               });
-              that.goBackToHome();
+              that.authpWindow = false
+              that.initOpenId = true
             }
           });
         }
       },
-      goBackToHome(){
-        uni.navigateBack()
-      }
     },
-    onShow() {
-     this.$refs.popup.open()
-    }
   };
 </script>
 
@@ -68,5 +72,9 @@
   }
   .pop-up {
     background-color: #fff;
+  }
+  .auth {
+    width: 100%;
+    height: 100%;
   }
 </style>
