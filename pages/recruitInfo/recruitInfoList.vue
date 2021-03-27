@@ -92,6 +92,7 @@ export default {
       uni.getStorage({
         key: "userInfo",
         success: function (result) {
+          uni.userId = result.data.openid;
           that.initUserInfo({
             ...result.data,
           });

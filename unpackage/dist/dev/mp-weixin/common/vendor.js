@@ -2607,17 +2607,15 @@ var _config = _interopRequireDefault(__webpack_require__(/*! ./config.js */ 14))
 
 var request = {};
 var headers = {};
-var openId;
 uni.getStorage({
   key: "userInfo",
   success: function success(res) {var _res$data;
-    openId = res === null || res === void 0 ? void 0 : (_res$data = res.data) === null || _res$data === void 0 ? void 0 : _res$data.openid;
+    uni.userId = res === null || res === void 0 ? void 0 : (_res$data = res.data) === null || _res$data === void 0 ? void 0 : _res$data.openid;
   },
   fail: function fail() {
-    openId = "mock";
+    uni.userId = "mock";
   } });
 
-console.log(openId);
 request.globalRequest = function (url, method, data, power) {
   return new Promise(function (resolve, reject) {
     return uni.
@@ -2626,7 +2624,7 @@ request.globalRequest = function (url, method, data, power) {
       method: method,
       data: _objectSpread(_objectSpread({},
       data), {}, {
-        userId: openId // 固定把openid带上
+        userId: uni.userId // 固定把openid带上
       }),
       dataType: "json",
       header: headers }).

@@ -3,7 +3,6 @@
 	import {mapMutations, mapState} from 'vuex'
 	export default {
 		onLaunch: function() {
-      this.auth();
 			console.log('App Launch')
 		},
 		onShow: function() {
@@ -13,41 +12,6 @@
 			console.log('App Hide')
 		},
 		methods:{
-			...mapMutations([
-				'initUserInfo',
-			]),
-			/**
-			 * 登陆验证
-			 */ 
-			async auth() {
-        const that = this;
-        uni.getStorage({
-            key: 'userInfo',
-            success: function (result) {
-                uni.getUserInfo({
-                  provider: 'weixin',
-                  success: function (infoRes) {
-                  uni.login({
-                    success: async function (loginRes) {
-                    const res = await api.login({code: loginRes.code, ...infoRes.userInfo});
-                    console.log(res);
-                    that.initUserInfo({
-                      ...res.data,
-                      ...infoRes.userInfo
-                    })
-                    }
-                  }); 
-                  }
-                });
-            },
-            fail(result) {
-              uni.redirectTo({
-                url: './pages/userInfo/initUserInfo'
-              })
-              console.log('err',result);
-            }
-        });
-			}
 		}
 	}
 </script>

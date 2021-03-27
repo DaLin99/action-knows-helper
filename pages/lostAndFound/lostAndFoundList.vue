@@ -35,11 +35,9 @@ export default {
 	name: 'HelloWorld',
 	components: { tabs, card },
   onShow() {
-    login(123)
     this.auth();
   },
   onLoad() {
-    console.log(223);
     this.auth();
   },
 	data() {
@@ -128,6 +126,8 @@ export default {
       uni.getStorage({
           key: 'userInfo',
           success: function (result) {
+            uni.userId = result.data.openid
+            console.log('设置成功');
             that.initUserInfo({
               ...result.data
             })

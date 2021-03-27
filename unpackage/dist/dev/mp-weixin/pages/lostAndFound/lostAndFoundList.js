@@ -167,11 +167,9 @@ var _vuex = __webpack_require__(/*! vuex */ 18);var _name$components$onSh;functi
   name: 'HelloWorld',
   components: { tabs: tabs, card: card },
   onShow: function onShow() {
-    login(123);
     this.auth();
   },
   onLoad: function onLoad() {
-    console.log(223);
     this.auth();
   },
   data: function data() {
@@ -260,6 +258,8 @@ var _vuex = __webpack_require__(/*! vuex */ 18);var _name$components$onSh;functi
               uni.getStorage({
                 key: 'userInfo',
                 success: function success(result) {
+                  uni.userId = result.data.openid;
+                  console.log('设置成功');
                   that.initUserInfo(_objectSpread({},
                   result.data));
 

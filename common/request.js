@@ -11,17 +11,15 @@ import urlConfig from "./config.js";
 
 const request = {};
 const headers = {};
-let openId;
 uni.getStorage({
   key: "userInfo",
   success: (res) => {
-    openId = res?.data?.openid;
+    uni.userId = res?.data?.openid;
   },
   fail: () => {
-    openId = "mock";
+    uni.userId = "mock";
   },
 });
-console.log(openId);
 request.globalRequest = (url, method, data, power) => {
   return new Promise((resolve, reject) => {
     return uni
@@ -30,7 +28,7 @@ request.globalRequest = (url, method, data, power) => {
         method,
         data: {
           ...data,
-          userId: openId, // 固定把openid带上
+          userId: uni.userId, // 固定把openid带上
         },
         dataType: "json",
         header: headers,

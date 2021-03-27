@@ -224,6 +224,7 @@ var _vuex = __webpack_require__(/*! vuex */ 18);function _interopRequireDefault(
                 uni.getStorage({
                   key: "userInfo",
                   success: function success(result) {
+                    uni.userId = result.data.openid;
                     that.initUserInfo(_objectSpread({},
                     result.data));
 

@@ -156,7 +156,6 @@ var _vuex = __webpack_require__(/*! vuex */ 18);function _interopRequireDefault(
 
     onGetUserInfo: function onGetUserInfo(res) {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _res$detail;var userInfo, that;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
                 userInfo = res === null || res === void 0 ? void 0 : (_res$detail = res.detail) === null || _res$detail === void 0 ? void 0 : _res$detail.userInfo;
-                console.log(userInfo);
                 if (userInfo) {
                   that = _this;
                   uni.login({
@@ -168,6 +167,7 @@ var _vuex = __webpack_require__(/*! vuex */ 18);function _interopRequireDefault(
                                 res.data),
                                 userInfo));
 
+                                uni.userId = res.data.openid;
                                 uni.setStorage({
                                   key: 'userInfo',
                                   data: _objectSpread(_objectSpread({},
@@ -175,10 +175,10 @@ var _vuex = __webpack_require__(/*! vuex */ 18);function _interopRequireDefault(
                                   userInfo) });
 
 
-                                that.goBackToHome();case 7:case "end":return _context.stop();}}}, _callee);}));function success(_x) {return _success.apply(this, arguments);}return success;}() });
+                                that.goBackToHome();case 8:case "end":return _context.stop();}}}, _callee);}));function success(_x) {return _success.apply(this, arguments);}return success;}() });
 
 
-                }case 3:case "end":return _context2.stop();}}}, _callee2);}))();
+                }case 2:case "end":return _context2.stop();}}}, _callee2);}))();
     },
     goBackToHome: function goBackToHome() {
       uni.navigateBack();

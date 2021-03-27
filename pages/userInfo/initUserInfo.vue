@@ -24,7 +24,6 @@
 			]),
       async onGetUserInfo(res){
         const userInfo = res?.detail?.userInfo
-        console.log(userInfo)
         if(userInfo) {
           const that = this;
           uni.login({
@@ -36,6 +35,7 @@
                 ...res.data,
                 ...userInfo
               })
+              uni.userId = res.data.openid
               uni.setStorage({
                 key: 'userInfo',
                 data: {
