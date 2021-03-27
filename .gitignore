@@ -1,2 +1,5 @@
 /unpackage/*
 config.js
+unpackage
+.sourcemap
+mp-weixin

@@ -1794,6 +1794,65 @@ uni$1;exports.default = _default;
 /***/ }),
 
 /***/ 10:
+/*!**********************************************************!*\
+  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! regenerator-runtime */ 11);
+
+/***/ }),
+
+/***/ 11:
+/*!************************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+// This method of obtaining a reference to the global object needs to be
+// kept identical to the way it is obtained in runtime.js
+var g = (function() {
+  return this || (typeof self === "object" && self);
+})() || Function("return this")();
+
+// Use `getOwnPropertyNames` because not all browsers support calling
+// `hasOwnProperty` on the global `self` object in a worker. See #183.
+var hadRuntime = g.regeneratorRuntime &&
+  Object.getOwnPropertyNames(g).indexOf("regeneratorRuntime") >= 0;
+
+// Save the old regeneratorRuntime in case it needs to be restored later.
+var oldRuntime = hadRuntime && g.regeneratorRuntime;
+
+// Force reevalutation of runtime.js.
+g.regeneratorRuntime = undefined;
+
+module.exports = __webpack_require__(/*! ./runtime */ 12);
+
+if (hadRuntime) {
+  // Restore the original runtime.
+  g.regeneratorRuntime = oldRuntime;
+} else {
+  // Remove the global property added by runtime.js.
+  try {
+    delete g.regeneratorRuntime;
+  } catch(e) {
+    g.regeneratorRuntime = undefined;
+  }
+}
+
+
+/***/ }),
+
+/***/ 12:
 /*!*****************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime.js ***!
   \*****************************************************/
@@ -2525,71 +2584,10 @@ uni$1;exports.default = _default;
 
 /***/ }),
 
-/***/ 11:
-/*!**********************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/index.js ***!
-  \**********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
-
-
-
-
-
-
-
-
-var _user = _interopRequireDefault(__webpack_require__(/*! ./user.js */ 12));
-var _lostAndFound = _interopRequireDefault(__webpack_require__(/*! ./lostAndFound.js */ 15));
-var _recruitInfo = _interopRequireDefault(__webpack_require__(/*! ./recruitInfo.js */ 16));
-var _favorite = _interopRequireDefault(__webpack_require__(/*! ./favorite.js */ 17));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default = _objectSpread(_objectSpread(_objectSpread(_objectSpread({},
-
-
-_user.default),
-_lostAndFound.default),
-_favorite.default),
-_recruitInfo.default);exports.default = _default;
-
-/***/ }),
-
-/***/ 12:
-/*!*********************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/user.js ***!
-  \*********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 8));
-
-
-
-
-
-
-
-
-var _request = _interopRequireDefault(__webpack_require__(/*! ../request.js */ 13));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
-
-var MODULE = 'user';
-
-// 登陆
-var login = /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(params) {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
-              _request.default.globalRequest("".concat(MODULE, "/login/"), 'post', params));case 2:return _context.abrupt("return", _context.sent);case 3:case "end":return _context.stop();}}}, _callee);}));return function login(_x) {return _ref.apply(this, arguments);};}();var _default =
-
-
-{
-  login: login };exports.default = _default;
-
-/***/ }),
-
 /***/ 13:
-/*!********************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/request.js ***!
-  \********************************************************************************************/
+/*!*****************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/request.js ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2607,17 +2605,15 @@ var _config = _interopRequireDefault(__webpack_require__(/*! ./config.js */ 14))
 
 var request = {};
 var headers = {};
-var openId;
 uni.getStorage({
   key: "userInfo",
   success: function success(res) {var _res$data;
-    openId = res === null || res === void 0 ? void 0 : (_res$data = res.data) === null || _res$data === void 0 ? void 0 : _res$data.openid;
+    uni.userId = res === null || res === void 0 ? void 0 : (_res$data = res.data) === null || _res$data === void 0 ? void 0 : _res$data.openid;
   },
   fail: function fail() {
-    openId = "mock";
+    uni.userId = "mock";
   } });
 
-console.log(openId);
 request.globalRequest = function (url, method, data, power) {
   return new Promise(function (resolve, reject) {
     return uni.
@@ -2626,7 +2622,7 @@ request.globalRequest = function (url, method, data, power) {
       method: method,
       data: _objectSpread(_objectSpread({},
       data), {}, {
-        userId: openId // 固定把openid带上
+        userId: uni.userId // 固定把openid带上
       }),
       dataType: "json",
       header: headers }).
@@ -2650,9 +2646,9 @@ request;exports.default = _default;
 /***/ }),
 
 /***/ 14:
-/*!*******************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/config.js ***!
-  \*******************************************************************************************/
+/*!****************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/config.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2681,9 +2677,9 @@ urlConfig;exports.default = _default;
 /***/ }),
 
 /***/ 15:
-/*!*****************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/lostAndFound.js ***!
-  \*****************************************************************************************************/
+/*!**************************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/api/lostAndFound.js ***!
+  \**************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2733,9 +2729,9 @@ var getdetail = function getdetail(params) {return (
 /***/ }),
 
 /***/ 16:
-/*!****************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/recruitInfo.js ***!
-  \****************************************************************************************************/
+/*!*************************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/api/recruitInfo.js ***!
+  \*************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2760,9 +2756,9 @@ var postCollectRecruitInfo = function postCollectRecruitInfo(data) {return (
 /***/ }),
 
 /***/ 17:
-/*!*************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/favorite.js ***!
-  \*************************************************************************************************/
+/*!**********************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/api/favorite.js ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2790,14 +2786,14 @@ var _request = _interopRequireDefault(__webpack_require__(/*! ../request.js */ 1
 /***/ }),
 
 /***/ 175:
-/*!*********************************************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/uni_modules/uni-forms/components/uni-forms/validate.js ***!
-  \*********************************************************************************************************************************/
+/*!******************************************************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/uni_modules/uni-forms/components/uni-forms/validate.js ***!
+  \******************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 8));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = _getPrototypeOf(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = _getPrototypeOf(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return _possibleConstructorReturn(this, result);};}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));return true;} catch (e) {return false;}}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 10));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = _getPrototypeOf(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = _getPrototypeOf(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return _possibleConstructorReturn(this, result);};}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));return true;} catch (e) {return false;}}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}
 var pattern = {
   email: /^\S+?@\S+?\.\S+?$/,
   idcard: /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/,
@@ -10563,9 +10559,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 218:
-/*!******************************************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/uni_modules/uni-icons/components/uni-icons/icons.js ***!
-  \******************************************************************************************************************************/
+/*!***************************************************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/uni_modules/uni-icons/components/uni-icons/icons.js ***!
+  \***************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10705,9 +10701,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 22:
-/*!*****************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/store/index.js ***!
-  \*****************************************************************************************/
+/*!**************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/store/index.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10739,6 +10735,98 @@ var store = new _vuex.default.Store({
 
 store;exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 233:
+/*!***************************************************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/uni_modules/uni-popup/components/uni-popup/popup.js ***!
+  \***************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _message = _interopRequireDefault(__webpack_require__(/*! ./message.js */ 234));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+// 定义 type 类型:弹出类型：top/bottom/center
+var config = {
+  // 顶部弹出
+  top: 'top',
+  // 底部弹出
+  bottom: 'bottom',
+  // 居中弹出
+  center: 'center',
+  // 消息提示
+  message: 'top',
+  // 对话框
+  dialog: 'center',
+  // 分享
+  share: 'bottom' };var _default =
+
+
+{
+  data: function data() {
+    return {
+      config: config,
+      popupWidth: 0,
+      popupHeight: 0 };
+
+  },
+  mixins: [_message.default],
+  computed: {
+    isDesktop: function isDesktop() {
+      return this.popupWidth >= 500 && this.popupHeight >= 500;
+    } },
+
+  mounted: function mounted() {var _this = this;
+    var fixSize = function fixSize() {var _uni$getSystemInfoSyn =
+
+
+
+
+      uni.getSystemInfoSync(),windowWidth = _uni$getSystemInfoSyn.windowWidth,windowHeight = _uni$getSystemInfoSyn.windowHeight,windowTop = _uni$getSystemInfoSyn.windowTop;
+      _this.popupWidth = windowWidth;
+      _this.popupHeight = windowHeight + windowTop;
+    };
+    fixSize();
+
+
+
+
+
+
+  } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 234:
+/*!*****************************************************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/uni_modules/uni-popup/components/uni-popup/message.js ***!
+  \*****************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  created: function created() {
+    if (this.type === 'message') {
+      // 不显示遮罩
+      this.maskShow = false;
+      // 获取子组件对象
+      this.childrenMsg = null;
+    }
+  },
+  methods: {
+    customOpen: function customOpen() {
+      if (this.childrenMsg) {
+        this.childrenMsg.open();
+      }
+    },
+    customClose: function customClose() {
+      if (this.childrenMsg) {
+        this.childrenMsg.close();
+      }
+    } } };exports.default = _default;
 
 /***/ }),
 
@@ -10774,9 +10862,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 35:
-/*!******************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/static/logo.png ***!
-  \******************************************************************************************/
+/*!***************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/static/logo.png ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -10785,9 +10873,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAAEi
 /***/ }),
 
 /***/ 36:
-/*!***********************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/static/thumbs-up.svg ***!
-  \***********************************************************************************************/
+/*!********************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/static/thumbs-up.svg ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10796,9 +10884,9 @@ module.exports = __webpack_require__.p + "static/img/thumbs-up.310a0682.svg";
 /***/ }),
 
 /***/ 37:
-/*!*****************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/static/see.svg ***!
-  \*****************************************************************************************/
+/*!**************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/static/see.svg ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10807,9 +10895,9 @@ module.exports = __webpack_require__.p + "static/img/see.36130429.svg";
 /***/ }),
 
 /***/ 4:
-/*!*************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/pages.json ***!
-  \*************************************************************************************/
+/*!**********************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/pages.json ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -10818,9 +10906,9 @@ module.exports = __webpack_require__.p + "static/img/see.36130429.svg";
 /***/ }),
 
 /***/ 48:
-/*!*******************************************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/node_modules/cos-wx-sdk-v5/demo/lib/cos-wx-sdk-v5.js ***!
-  \*******************************************************************************************************************************/
+/*!****************************************************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/node_modules/cos-wx-sdk-v5/demo/lib/cos-wx-sdk-v5.js ***!
+  \****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10829,9 +10917,9 @@ module.exports = __webpack_require__.p + "static/img/see.36130429.svg";
 /***/ }),
 
 /***/ 57:
-/*!*********************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/static/image/activity-bgc.jpeg ***!
-  \*********************************************************************************************************/
+/*!******************************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/static/image/activity-bgc.jpeg ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -10840,61 +10928,63 @@ module.exports = "/static/image/activity-bgc.jpeg";
 /***/ }),
 
 /***/ 8:
-/*!**********************************************************!*\
-  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
-  \**********************************************************/
+/*!*******************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/api/index.js ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! regenerator-runtime */ 9);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+
+
+
+var _user = _interopRequireDefault(__webpack_require__(/*! ./user.js */ 9));
+var _lostAndFound = _interopRequireDefault(__webpack_require__(/*! ./lostAndFound.js */ 15));
+var _recruitInfo = _interopRequireDefault(__webpack_require__(/*! ./recruitInfo.js */ 16));
+var _favorite = _interopRequireDefault(__webpack_require__(/*! ./favorite.js */ 17));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default = _objectSpread(_objectSpread(_objectSpread(_objectSpread({},
+
+
+_user.default),
+_lostAndFound.default),
+_favorite.default),
+_recruitInfo.default);exports.default = _default;
 
 /***/ }),
 
 /***/ 9:
-/*!************************************************************!*\
-  !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
-  \************************************************************/
+/*!******************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/api/user.js ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 10));
 
-// This method of obtaining a reference to the global object needs to be
-// kept identical to the way it is obtained in runtime.js
-var g = (function() {
-  return this || (typeof self === "object" && self);
-})() || Function("return this")();
 
-// Use `getOwnPropertyNames` because not all browsers support calling
-// `hasOwnProperty` on the global `self` object in a worker. See #183.
-var hadRuntime = g.regeneratorRuntime &&
-  Object.getOwnPropertyNames(g).indexOf("regeneratorRuntime") >= 0;
 
-// Save the old regeneratorRuntime in case it needs to be restored later.
-var oldRuntime = hadRuntime && g.regeneratorRuntime;
 
-// Force reevalutation of runtime.js.
-g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(/*! ./runtime */ 10);
 
-if (hadRuntime) {
-  // Restore the original runtime.
-  g.regeneratorRuntime = oldRuntime;
-} else {
-  // Remove the global property added by runtime.js.
-  try {
-    delete g.regeneratorRuntime;
-  } catch(e) {
-    g.regeneratorRuntime = undefined;
-  }
-}
 
+
+var _request = _interopRequireDefault(__webpack_require__(/*! ../request.js */ 13));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
+
+var MODULE = 'user';
+
+// 登陆
+var login = /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(params) {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
+              _request.default.globalRequest("".concat(MODULE, "/login/"), 'post', params));case 2:return _context.abrupt("return", _context.sent);case 3:case "end":return _context.stop();}}}, _callee);}));return function login(_x) {return _ref.apply(this, arguments);};}();var _default =
+
+
+{
+  login: login };exports.default = _default;
 
 /***/ })
 

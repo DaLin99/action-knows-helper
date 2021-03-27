@@ -1,6 +1,6 @@
 <template>
   <view>
-    <tabs
+  <tabs
       :tabs-list="tabsList"
       :active-tab-index="activeTabIndex"
       class="mb10"
@@ -91,6 +91,7 @@ export default {
       uni.getStorage({
           key: 'userInfo',
           success: function (result) {
+            uni.userId = result.data.openid
             that.initUserInfo({
               ...result.data
             })
