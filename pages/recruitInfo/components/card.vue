@@ -20,7 +20,7 @@
           <text
             v-for="(
               requirementItem, requirementIndex
-            ) in item.educationRequirement"
+            ) in item.educationRequirement.split('，')"
             :key="requirementIndex"
           >
             {{ requirementItem }}
@@ -30,7 +30,7 @@
       </view>
     </view>
     <view class="container-right">
-      <image :src="item.imgPath" class="company-img" alt="" />
+      <image :src="item.imageUrl" class="company-img" alt="" />
     </view>
   </view>
 </template>

@@ -81,11 +81,13 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var l0 = _vm.item.educationRequirement.split("，")
   var g0 = _vm.item.publishDate.split(" ")
   _vm.$mp.data = Object.assign(
     {},
     {
       $root: {
+        l0: l0,
         g0: g0
       }
     }

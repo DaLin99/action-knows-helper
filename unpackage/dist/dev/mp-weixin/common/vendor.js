@@ -2701,10 +2701,11 @@ var _request = _interopRequireDefault(__webpack_require__(/*! ../request.js */ 1
                                                                                                                                                                * lostAndFound.js  失物招领请求api
                                                                                                                                                                * @Author: xqbzheng
                                                                                                                                                                * @Date: 2021-2-21
-                                                                                                                                                               * @LastEditTime: 
+                                                                                                                                                               * @LastEditTime:
                                                                                                                                                                * @LastEditors: xqbzheng
                                                                                                                                                                * @Description:
-                                                                                                                                                               */var MODULE = 'lostAndFound';var submitLost = function submitLost(params) {return _request.default.globalRequest("".concat(MODULE, "/submitLost"), 'post', params);};var getLostAndFoundList = function getLostAndFoundList(params) {return _request.default.globalRequest("".concat(MODULE, "/list"), 'get', params);}; // const getLostAndFoundList = params => request.globalRequest('admin/recruitInfo/publish', 'post', {
+                                                                                                                                                               */var MODULE = "lostAndFound";var submitLost = function submitLost(params) {return _request.default.globalRequest("".concat(MODULE, "/submitLost"), "post", params);};var getLostAndFoundList = function getLostAndFoundList(params) {return _request.default.globalRequest("".concat(MODULE, "/list"), "get", params);};
+// const getLostAndFoundList = params => request.globalRequest('admin/recruitInfo/publish', 'post', {
 //   id: '8',
 //   jodDescription: '213123',
 //   jodResponsibility: '213123',
@@ -2718,7 +2719,10 @@ var _request = _interopRequireDefault(__webpack_require__(/*! ../request.js */ 1
 //   educationRequirement: '213123',
 //   publisher: '213123',
 // });
-var getUserLostAndFoundList = function getUserLostAndFoundList(params) {return _request.default.globalRequest("".concat(MODULE, "/userList"), 'get', params);};var getdetail = function getdetail(params) {return _request.default.globalRequest("".concat(MODULE, "/detail"), 'get', params);};var _default =
+var getUserLostAndFoundList = function getUserLostAndFoundList(params) {return (
+    _request.default.globalRequest("".concat(MODULE, "/userList"), "get", params));};
+var getdetail = function getdetail(params) {return (
+    _request.default.globalRequest("".concat(MODULE, "/detail"), "get", params));};var _default =
 
 {
   submitLost: submitLost,

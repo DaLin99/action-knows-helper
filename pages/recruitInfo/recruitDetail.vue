@@ -70,7 +70,8 @@
         class="collect-btn"
         type="primary"
       >
-        {{ info.isCollect === "1" ? "取消收藏" : "收藏" }}
+        {{ info.isCollect }}
+        {{ info.isCollect === 1 ? "取消收藏" : "收藏" }}
       </button>
     </view>
   </view>
