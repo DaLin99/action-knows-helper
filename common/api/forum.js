@@ -13,9 +13,13 @@ const fetchForumDetail = (params) =>
 // 发布评论
 const submitComment = (params) =>
   request.globalRequest(`${MODULE}/comment`, "post", params);
+// 点赞
+const postThumbUp = (params) =>
+  request.globalRequest(`${MODULE}/thumbUp`, "post", params);
 export default {
   fetchForumList,
   submitForum,
   fetchForumDetail,
   submitComment,
+  postThumbUp,
 };

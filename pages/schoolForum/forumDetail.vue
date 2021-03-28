@@ -11,8 +11,16 @@
           {{ info.topicContent }}
         </div>
       </div>
-      <div class="icon-nums-container" @click="thumbUp(true)">
-        <img src="../../static/thumbs-up.svg" alt="" class="thumbs-up" />
+      <div
+        class="icon-nums-container"
+        @click="thumbUp(info.isThumbUp === 1 ? 0 : 1)"
+      >
+        <img
+          src="../../static/thumbs-up.svg"
+          alt=""
+          :style="{ background: info.isThumbUp === 1 ? 'yellow' : '' }"
+          class="thumbs-up"
+        />
         <span class="thumbs-up-nums">{{ info.thumbUpNums }}</span>
         <img src="../../static/see.svg" alt="" class="see" />
         <span class="see-nums">{{ info.readNums }}</span>
@@ -161,12 +169,17 @@ export default {
         });
       }
     },
-    thumbUp(isBoolean) {
+    async thumbUp(isThumbUp) {
+      await api.postThumbUp({
+        id: this.info.id,
+        isThumbUp: isThumbUp,
+      });
       uni.showToast({
-        title: isBoolean ? "取消点赞成功" : "点赞成功",
+        title: isThumbUp === 1 ? "点赞成功" : "取消点赞成功",
         duration: 20000,
         icon: "success",
       });
+      this.getDetail(this.info.id);
     },
     show() {
       uni.showToast({
