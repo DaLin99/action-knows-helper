@@ -11,17 +11,15 @@ import urlConfig from "./config.js";
 
 const request = {};
 const headers = {};
-let openId;
 uni.getStorage({
   key: "userInfo",
   success: (res) => {
-    openId = res?.data?.openid;
+    uni.userId = res?.data?.openid;
   },
   fail: () => {
-    openId = "mock";
+    uni.userId = "mock";
   },
 });
-console.log(openId);
 request.globalRequest = (url, method, data, power) => {
   return new Promise((resolve, reject) => {
     return uni
@@ -30,7 +28,7 @@ request.globalRequest = (url, method, data, power) => {
         method,
         data: {
           ...data,
-          userId: openId, // 固定把openid带上
+          userId: uni.userId, // 固定把openid带上
         },
         dataType: "json",
         header: headers,
@@ -39,11 +37,15 @@ request.globalRequest = (url, method, data, power) => {
         if (res[1].data && res[1].data.code == 1) {
           resolve(res[1].data);
         } else {
+          uni.showToast({
+            title: res[1].data.message,
+            icon: 'none',
+            duration: 3000,
+          })
           reject(res[1].data);
         }
       })
       .catch((parmas) => {
-        console.warn(parmas);
         reject("小程序后台发生位置异常");
       });
   });

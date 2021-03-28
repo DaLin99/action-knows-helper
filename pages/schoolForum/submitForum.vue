@@ -1,28 +1,29 @@
 <template>
   <div class="submit-info-container">
     <uni-forms ref="form" :value="formData" :rules="rules">
-      <uni-forms-item label="论坛标题" name="title">
+      <uni-forms-item label="论坛标题" name="topicTitle">
         <input
-          v-model="formData.title"
+          v-model="formData.topicTitle"
           type="text"
           placeholder="请填论坛标题"
           class="mt12"
         />
       </uni-forms-item>
 
-      <uni-forms-item label="话题类别" name="type">
+      <uni-forms-item label="话题类别" name="topicType">
+        {{ formData.topicType }}
         <picker
           :range="lostTypeList"
           mode="selector"
           class="mt12"
           @change="pickType"
-          >{{ lostTypeList[formData.type] || "请选择分类" }}</picker
+          >{{ lostTypeList[formData.topicType] || "请选择分类" }}</picker
         >
       </uni-forms-item>
 
-      <uni-forms-item label="论坛内容" name="context">
+      <uni-forms-item label="论坛内容" name="topicContent">
         <textarea
-          v-model="formData.context"
+          v-model="formData.topicContent"
           placeholder="请填写论坛内容"
           class="mt12"
         />
@@ -62,16 +63,16 @@ export default {
     let formRules = {};
     const arr = [
       {
-        name: "title",
+        name: "topicTitle",
         label: "论坛标题",
       },
       {
-        name: "type",
+        name: "topicType",
         label: "论坛分类",
       },
 
       {
-        name: "context",
+        name: "topicContent",
         label: "论坛内容",
       },
     ];
@@ -100,13 +101,14 @@ export default {
   methods: {
     onShowDatePicker(type) {
       //显示
-      this.type = type;
+      this.topicType = type;
       this.showPicker = true;
       this.value = this[type];
     },
     // 点击下拉框选择
     pickType(e, value) {
-      this.formData.type = e.detail.value;
+      console.log();
+      this.formData.topicType = e.detail.value;
     },
 
     pickFile() {
@@ -151,15 +153,46 @@ export default {
         },
       });
     },
+    zeroFill(i) {
+      if (i >= 0 && i <= 9) {
+        return "0" + i;
+      } else {
+        return i;
+      }
+    },
     // 点击发布按钮
     submit() {
+      let date = new Date(); //当前时间
+      const month = this.zeroFill(date.getMonth() + 1); //月
+      const day = this.zeroFill(date.getDate()); //日
+      const hour = this.zeroFill(date.getHours()); //时
+      const minute = this.zeroFill(date.getMinutes()); //分
+      const second = this.zeroFill(date.getSeconds()); //秒
+
+      //当前时间
+      const curTime =
+        date.getFullYear() +
+        "-" +
+        month +
+        "-" +
+        day +
+        " " +
+        hour +
+        ":" +
+        minute +
+        ":" +
+        second;
+      this.formData.publishDate = curTime;
+
       this.$refs.form
         .submit()
-        .then((res) => {
-          api.submitLost({ ...res, type: "found" }).then(() => {
-            uni.showToast({
-              title: "发布成功",
-            });
+        .then(async (res) => {
+          await api.submitForum(this.formData).then(({ code }) => {
+            if (code === 1) {
+              uni.showToast({
+                title: "发布成功",
+              });
+            }
             // 页面回跳
             uni.navigateBack();
           });

@@ -3,7 +3,6 @@
     <!-- 卡片信息 -->
     <view class="card">
       <view class="workType-salary">
-        {{ info.isCollect }}
         <text>{{ info.jobType }}</text>
         <text class="salary">{{ info.salary }}</text>
       </view>
@@ -70,7 +69,10 @@
         class="collect-btn"
         type="primary"
       >
-        {{ info.isCollect === "1" ? "取消收藏" : "收藏" }}
+        {{ info.isCollect === 1 ? "取消收藏" : "收藏" }}
+      </button>
+      <button @click="handleThumbUp(info.isThumbUp)" class="collect-btn">
+        {{ info.isThumbUp === 1 ? "取消点赞" : "点赞" }}
       </button>
     </view>
   </view>
@@ -141,6 +143,20 @@ export default {
       const res = await api.getRecruitInfoDetail({ id });
       this.info = res?.data[0];
       console.log("res:", res);
+    },
+    async handleThumbUp(isThumbUp) {
+      const res = await api.postThumpUp({
+        id: this.info.id,
+        isThumbUp: isThumbUp === 1 ? 0 : 1,
+      });
+      if (res.code === 1) {
+        uni.showToast({
+          title: isThumbUp === 1 ? "取消点赞成功" : "点赞成功",
+          duration: 2000,
+          icon: "success",
+        });
+        this.getDetail(this.info.id);
+      }
     },
   },
 };
@@ -232,7 +248,9 @@ export default {
     left: 0;
     bottom: 0;
     margin-top: 36rpx;
+    display: flex;
     .collect-btn {
+      width: 50%;
       background-color: #54cebc;
       border: none;
     }

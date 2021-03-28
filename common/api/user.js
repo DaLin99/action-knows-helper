@@ -16,6 +16,11 @@ const login = async params => {
 	return await request.globalRequest(`${MODULE}/login/`, 'post', params);
 };
 
+const loginByCard = async params => {
+	return await request.globalRequest(`${MODULE}/loginByCard`, 'post', params);
+};
+
 export default {
 	login, 
+	loginByCard, 
 };

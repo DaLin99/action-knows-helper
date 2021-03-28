@@ -1,1 +1,1 @@
-<view class="get-authority-page"><button class="btn" type="primary" open-type="getUserInfo" data-event-opts="{{[['getuserinfo',[['onGetUserInfo',['$event']]]]]}}" bindgetuserinfo="__e">授权登陆</button></view>
+<view class="get-authority-page"><block wx:if="{{authpWindow}}"><view class="gray-bg"><button class="btn" type="primary" open-type="getUserInfo" data-event-opts="{{[['getuserinfo',[['onGetUserInfo',['$event']]]]]}}" bindgetuserinfo="__e">授权登陆</button></view></block><block wx:if="{{initOpenId}}"><auth class="auth" vue-id="bdcfcb20-1" bind:__l="__l"></auth></block></view>

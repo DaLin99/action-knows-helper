@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "授权",
   "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "usingComponents": {
+    "auth": "/pages/userInfo/auth"
+  }
 }

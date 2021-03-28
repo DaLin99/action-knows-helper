@@ -20,17 +20,17 @@
           <text
             v-for="(
               requirementItem, requirementIndex
-            ) in item.educationRequirement"
+            ) in requirements"
             :key="requirementIndex"
           >
             {{ requirementItem }}
           </text>
-          <text class="date">{{ item.publishDate.split(" ")[0] }}</text>
+          <!-- <text class="date">{{ item.publishDate.split(" ")[0] }}</text> -->
         </view>
       </view>
     </view>
     <view class="container-right">
-      <image :src="item.imgPath" class="company-img" alt="" />
+      <image :src="item.imageUrl" class="company-img" alt="" />
     </view>
   </view>
 </template>
@@ -43,6 +43,11 @@ export default {
       default: () => ({}),
     },
   },
+  computed: {
+    requirements() {
+      return this.item.educationRequirement?.split('，') || []
+    }
+  }
 };
 </script>
 

@@ -10,8 +10,13 @@ const getRecruitInfoDetail = (params) =>
 // 收藏
 const postCollectRecruitInfo = (data) =>
   request.globalRequest(`${MODULE}/favoriteEdit`, "post", data);
+// 点赞
+const postThumpUp = (data) =>
+  request.globalRequest(`${MODULE}/thumbUp`, "post", data);
+
 export default {
   getRecruitInfoList,
   getRecruitInfoDetail,
   postCollectRecruitInfo,
+  postThumpUp,
 };

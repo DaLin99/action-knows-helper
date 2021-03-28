@@ -7,17 +7,17 @@
       @click="showDetail(item.id)"
     >
       <view class="activity-bgc-container">
-        <image :src="item.activityBgcSrc" class="activity-bgc" />
+        <image :src="item.imageUrl" class="activity-bgc" />
       </view>
       <text class="activitity-title">{{ item.activityTitle }}</text>
-      <text class="activitity-des">{{ item.activitityDes }}</text>
+      <text class="activitity-des">{{ item.activityContent }}</text>
       <view class="holder-date-container">
         <view class="icon-and-hoder">
           <uni-icons class="icon" type="contact" size="20" />
-          <text>{{ item.activityHolder }}</text>
+          <text>{{ item.holder }}</text>
         </view>
         <view class="date">
-          <text>{{ item.activityDate }}</text>
+          <text>{{ item.publishDate }}</text>
         </view>
       </view>
     </view>
@@ -25,52 +25,59 @@
 </template>
 
 <script>
+import api from "../../common/api/";
+
 export default {
   data() {
     return {
-      activityList: [
-        {
-          activityBgcSrc: "../../static/image/avator3.png",
-          activityTitle: "数据安全建设",
-          activityDate: "2021-3-1",
-          activityHolder: "Jermenis公司",
-          activitityDes:
-            "介绍详情本次大会以新形势下的企业数据安全建设”为主题,旨在增进蚂蚁金服与生态合作伙伴之间的相互了解、分享实践经验、共筑数据安全",
-        },
-        {
-          activityBgcSrc: "../../static/image/activity1.jpg",
-          activityTitle: "团干部招新报名开始了",
-          activityDate: "2021-3-1",
-          activityHolder: "团学干部",
-          activitityDes:
-            "团学干部换届招新活动火热进行中，你想不想要成为贡献自己的一部分力量",
-        },
-        {
-          activityBgcSrc: "../../static/image/activity2.jpeg",
-          activityTitle: "志愿者招募",
-          activityDate: "2021-3-17",
-          activityHolder: "志愿者协会",
-          activitityDes:
-            "招聘要求：1.无关端正。2.担任干部的经历有限。3.幽默有趣4.写bug多的4.会做菜做得很好吃的",
-        },
-        {
-          activityBgcSrc: "../../static/image/activity3.jpeg",
-          activityTitle: "更新旅游学院18届校友通讯录",
-          activityDate: "2021-3-21",
-          activityHolder: "组织名称",
-          activitityDes:
-            "为方便学院联系校友、紧密校友与学校的联系，现启动校友通讯录更新活动。诚邀旅游学院全体18届校友填写下方问卷，更新通讯录信息。",
-        },
-        {
-          activityBgcSrc: "../../static/image/activity1.jpg",
-          activityTitle: "志愿者招募2",
-          activityDate: "2020-9-1",
-          activityHolder: "志愿者协会2",
-          activitityDes:
-            "招聘要求：1.无关端正。2.担任干部的经历有限。3.幽默有趣4.写bug多的4.会做菜做得很好吃的",
-        },
-      ],
+      activityList: [],
+      // activityList: [
+      //   {
+      //     activityBgcSrc: "../../static/image/avator3.png",
+      //     activityTitle: "数据安全建设",
+      //     activityDate: "2021-3-1",
+      //     activityHolder: "Jermenis公司",
+      //     activitityDes:
+      //       "介绍详情本次大会以新形势下的企业数据安全建设”为主题,旨在增进蚂蚁金服与生态合作伙伴之间的相互了解、分享实践经验、共筑数据安全",
+      //   },
+      //   {
+      //     activityBgcSrc: "../../static/image/activity1.jpg",
+      //     activityTitle: "团干部招新报名开始了",
+      //     activityDate: "2021-3-1",
+      //     activityHolder: "团学干部",
+      //     activitityDes:
+      //       "团学干部换届招新活动火热进行中，你想不想要成为贡献自己的一部分力量",
+      //   },
+      //   {
+      //     activityBgcSrc: "../../static/image/activity2.jpeg",
+      //     activityTitle: "志愿者招募",
+      //     activityDate: "2021-3-17",
+      //     activityHolder: "志愿者协会",
+      //     activitityDes:
+      //       "招聘要求：1.无关端正。2.担任干部的经历有限。3.幽默有趣4.写bug多的4.会做菜做得很好吃的",
+      //   },
+      //   {
+      //     activityBgcSrc: "../../static/image/activity3.jpeg",
+      //     activityTitle: "更新旅游学院18届校友通讯录",
+      //     activityDate: "2021-3-21",
+      //     activityHolder: "组织名称",
+      //     activitityDes:
+      //       "为方便学院联系校友、紧密校友与学校的联系，现启动校友通讯录更新活动。诚邀旅游学院全体18届校友填写下方问卷，更新通讯录信息。",
+      //   },
+      //   {
+      //     activityBgcSrc: "../../static/image/activity1.jpg",
+      //     activityTitle: "志愿者招募2",
+      //     activityDate: "2020-9-1",
+      //     activityHolder: "志愿者协会2",
+      //     activitityDes:
+      //       "招聘要求：1.无关端正。2.担任干部的经历有限。3.幽默有趣4.写bug多的4.会做菜做得很好吃的",
+      //   },
+      // ],
     };
+  },
+  created() {
+    console.log("22");
+    this.getList();
   },
   methods: {
     showDetail(id) {
@@ -78,6 +85,11 @@ export default {
       uni.navigateTo({
         url: `../schoolActivity/schoolActivityDetail?info=${id}`,
       });
+    },
+    async getList() {
+      const { code, data } = await api.fetchActivityList();
+      console.log("data:", data);
+      this.activityList = data.filter((item) => item.status === "1") || [];
     },
   },
 };

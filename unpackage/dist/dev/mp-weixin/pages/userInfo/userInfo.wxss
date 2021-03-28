@@ -47,11 +47,11 @@
 }
 .user-msg .overview .overview-item .overview-count.data-v-4b7ab2a6 {
   font-size: 30rpx;
-  color: #B0BEC5;
+  color: #b0bec5;
 }
 .user-msg .overview .overview-item .overview-title.data-v-4b7ab2a6 {
   font-style: 17rpx;
-  color: #455A64;
+  color: #455a64;
   font-weight: 400;
 }
 
