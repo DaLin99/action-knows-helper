@@ -1,85 +1,112 @@
 <template>
   <view class="school-activity-detail">
     <view class="bgc-container">
-      <image :src="imgPath" mode="" />
+      <image :src="info.imageUrl" mode="" />
     </view>
     <view class="date-and-btn">
       <view class="date-container">
         <text class="date-title">报名时间</text>
-        <text class="date-info">1天02时00分40秒</text>
+        <text class="date-info"
+          >{{ info.enterStartDate }}-{{ info.enterEndDate }}</text
+        >
       </view>
-      <view class="btn-container" @click="handle(false)">
-        <text>我要报名</text>
-        <text class="retain-nums">还剩50人</text>
+      <view class="btn-container" @click="handle(info.isApply === 1 ? 0 : 1)">
+        <text
+          >{{ info.isApply
+          }}{{ info.isApply === 1 ? "取消报名" : "我要报名" }}</text
+        >
       </view>
     </view>
     <view class="info-container">
       <view class="info-item">
         <text class="label">组织者</text>
-        <text>{{ organizer }}</text>
+        <text>{{ info.holder }}</text>
       </view>
       <view class="info-item">
         <text class="label">时间</text>
         <view class="flex-box">
-          <text>{{ date.start }}</text>
-          <text>{{ date.end }}</text>
+          <text>{{ info.activityStartDate }}</text>
+          <text>{{ info.activityEndDate }}</text>
         </view>
       </view>
       <view class="info-item">
         <text class="label">地点</text>
-        <text>{{ place }}</text>
+        <text>{{ info.activityPlace }}</text>
       </view>
       <view class="info-item">
         <text class="label">发布</text>
-        <text>{{ publisher }}</text>
+        <text>{{ info.publisher }}</text>
       </view>
-    </view>
-    <!-- 如果是讲座类型活动有老师介绍？ -->
-    <view class="introduce-box">
-      <view class="header-img-container">
-        <image :src="imgPath" class="header-img" mode="" />
+      <!-- </view> -->
+      <!-- 如果是讲座类型活动有老师介绍？ -->
+      <view class="introduce-box">
+        <view class="header-img-container">
+          <!-- <image :src="info.imageUrl" class="header-img" mode="" /> -->
+        </view>
+        <text>{{ info.activityTitle }}</text>
+        <!-- <text class="company-name">地点{{info.activityPlace}}</text> -->
+        <text>{{ info.activityContent }}</text>
       </view>
-      <text>Mariano Rasgado</text>
-      <text class="company-name">公司名Jermenis</text>
-      <text
-        >介绍详情本次大会以 “新形势下的企业数据安全建设”为主题，
-        旨在增进蚂蚁金服与生态合作伙伴之间的相互了解、分享实践经验、共筑数据安全</text
+      <!-- <view class="des-container">
+      <view
+        v-for="(item, index) in activityContent"
+        :key="index"
+        class="des-item"
       >
-    </view>
-    <view class="des-container">
-      <view v-for="(item, index) in des" :key="index" class="des-item">
         {{ item }}
-      </view>
+      </view> -->
     </view>
   </view>
 </template>
 
 <script>
+import api from "../../common/api/";
+
 export default {
+  onLoad(opt) {
+    console.log(opt);
+    this.getDetail(opt.info);
+  },
   data() {
     return {
-      imgPath: "/static/image/avator3.png",
-      organizer: "马玉",
-      date: {
-        start: "2021年2月2日 周日 14：00",
-        end: "2021年2月2日 周日 18：00",
+      info: {
+        activityContent: "",
+        activityEndDate: "",
+        activityPlace: "",
+        activityStartDate: "",
+        activityTitle: "",
+        enterEndDate: "",
+        enterNums: "",
+        enterStartDate: "",
+        holder: "",
+        id: "",
+        isApply: "",
+        isCollect: "",
+        publisher: "",
+        readNums: "",
+        list: [],
       },
-      place: "亿万中国上海总部",
-      publisher: "梅子",
-      des: [
-        "1.负责人是食品安全第一责任人，应当依照法律、法规和食品安全标准组织开展食品经营活动。",
-        "2.经营食品应当符合环境卫生要求，具备食品销售、储存、运输和装卸的卫生条件。",
-        "3.从事食品经营的人员应当遵守卫生要求，不符合法律规定健康要求的人员，不得参加接触直接入口食品的",
-      ],
     };
   },
   methods: {
-    handle(isEnter) {
-      uni.showToast({
-        title: isEnter ? "取消报名成功" : "报名成功",
-        duration: 20000,
-        icon: "success",
+    async handle(isEnter) {
+      const { code } = await api.applyActivity({
+        id: this.info.id,
+        isApply: isEnter,
       });
+      if (code === 1) {
+        this.getDetail(this.info.id);
+        uni.showToast({
+          title: isEnter === 0 ? "取消报名成功" : "报名成功",
+          duration: 2000,
+          icon: "success",
+        });
+      }
+    },
+    async getDetail(id) {
+      const res = await api.getActivityDetail({ id });
+      this.info = res?.data[0];
+      console.log("res:", res?.data[0]);
     },
   },
 };

@@ -11,10 +11,11 @@ import user from "./user.js";
 import lostAndFound from "./lostAndFound.js";
 import recruitInfo from "./recruitInfo.js";
 import favorite from "./favorite.js";
-
+import activity from "./activity.js";
 export default {
   ...user,
   ...lostAndFound,
   ...favorite,
   ...recruitInfo,
+  ...activity,
 };

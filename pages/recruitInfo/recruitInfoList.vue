@@ -107,7 +107,6 @@ export default {
     async getList() {
       const res = await api.getRecruitInfoList();
       this.recruitInfoList = res.data.filter((item) => item.status === "1");
-      
     },
     showDetail(id) {
       uni.navigateTo({
