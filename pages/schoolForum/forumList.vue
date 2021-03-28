@@ -6,7 +6,7 @@
         v-for="(item, index) in forumList"
         :item="item"
         :key="index"
-        @click="showDetail(1)"
+        @onClick="showDetail(index)"
       />
     </view>
     <view class="btn-list">

@@ -1,5 +1,5 @@
 <template>
-  <view class="forum-item">
+  <view class="forum-item" @click="$emit('onClick')">
     <view class="content-top"> </view>
     <title class="title mt10 mb5">标题：{{ item.topicTitle }}</title>
     <text>{{ item.topicContent }}</text>
