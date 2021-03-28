@@ -26,6 +26,7 @@
 </template>
 
 <script>
+  import api from '../../common/api';
 import { mapMutations, mapState } from "vuex";
 export default {
   data() {
@@ -57,10 +58,6 @@ export default {
           url: "auth",
         },
         {
-          title: "管理员入口",
-          url: "admin",
-        },
-        {
           title: "关于",
           url: "about",
         },
@@ -81,9 +78,20 @@ export default {
       ],
     };
   },
-  onLoad() {},
+  onShow() {
+    this.getUserInfo();
+  },
+  created() {
+    this.getUserInfo();
+  },
   methods: {
-    getUserInfo(e) {
+    async getUserInfo(e) {
+      let res = await api.commentTotal();
+      this.overview[0].count = res.data;
+      res = await api.thumbTotal();
+      this.overview[1].count = res.data;
+      res = await api.favoriteTotal();
+      this.overview[2].count = res.data;
     },
     goToPage(url) {
       uni.navigateTo({

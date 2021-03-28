@@ -20,7 +20,22 @@ const loginByCard = async params => {
 	return await request.globalRequest(`${MODULE}/loginByCard`, 'post', params);
 };
 
+const favoriteTotal = async params => {
+	return await request.globalRequest(`${MODULE}/favoriteTotal`, 'get', params);
+};
+
+const thumbTotal = async params => {
+	return await request.globalRequest(`${MODULE}/thumbTotal`, 'get', params);
+};
+
+const commentTotal = async params => {
+	return await request.globalRequest(`${MODULE}/commentTotal`, 'get', params);
+};
+
 export default {
 	login, 
 	loginByCard, 
+  favoriteTotal,
+  commentTotal,
+  thumbTotal,
 };
