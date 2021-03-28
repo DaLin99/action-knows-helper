@@ -2,53 +2,63 @@
   <div class="forum-detail-container">
     <div class="flex-top">
       <div class="avator-name-container">
-        <img src="../../static/logo.png" class="avator" />
-        <span>Joyce</span>
+        <img :src="info.avatorUrl" class="avator" />
+        <span>{{ info.userName }}</span>
       </div>
       <div class="content-container">
-        <span class="date">2021-3-12</span>
+        <span class="date">{{ info.publishDate }}</span>
         <div>
-          时间过得太快了，没想到我们即将离开大学的校园，走入社会，现在有些紧张和焦虑的心情，有朋友也是这样的吗？我们如何过渡这个身份的转变呢？有朋友愿意分享吗？
+          {{ info.topicContent }}
         </div>
       </div>
       <div class="icon-nums-container" @click="thumbUp(true)">
         <img src="../../static/thumbs-up.svg" alt="" class="thumbs-up" />
-        <span class="thumbs-up-nums">312</span>
+        <span class="thumbs-up-nums">{{ info.thumbUpNums }}</span>
         <img src="../../static/see.svg" alt="" class="see" />
-        <span class="see-nums">502</span>
+        <span class="see-nums">{{ info.readNums }}</span>
       </div>
       <div class="comment-container">
         <h3>评论</h3>
         <div
           class="comment-item-container"
-          v-for="(item, index) in commentList"
+          v-for="(item, index) in info.commentList"
           :key="index"
         >
           <div class="left">
-            <img :src="item.avator" alt="" class="see" />
+            <img :src="item.avatorUrl" alt="" class="see" />
           </div>
           <div class="right">
             <h5>
-              <span class="name">{{ item.name }}</span>
-              在{{ item.date }}说
+              <span class="name">{{ item.userName }}</span>
+              在{{ item.publishDate }}说
             </h5>
-            <p class="comment">{{ item.comment }}</p>
+            <p class="comment">{{ item.content }}</p>
           </div>
         </div>
       </div>
     </div>
     <div class="input-container">
       <div class="input-btn">
-        <Input class="input-comment" placeholder="想说什么就说出来吧" />
-        <button class="btn" type="primary" size="mini">评论</button>
+        <Input
+          class="input-comment"
+          placeholder="想说什么就说出来吧"
+          v-model="commentValue"
+        />
+        <button class="btn" type="primary" size="mini" @click="submitComment">
+          评论
+        </button>
       </div>
     </div>
   </div>
 </template>
 <script>
+import api from "../../common/api/";
+
 export default {
   data() {
     return {
+      info: {},
+      commentValue: "",
       commentList: [
         {
           avator: "../../static/image/avator1.png",
@@ -91,7 +101,66 @@ export default {
       ],
     };
   },
+  onLoad(opt) {
+    console.log(opt.id);
+    this.getDetail(opt.id);
+  },
   methods: {
+    async getDetail(id) {
+      const { data } = await api.fetchForumDetail({
+        id: Number(id),
+      });
+      this.info = data[0];
+    },
+    zeroFill(i) {
+      if (i >= 0 && i <= 9) {
+        return "0" + i;
+      } else {
+        return i;
+      }
+    },
+    async submitComment() {
+      let date = new Date(); //当前时间
+      const month = this.zeroFill(date.getMonth() + 1); //月
+      const day = this.zeroFill(date.getDate()); //日
+      const hour = this.zeroFill(date.getHours()); //时
+      const minute = this.zeroFill(date.getMinutes()); //分
+      const second = this.zeroFill(date.getSeconds()); //秒
+
+      //当前时间
+      const curTime =
+        date.getFullYear() +
+        "-" +
+        month +
+        "-" +
+        day +
+        " " +
+        hour +
+        ":" +
+        minute +
+        ":" +
+        second;
+
+      if (this.commentValue) {
+        await api.submitComment({
+          topicId: this.info.id,
+          content: this.commentValue,
+          publishDate: curTime,
+        });
+        this.getDetail(this.info.id);
+        uni.showToast({
+          title: "评论成功",
+          duration: 2000,
+          icon: "success",
+        });
+      } else {
+        uni.showToast({
+          title: "请输入评论内容",
+          duration: 2000,
+          icon: "none",
+        });
+      }
+    },
     thumbUp(isBoolean) {
       uni.showToast({
         title: isBoolean ? "取消点赞成功" : "点赞成功",

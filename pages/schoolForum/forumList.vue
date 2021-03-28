@@ -6,7 +6,7 @@
         v-for="(item, index) in forumList"
         :item="item"
         :key="index"
-        @onClick="showDetail(index)"
+        @onClick="showDetail(item.id)"
       />
     </view>
     <view class="btn-list">
@@ -56,7 +56,7 @@ export default {
     showDetail(id) {
       console.log(id);
       uni.navigateTo({
-        url: `../schoolForum/forumDetail?info=${id}`,
+        url: `../schoolForum/forumDetail?id=${id}`,
       });
     },
   },
