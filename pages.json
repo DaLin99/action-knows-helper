@@ -1,6 +1,12 @@
 {
   "pages": [
     {
+      "path": "pages/schoolForum/forumList",
+      "style": {
+        "navigationBarTitleText": "校园论坛"
+      }
+    },
+    {
       "path": "pages/schoolActivity/schoolActivityList",
       "style": {
         "navigationBarTitleText": "校园活动",
@@ -80,12 +86,6 @@
       }
     },
 
-    {
-      "path": "pages/schoolForum/forumList",
-      "style": {
-        "navigationBarTitleText": "校园论坛"
-      }
-    },
     {
       "path": "pages/lostAndFound/lostInfo",
       "style": {

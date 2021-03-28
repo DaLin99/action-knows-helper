@@ -49,4 +49,24 @@
 .forum-list {
   padding: 0 50rpx;
 }
+.btn-list {
+  position: fixed;
+  right: 0rpx;
+  bottom: 50rpx;
+}
+.publish,
+.my {
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  border-radius: 50%;
+  color: #fff;
+}
+.publish {
+  background-color: #9773ff;
+}
+.my {
+  background-color: #82d5e0;
+}
 

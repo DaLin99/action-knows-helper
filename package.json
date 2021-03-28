@@ -4,5 +4,8 @@
     "cos-wx-sdk-v5": "^1.0.6",
     "image-compressor": "^2.0.3",
     "miniprogram-api-typings": "^2.4.1"
+  },
+  "devDependencies": {
+    "dayjs": "^1.10.4"
   }
 }
