@@ -74,12 +74,10 @@ export default {
         this.forumList = this.forumList.sort(function(a,b){
           return b.publishDate > a.publishDate ? 1 : -1;
         })
-        this.forumList.map(i=>console.log(i.publishDate,i.readNums))
       } else {
         this.forumList = this.forumList.sort(function(a,b){
           return +b.readNums > +a.readNums  ? 1 : -1;
         })
-        this.forumList.map(i=>console.log(i.publishDate,i.readNums))
       }
     },
     goToSubmit() {
