@@ -4,7 +4,12 @@
     <title class="title mt10 mb5">标题：{{ item.topicTitle }}</title>
     <text>{{ item.topicContent }}</text>
     <text>{{ responseWords }}</text>
-    <text class="date">{{ item.publishDate }}</text>
+    <view class="bottom">
+      <view class="date">{{ item.publishDate }}</view>
+      <view class="read-num">
+        <text>已读{{item.readNums}}</text>
+      </view>
+    </view>
   </view>
 </template>
 
@@ -42,14 +47,24 @@ export default {
     color: #000;
   }
   .response,
-  .date {
+  .bottom {
     color: #ccc;
+    font-size: 26rpx;
+    // background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50rpx;
+    .date {
+      width: 60%;
+    }
+    .read-num{
+      width: 110rpx;
+      text-align: start;
+    }
   }
   .response {
     font-size: 30rpx;
-  }
-  .date {
-    font-size: 26rpx;
   }
 }
 </style>

@@ -1,11 +1,17 @@
 <template>
   <view>
-    <view class="forum-list">
+    <tabs
+      :tabs-list="tabsList"
+      :active-tab-index="activeTabIndex"
+      class="mb10"
+      @clickTab="clcikTab"
+    />
+    <view class="forum-list mt80">
       <card
         class="mt20"
         v-for="(item, index) in forumList"
         :item="item"
-        :key="index"
+        :key="item.id"
         @onClick="showDetail(item.id)"
       />
     </view>
@@ -30,23 +36,51 @@
 import api from "../../common/api/";
 import { mapState } from "vuex";
 import card from "./components/card.vue";
+import tabs from "../component/tabs/tabs.vue"
 export default {
-  components: { card },
+  components: { card, tabs },
   data() {
     return {
       title: "Hello",
       forumList: [],
+			activeTabIndex: 0,
+			tabsList: [
+				{
+					tabName: '最新',
+				},
+				{
+					tabName: '最热',
+				},
+			],
     };
   },
   created() {
     this.getList();
   },
-  onLoad() {},
+  onShow() {
+    this.getList();
+  },
   methods: {
     async getList() {
       const { code, data } = await api.fetchForumList();
-      this.forumList = data;
-      console.log(data);
+      this.activeTabIndex = 0;
+      this.forumList = data.sort(function(a,b){
+        return b.publishDate > a.publishDate ? 1 : -1;
+      })
+    },
+    clcikTab(i) {
+      this.activeTabIndex = i;
+      if(i === 0) {
+        this.forumList = this.forumList.sort(function(a,b){
+          return b.publishDate > a.publishDate ? 1 : -1;
+        })
+        this.forumList.map(i=>console.log(i.publishDate,i.readNums))
+      } else {
+        this.forumList = this.forumList.sort(function(a,b){
+          return +b.readNums > +a.readNums  ? 1 : -1;
+        })
+        this.forumList.map(i=>console.log(i.publishDate,i.readNums))
+      }
     },
     goToSubmit() {
       uni.navigateTo({
