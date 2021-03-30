@@ -47,7 +47,7 @@ export default {
         },
         {
           title: "已发布的论坛",
-          url: "auth",
+          url: "../schoolForum/myForum",
         },
         {
           title: "收藏的招聘信息",
@@ -82,9 +82,34 @@ export default {
     this.getUserInfo();
   },
   created() {
+    this.auth();
     this.getUserInfo();
   },
   methods: {
+    ...mapMutations([
+      'initUserInfo',
+    ]),
+    /**
+     * 登陆验证
+     */ 
+    async auth() {
+      const that = this;
+      uni.getStorage({
+          key: 'userInfo',
+          success: function (result) {
+            uni.userId = result.data.openid
+            console.log(result);
+            that.initUserInfo({
+              ...result.data
+            })
+          },
+          fail(result) {
+            uni.navigateTo({
+              url: '/pages/userInfo/initUserInfo'
+            })
+          }
+      });
+    },
     async getUserInfo(e) {
       let res = await api.commentTotal();
       this.overview[0].count = res.data;

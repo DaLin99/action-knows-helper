@@ -1,12 +1,6 @@
 <template>
   <view>
-    <tabs
-      :tabs-list="tabsList"
-      :active-tab-index="activeTabIndex"
-      class="mb10"
-      @clickTab="clcikTab"
-    />
-    <view class="forum-list mt80">
+    <view class="forum-list">
       <card
         class="mt20"
         v-for="(item, index) in forumList"
@@ -18,23 +12,12 @@
     <view class="btn-list">
       <view class="publish" @click="goToSubmit">发布</view>
     </view>
-    <!-- <button open-type="getUserInfo">ss</button>
-		<image class="logo" :src="avatarUrl"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-			<text class="title">{{userInfo}}</text>
-		</view>xw
-		<text class="user-info" v-for="key in Object.keys(userInfo)">
-			<text>
-				{{key}}: {{userInfo[key]}}
-			</text>
-		</text> -->
   </view>
 </template>
 
 <script>
 import api from "../../common/api/";
-import {mapMutations, mapState} from 'vuex'
+import { mapState } from "vuex";
 import card from "./components/card.vue";
 import tabs from "../component/tabs/tabs.vue"
 export default {
@@ -55,37 +38,12 @@ export default {
     };
   },
   created() {
-    this.auth();
     this.getList();
   },
   onShow() {
     this.getList();
   },
   methods: {
-    ...mapMutations([
-      'initUserInfo',
-    ]),
-    /**
-     * 登陆验证
-     */ 
-    async auth() {
-      const that = this;
-      console.log(123);
-      uni.getStorage({
-          key: 'userInfo',
-          success: function (result) {
-            uni.userId = result.data.openid
-            that.initUserInfo({
-              ...result.data
-            })
-          },
-          fail(result) {
-            uni.navigateTo({
-              url: '/pages/userInfo/initUserInfo'
-            })
-          }
-      });
-    },
     async getList() {
       const { code, data } = await api.fetchForumList();
       this.activeTabIndex = 0;

@@ -26,7 +26,7 @@
 
 <script>
 import api from "../../common/api/";
-
+import {mapMutations, mapState} from 'vuex'
 export default {
   data() {
     return {
@@ -76,10 +76,34 @@ export default {
     };
   },
   created() {
-    console.log("22");
     this.getList();
+    this.auth();
   },
   methods: {
+    ...mapMutations([
+      'initUserInfo',
+    ]),
+    /**
+     * 登陆验证
+     */ 
+    async auth() {
+      const that = this;
+      uni.getStorage({
+          key: 'userInfo',
+          success: function (result) {
+            uni.userId = result.data.openid
+            console.log(result);
+            that.initUserInfo({
+              ...result.data
+            })
+          },
+          fail(result) {
+            uni.navigateTo({
+              url: '/pages/userInfo/initUserInfo'
+            })
+          }
+      });
+    },
     showDetail(id) {
       console.log(id);
       uni.navigateTo({

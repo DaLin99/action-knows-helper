@@ -34,12 +34,6 @@ import {mapMutations, mapState} from 'vuex'
 export default {
 	name: 'HelloWorld',
 	components: { tabs, card },
-  onShow() {
-    this.auth();
-  },
-  onLoad() {
-    this.auth();
-  },
 	data() {
 		return {
 			showDatasource: [],
@@ -109,9 +103,10 @@ export default {
 		};
 	},
 	onLoad() {
-		this.showDatasource = this.tabsList[0].dataSource;
+    this.auth();
+		// this.showDatasource = this.tabsList[0].dataSource;
 	},
-  onShow() {
+  created() {
     this.getList();
   },
 	methods: {
@@ -123,11 +118,13 @@ export default {
      */ 
     async auth() {
       const that = this;
+      console.log(123);
       uni.getStorage({
           key: 'userInfo',
           success: function (result) {
             uni.userId = result.data.openid
             console.log('设置成功');
+            console.log(result);
             that.initUserInfo({
               ...result.data
             })

@@ -1,5 +1,11 @@
 <template>
   <div class="forum-detail-container">
+    <view
+      class="delete-btn"
+      v-if="canBeDelete"
+      @click="deleteForum(info.id)">
+      删除
+    </view>
     <div class="flex-top">
       <div class="avator-name-container">
         <img :src="info.avatorUrl" class="avator" />
@@ -61,7 +67,7 @@
 </template>
 <script>
 import api from "../../common/api/";
-
+import { mapState } from 'vuex' 
 export default {
   data() {
     return {
@@ -110,8 +116,17 @@ export default {
     };
   },
   onLoad(opt) {
-    console.log(opt.id);
+    console.log(this.userInfo);
     this.getDetail(opt.id);
+  },
+  computed:{
+      ...mapState({
+        'userInfo': state=>state.userInfo
+      }),
+      canBeDelete() {
+        if(!this.userInfo?.openid || !this.info.userId) return false;
+        return this.userInfo?.openid === this.info.userId
+      }
   },
   methods: {
     async getDetail(id) {
@@ -188,6 +203,10 @@ export default {
         icon: "success",
       });
     },
+    async deleteForum(id) {
+      await api.deleteForum(id)
+      uni.navigateBack()
+    }
   },
 };
 </script>
@@ -278,5 +297,11 @@ export default {
   align-items: center;
 }
 .btn {
+}
+.delete-btn{
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  color: red;
 }
 </style>
