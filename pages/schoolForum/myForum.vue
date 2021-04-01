@@ -50,6 +50,7 @@ export default {
       this.forumList = data.sort(function(a,b){
         return b.publishDate > a.publishDate ? 1 : -1;
       })
+      this.forumList = this.forumList.filter(i=>i.userId===this.userInfo.openid)
     },
     clcikTab(i) {
       this.activeTabIndex = i;
