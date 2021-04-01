@@ -1,7 +1,7 @@
 <template>
 	<view class="detail">
 		<image class="img" :src="itemDetail.imgPath" />
-    <uni-list>
+    <uni-list class="info-list">
         <uni-list-item title="失物名称" :rightText="itemDetail.title"></uni-list-item>
         <uni-list-item title="丢失时间" :rightText="itemDetail.time"></uni-list-item>
         <uni-list-item title="丢失地点" :rightText="itemDetail.place"></uni-list-item>
@@ -92,7 +92,9 @@
 .img{
   // height: 400rpx;
   width: 100%;
+  border-radius: 8rpx;
 }
+.info-list{}
 .content {
   padding: 20rpx;
   font-size: 28rpx;

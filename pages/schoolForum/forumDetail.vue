@@ -1,69 +1,76 @@
 <template>
-  <div class="forum-detail-container">
+  <view class="forum-detail-container">
     <view
       class="delete-btn"
       v-if="canBeDelete"
       @click="deleteForum(info.id)">
       删除
     </view>
-    <div class="flex-top">
-      <div class="avator-name-container">
+    <view class="flex-top">
+      <view class="avator-name-container">
         <img :src="info.avatorUrl" class="avator" />
-        <span>{{ info.userName }}</span>
-      </div>
-      <div class="content-container">
-        <span class="date">{{ info.publishDate }}</span>
-        <div>
+        <text>{{ info.userName }}</text>
+        <text class="date">发表于{{ info.publishDate }}</text>
+      </view>
+      <view class="title">
+        Topic:{{info.topicTitle}}
+      </view>
+      <view class="content-container">
+        <view>
           {{ info.topicContent }}
-        </div>
-      </div>
-      <div
+        </view>
+      </view>
+      <view
         class="icon-nums-container"
-        @click="thumbUp(info.isThumbUp === 1 ? 0 : 1)"
       >
-        <img
-          src="../../static/thumbs-up.svg"
-          alt=""
-          :style="{ background: info.isThumbUp === 1 ? 'yellow' : '' }"
-          class="thumbs-up"
-        />
-        <span class="thumbs-up-nums">{{ info.thumbUpNums }}</span>
-        <img src="../../static/see.svg" alt="" class="see" />
-        <span class="see-nums">{{ info.readNums }}</span>
-      </div>
-      <div class="comment-container">
+        <view class="thumb">
+            <img
+              src="../../static/thumbs-up.svg"
+              alt=""
+              @click="thumbUp(info.isThumbUp === 1 ? 0 : 1)"
+              :style="{ background: info.isThumbUp === 1 ? 'yellow' : '' }"
+              class="thumbs-up"
+            />
+            <text class="thumbs-up-nums">{{ info.thumbUpNums }}</text>
+        </view>
+        <view class="thumb">
+          <img src="../../static/see.svg" alt="" class="see" />
+          <text class="see-nums">{{ info.readNums }}</text>
+        </view>
+      </view>
+      <view class="comment-container">
         <h3>评论</h3>
-        <div
+        <view
           class="comment-item-container"
           v-for="(item, index) in info.commentList"
           :key="index"
         >
-          <div class="left">
+          <view class="left">
             <img :src="item.avatorUrl" alt="" class="see" />
-          </div>
-          <div class="right">
+          </view>
+          <view class="right">
             <h5>
-              <span class="name">{{ item.userName }}</span>
+              <text class="name">{{ item.userName }}</text>
               在{{ item.publishDate }}说
             </h5>
             <p class="comment">{{ item.content }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="input-container">
-      <div class="input-btn">
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="input-container">
+      <view class="input-btn">
         <Input
           class="input-comment"
           placeholder="想说什么就说出来吧"
           v-model="commentValue"
         />
-        <button class="btn" type="primary" size="mini" @click="submitComment">
+        <button class="comment-btn" type="primary" size="mini" @click="submitComment">
           评论
         </button>
-      </div>
-    </div>
-  </div>
+      </view>
+    </view>
+  </view>
 </template>
 <script>
 import api from "../../common/api/";
@@ -191,7 +198,7 @@ export default {
       });
       uni.showToast({
         title: isThumbUp === 1 ? "点赞成功" : "取消点赞成功",
-        duration: 20000,
+        duration: 1000,
         icon: "success",
       });
       this.getDetail(this.info.id);
@@ -199,7 +206,7 @@ export default {
     show() {
       uni.showToast({
         title: "评论成功",
-        duration: 20000,
+        duration: 1000,
         icon: "success",
       });
     },
@@ -210,7 +217,7 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="less" scoped>
 .forum-detail-container {
   padding: 48rpx;
   display: flex;
@@ -224,6 +231,10 @@ export default {
   display: flex;
   align-items: center;
   margin-bottom: 16rpx;
+}
+.title{
+  font-size: 36rpx;
+  color: #9eabc2;
 }
 .avator {
   width: 100rpx;
@@ -245,6 +256,11 @@ export default {
 .icon-nums-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  .thumb{
+    display: flex;
+    align-items: center;
+  }
 }
 .thumbs-up,
 .see {
@@ -273,6 +289,7 @@ export default {
 }
 .comment {
   font-size: 14px;
+  color: #9eabc2;
 }
 .name {
   color: rgb(1, 2, 2);
@@ -280,7 +297,7 @@ export default {
 }
 .input-container {
   width: 100%;
-  background: rgb(180, 236, 206);
+  background: rgb(233, 235, 242);
   position: fixed;
   left: 0px;
   bottom: 0px;
@@ -289,19 +306,21 @@ export default {
 }
 .input-comment {
   width: 600rpx;
-  border: solid 1px black;
+  color: #ccc;
+  border: solid 1px #fff;
   border-radius: 20rpx;
 }
 .input-btn {
   display: flex;
   align-items: center;
 }
-.btn {
+.comment-btn {
+  background-color: #adc4fb;
 }
 .delete-btn{
   position: absolute;
   right: 20rpx;
   top: 20rpx;
-  color: red;
+  color: #d7d7d7;
 }
 </style>

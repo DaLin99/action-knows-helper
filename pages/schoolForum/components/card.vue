@@ -1,13 +1,15 @@
 <template>
-  <view class="forum-item" @click="$emit('onClick')">
-    <view class="content-top"> </view>
-    <title class="title mt10 mb5">标题：{{ item.topicTitle }}</title>
-    <text>{{ item.topicContent }}</text>
-    <text>{{ responseWords }}</text>
+  <view 
+    class="forum-item" 
+    @click="$emit('onClick')">
+    <view class="content-top"/>
+    <title class="title mt10 mb5">Topic：{{ item.topicTitle }}</title>
+    <text class="main-content">{{ item.topicContent }}</text>
+    <text class="response">{{ responseWords }}</text>
     <view class="bottom">
-      <view class="date">{{ item.publishDate }}</view>
+      <view class="date">{{ item.publishDate.split('').slice(0, 10).join('') }}</view>
       <view class="read-num">
-        <text>已读{{item.readNums}}</text>
+        <text>已读{{ item.readNums }}</text>
       </view>
     </view>
   </view>
@@ -25,9 +27,9 @@ export default {
     responseWords() {
       return this.item.commentList.length > 0
         ? `最新回复：${
-            this.item.commentList[this.item.commentList.length - 1]?.content
-          }结束`
-        : "呀～暂无人回复";
+            this.item.commentList[this.item.commentList.length - 1].content
+          }`
+        : '呀～暂无人回复';
     },
   },
 };
@@ -39,14 +41,31 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  height: 260rpx;
+  height: 240rpx;
   border-bottom: 1rpx solid rgba(202, 199, 204, 0.5);
   .title {
     display: block;
-    font-size: 34rpx;
-    color: #000;
+    font-size: 30rpx;
+    color: #2f3245;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal !important;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
   }
-  .response,
+  .main-content{
+    font-size: 24rpx;
+    color: #C0C0C0;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal !important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
   .bottom {
     color: #ccc;
     font-size: 26rpx;
@@ -64,7 +83,8 @@ export default {
     }
   }
   .response {
-    font-size: 30rpx;
+    font-size: 22rpx;
+    color: #b5d6e1;
   }
 }
 </style>

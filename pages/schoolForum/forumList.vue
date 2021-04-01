@@ -180,7 +180,7 @@ export default {
   color: #fff;
 }
 .publish {
-  background-color: #9773ff;
+  background-color: #adc4fb;
 }
 .my {
   background-color: #82d5e0;
