@@ -7,7 +7,7 @@
     <text class="main-content">{{ item.topicContent }}</text>
     <text class="response">{{ responseWords }}</text>
     <view class="bottom">
-      <view class="date">{{ item.publishDate.split('').slice(0, 10).join('') }}</view>
+      <view class="date">{{ publishDate }}</view>
       <view class="read-num">
         <text>已读{{ item.readNums }}</text>
       </view>
@@ -31,6 +31,9 @@ export default {
           }`
         : '呀～暂无人回复';
     },
+    publishDate() {
+      return this.item.publishDate?.split('').slice(0, 10).join('')
+    }
   },
 };
 </script>

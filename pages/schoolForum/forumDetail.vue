@@ -1,16 +1,18 @@
 <template>
   <view class="forum-detail-container">
-    <view
-      class="delete-btn"
-      v-if="canBeDelete"
-      @click="deleteForum(info.id)">
-      删除
-    </view>
+    <text class="date">
+      发表于{{ info.publishDate }}
+      <view
+        class="delete-btn"
+        v-if="canBeDelete"
+        @click="deleteForum(info.id)">
+        删除
+      </view>
+    </text>
     <view class="flex-top">
       <view class="avator-name-container">
         <img :src="info.avatorUrl" class="avator" />
         <text>{{ info.userName }}</text>
-        <text class="date">发表于{{ info.publishDate }}</text>
       </view>
       <view class="title">
         Topic:{{info.topicTitle}}
@@ -51,7 +53,7 @@
           <view class="right">
             <h5>
               <text class="name">{{ item.userName }}</text>
-              在{{ item.publishDate }}说
+              <text class="time">{{ item.publishDate }}:</text>
             </h5>
             <p class="comment">{{ item.content }}</p>
           </view>
@@ -233,8 +235,8 @@ export default {
   margin-bottom: 16rpx;
 }
 .title{
-  font-size: 36rpx;
-  color: #9eabc2;
+  font-size: 34rpx;
+  color: #33373f;
 }
 .avator {
   width: 100rpx;
@@ -242,21 +244,17 @@ export default {
   border-radius: 50%;
   margin-right: 16rpx;
 }
-.date {
-  color: rgb(71, 70, 68);
-  opacity: 0.5;
-}
 .content-container {
   padding: 24rpx 0rpx;
   border-top: solid 1px #f3f3f3;
   border-bottom: solid 1px #f3f3f3;
   opacity: 0.6;
-  margin-bottom: 24rpx;
 }
 .icon-nums-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 18rpx 0;
   .thumb{
     display: flex;
     align-items: center;
@@ -273,27 +271,29 @@ export default {
   margin: 0rpx 16rpx;
 }
 .comment-container {
-  margin-top: 36rpx;
-  padding: 16rpx 0rpx;
+  padding-top: 26rpx;
   border-top: solid 1px #f3f3f3;
-}
-.comment-item-container {
-  display: flex;
-  color: rgb(59, 56, 56);
-  border-bottom: solid 1px #f3f3f3;
-  padding: 16rpx 0rpx;
-  opacity: 0.7;
-}
-.left {
-  margin-right: 16rpx;
-}
-.comment {
-  font-size: 14px;
-  color: #9eabc2;
-}
-.name {
-  color: rgb(1, 2, 2);
-  margin-right: 16rpx;
+  .comment-item-container {
+    display: flex;
+    color: rgb(59, 56, 56);
+    border-bottom: solid 1px #f3f3f3;
+    padding: 16rpx 0rpx;
+    opacity: 0.7;
+  }
+  .left {
+    margin-right: 16rpx;
+  }
+  .comment {
+    font-size: 14px;
+    color: #616978;
+  }
+  .name {
+    color: rgb(1, 2, 2);
+    margin-right: 16rpx;
+  }
+  .time {
+    font-size: 22rpx;
+  }
 }
 .input-container {
   width: 100%;
@@ -317,10 +317,16 @@ export default {
 .comment-btn {
   background-color: #adc4fb;
 }
-.delete-btn{
+
+.date {
+  color: rgb(71, 70, 68);
+  opacity: 0.5;
+  font-size: 24rpx;
   position: absolute;
   right: 20rpx;
   top: 20rpx;
-  color: #d7d7d7;
+  .delete-btn{
+    color: #d7d7d7;
+  }
 }
 </style>
