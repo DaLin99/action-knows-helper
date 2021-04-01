@@ -1,5 +1,5 @@
 <template>
-	<view >
+	<view class="detail">
 		<image class="img" :src="itemDetail.imgPath" />
     <uni-list>
         <uni-list-item title="失物名称" :rightText="itemDetail.title"></uni-list-item>
@@ -84,11 +84,18 @@
 </script>
 
 <style lang="less">
+  .detail{
+    padding: 20rpx;
+    height: 100%;
+    position: relative;
+  }
 .img{
   // height: 400rpx;
   width: 100%;
 }
 .content {
   padding: 20rpx;
+  font-size: 28rpx;
+  background-color: #e9e7eb;
 }
 </style>

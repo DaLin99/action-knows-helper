@@ -6,7 +6,7 @@
       class="mb10"
       @clickTab="clcikTab"
     />
-    <view class="card-list mt80">
+    <view class="card-list mt80 mb80">
       <card
         v-for="(item, index) in showDatasource"
         :key="index"
@@ -214,10 +214,10 @@ export default {
       color: #fff;
     }
     .publish{
-      background-color: #9773ff;
+      background-color: #adc4fb;
     }
     .my{
-      background-color: #82d5e0;
+      background-color: #a9c4e1;
     }
   }
 </style>

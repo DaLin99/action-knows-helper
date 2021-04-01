@@ -9,6 +9,7 @@
     <view class="card-list mt80">
       <card
         v-for="(item, index) in showDatasource"
+        :showLabel="true"
         :key="index"
         :item="item"
         @onClick="goToDetail(item.id)"

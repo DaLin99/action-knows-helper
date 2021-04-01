@@ -17,22 +17,30 @@
     </view>
     <view class="card-bottom">
       <view class="icon-publisher">
-        <image :src="item.avator" class="publisher-avator"></image>
+        <image 
+          :src="item.avator" 
+          class="publisher-avator" />
         <text class="publisher-name ml10">{{
           item.publisher
         }}</text>
       </view>
       <view class="check-times">
-        <image :src="eyesImg"></image>
-        <text>{{item.checkTimes}}</text>
+        <image :src="eyesImg" />
+        <text>{{ item.checkTimes }}</text>
       </view>
       <text class="publish-date">{{
         item.publishDate
       }}</text>
     </view>
-    <view class="label">
-      <view v-if="item.type === 'lost'">丢失</view>
-      <view v-else>拾到</view>
+    <view 
+      v-if="showLabel"
+      :class="labelStyle">
+      <view 
+        v-if="item.type === 'lost'" 
+      >丢</view>
+      <view 
+        v-else
+      >拾</view>
     </view>
   </view>
 </template>
@@ -44,10 +52,19 @@
       		type: Object,
       		default: () => ({}),
       	},
+        showLabel: {
+      		type: Boolean,
+      		default: () => false,
+        }
     },
     data() {
       return {
         eyesImg: 'https://xqbzheng-1300584219.cos.ap-guangzhou.myqcloud.com/eyes.svg'
+      };
+    },
+    computed:{
+      labelStyle (){
+        return `label ${this.item.type === 'lost' ? 'lost' : 'found'}`;
       }
     }
   };
@@ -92,11 +109,12 @@
           -webkit-box-orient: vertical;
         }
         .content {
-          font-size: 28rpx;
+          font-size: 24rpx;
           color: #6a6a68;
           -webkit-line-clamp: 3;
         }
         .title {
+          color: #122e0c;
           -webkit-line-clamp: 1;
         }
   		}
@@ -118,16 +136,18 @@
         .publisher-avator {
           height: 40rpx;
           width: 40rpx;
+          margin-left: 8rpx;
         }
   		}
   		.publish-date {
-  			color: #7763ce;
+  			color: #535252;
         font-size: 24rpx;
   		}
     .check-times {
       display: flex;
       position: absolute;
       right: 40%;
+      top: 4rpx;
       image {
         height: 40rpx;
         width: 50rpx;
@@ -142,6 +162,17 @@
       position: absolute;
       right: 0;
       top: 0;
+      background-color: green;
+      font-size: 30rpx;
+      color: #fff;
+      border-bottom-left-radius: 16rpx;
+      padding: 10rpx;
+    }
+    .found {
+      background-color: #8abafb;
+    }
+    .lost {
+      background-color: #c6d9f2;
     }
   }
   .card-item:hover {
