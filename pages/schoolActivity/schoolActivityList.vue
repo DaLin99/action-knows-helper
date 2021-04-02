@@ -8,9 +8,9 @@
     >
       <view class="activity-bgc-container">
         <image :src="item.imageUrl" class="activity-bgc" />
+        <text class="activitity-title">{{ item.activityTitle }}</text>
+        <text class="activitity-des">{{ item.activityContent }}</text>
       </view>
-      <text class="activitity-title">{{ item.activityTitle }}</text>
-      <text class="activitity-des">{{ item.activityContent }}</text>
       <view class="holder-date-container">
         <view class="icon-and-hoder">
           <uni-icons class="icon" type="contact" size="20" />
@@ -130,20 +130,21 @@ export default {
   .acitivity-item-container {
     width: 45%;
     padding: 16rpx;
+    height: 560rpx;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     margin: 8rpx 16rpx;
     box-sizing: border-box;
     border: 1px solid #f0f0f0;
     background: #ffffff;
-    border-radius: 12rpx;
+    border-radius: 8rpx;
 
     .activity-bgc-container {
       width: 100%;
-      height: 100%;
       .activity-bgc {
-        width: 100%;
-        height: 100%;
+        width: 100%; 
+       height: 260rpx;
         border-radius: 12rpx;
       }
     }
@@ -153,7 +154,6 @@ export default {
     }
     .activitity-des {
       margin-top: 24rpx;
-      height: 315rpx;
       display: -webkit-box;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -168,7 +168,6 @@ export default {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 48rpx;
       .icon-and-hoder {
         display: flex;
         align-items: center;
