@@ -1,22 +1,25 @@
 <script>
-	import api from './common/api'
-	import {mapMutations, mapState} from 'vuex'
+	import api from './common/api';
+	import {mapMutations, mapState} from 'vuex';
 	export default {
 		onLaunch: function() {
-			console.log('App Launch')
+			console.log('App Launch');
 		},
 		onShow: function() {
-			console.log('App Show')
+			console.log('App Show');
 		},
 		onHide: function() {
-			console.log('App Hide')
+			console.log('App Hide');
 		},
 		methods:{
 		}
-	}
+	};
 </script>
 
 <style>
+  page {
+    height: 100%;
+  }
 	/*每个页面公共css */
   .shadow-box {
     box-shadow: 0 4rpx 18rpx 0 #B0BEC5;
@@ -146,6 +149,9 @@
   }
   .mt80 {
       margin-top: 80rpx;
+  }
+  .mb80 {
+      margin-bottom: 80rpx;
   }
   .mb40 {
       margin-bottom: 40rpx;
