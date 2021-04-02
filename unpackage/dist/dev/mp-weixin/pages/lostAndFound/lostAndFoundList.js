@@ -162,16 +162,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _api = _interopRequireDefault(__webpack_require__(/*! ../../common/api/ */ 8));
-var _vuex = __webpack_require__(/*! vuex */ 20);var _name$components$onSh;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var tabs = function tabs() {__webpack_require__.e(/*! require.ensure | pages/component/tabs/tabs */ "pages/component/tabs/tabs").then((function () {return resolve(__webpack_require__(/*! pages/component/tabs/tabs.vue */ 180));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var card = function card() {__webpack_require__.e(/*! require.ensure | pages/lostAndFound/components/card */ "pages/lostAndFound/components/card").then((function () {return resolve(__webpack_require__(/*! ./components/card.vue */ 216));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = (_name$components$onSh = {
-
+var _vuex = __webpack_require__(/*! vuex */ 20);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var tabs = function tabs() {__webpack_require__.e(/*! require.ensure | pages/component/tabs/tabs */ "pages/component/tabs/tabs").then((function () {return resolve(__webpack_require__(/*! pages/component/tabs/tabs.vue */ 165));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var card = function card() {__webpack_require__.e(/*! require.ensure | pages/lostAndFound/components/card */ "pages/lostAndFound/components/card").then((function () {return resolve(__webpack_require__(/*! ./components/card.vue */ 216));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+{
   name: 'HelloWorld',
   components: { tabs: tabs, card: card },
-  onShow: function onShow() {
-    this.auth();
-  },
-  onLoad: function onLoad() {
-    this.auth();
-  },
   data: function data() {
     return {
       showDatasource: [],
@@ -239,95 +233,98 @@ var _vuex = __webpack_require__(/*! vuex */ 20);var _name$components$onSh;functi
 
 
 
-  } }, _defineProperty(_name$components$onSh, "onLoad", function onLoad()
-{
-  this.showDatasource = this.tabsList[0].dataSource;
-}), _defineProperty(_name$components$onSh, "onShow", function onShow()
-{
-  this.getList();
-}), _defineProperty(_name$components$onSh, "methods", _objectSpread(_objectSpread({},
-
-(0, _vuex.mapMutations)([
-'initUserInfo'])), {}, {
-
-  /**
-                          * 登陆验证
-                          */
-  auth: function auth() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var that;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
-              that = _this;
-              uni.getStorage({
-                key: 'userInfo',
-                success: function success(result) {
-                  uni.userId = result.data.openid;
-                  console.log('设置成功');
-                  that.initUserInfo(_objectSpread({},
-                  result.data));
-
-                },
-                fail: function fail(result) {
-                  uni.navigateTo({
-                    url: '/pages/userInfo/initUserInfo' });
-
-                } });case 2:case "end":return _context.stop();}}}, _callee);}))();
-
   },
-  /**
-        * 点击tab-nav-name进行切换
-        * @param {String}  i 索引
+  onLoad: function onLoad() {
+    this.auth();
+    // this.showDatasource = this.tabsList[0].dataSource;
+  },
+  created: function created() {
+    this.getList();
+  },
+  methods: _objectSpread(_objectSpread({},
+  (0, _vuex.mapMutations)([
+  'initUserInfo'])), {}, {
+
+    /**
+                            * 登陆验证
+                            */
+    auth: function auth() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var that;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+                that = _this;
+                console.log(123);
+                uni.getStorage({
+                  key: 'userInfo',
+                  success: function success(result) {
+                    uni.userId = result.data.openid;
+                    console.log('设置成功');
+                    console.log(result);
+                    that.initUserInfo(_objectSpread({},
+                    result.data));
+
+                  },
+                  fail: function fail(result) {
+                    uni.navigateTo({
+                      url: '/pages/userInfo/initUserInfo' });
+
+                  } });case 3:case "end":return _context.stop();}}}, _callee);}))();
+
+    },
+    /**
+          * 点击tab-nav-name进行切换
+          * @param {String}  i 索引
+          */
+    clcikTab: function clcikTab(i) {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var params, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+                _this2.activeTabIndex = i;
+                // this.showDatasource = this.tabsList[i].dataSource;
+                params = {
+                  type: i === 0 ? 'lost' : 'found' };_context2.next = 4;return (
+
+                  _api.default.getLostAndFoundList(params));case 4:res = _context2.sent;
+                _this2.showDatasource = res === null || res === void 0 ? void 0 : res.data;case 6:case "end":return _context2.stop();}}}, _callee2);}))();
+    },
+    /**
+        * 前往发布 0丢失1拾到
         */
-  clcikTab: function clcikTab(i) {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var params, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
-              _this2.activeTabIndex = i;
-              // this.showDatasource = this.tabsList[i].dataSource;
-              params = {
-                type: i === 0 ? 'lost' : 'found' };_context2.next = 4;return (
+    goToPulbish: function goToPulbish() {
+      console.log(this.activeTabIndex);
+      if (this.activeTabIndex === 0) {
+        uni.navigateTo({
+          url: './submitLost' });
 
-                _api.default.getLostAndFoundList(params));case 4:res = _context2.sent;
-              _this2.showDatasource = res === null || res === void 0 ? void 0 : res.data;case 6:case "end":return _context2.stop();}}}, _callee2);}))();
-  },
-  /**
-      * 前往发布 0丢失1拾到
-      */
-  goToPulbish: function goToPulbish() {
-    console.log(this.activeTabIndex);
-    if (this.activeTabIndex === 0) {
+      } else {
+        uni.navigateTo({
+          url: './submitFound' });
+
+      }
+    },
+    /**
+        * 获取列表
+        */
+    getList: function getList() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var params, res;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
+                params = {
+                  type: _this3.activeTabIndex === 0 ? 'lost' : 'found' };_context3.next = 3;return (
+
+                  _api.default.getLostAndFoundList(params));case 3:res = _context3.sent;
+                _this3.showDatasource = res === null || res === void 0 ? void 0 : res.data;
+                console.log(res);case 6:case "end":return _context3.stop();}}}, _callee3);}))();
+    },
+    /**
+        * 查看详情
+        */
+    goToDetail: function goToDetail(index) {
+      console.log(index);
       uni.navigateTo({
-        url: './submitLost' });
+        url: "./detail?id=".concat(index) });
 
-    } else {
+    },
+    /**
+        * 查看详情
+        */
+    goToMyList: function goToMyList(index) {
+      console.log(index);
       uni.navigateTo({
-        url: './submitFound' });
+        url: './myList' });
 
-    }
-  },
-  /**
-      * 获取列表
-      */
-  getList: function getList() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var params, res;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
-              params = {
-                type: _this3.activeTabIndex === 0 ? 'lost' : 'found' };_context3.next = 3;return (
-
-                _api.default.getLostAndFoundList(params));case 3:res = _context3.sent;
-              _this3.showDatasource = res === null || res === void 0 ? void 0 : res.data;
-              console.log(res);case 6:case "end":return _context3.stop();}}}, _callee3);}))();
-  },
-  /**
-      * 查看详情
-      */
-  goToDetail: function goToDetail(index) {
-    console.log(index);
-    uni.navigateTo({
-      url: "./detail?id=".concat(index) });
-
-  },
-  /**
-      * 查看详情
-      */
-  goToMyList: function goToMyList(index) {
-    console.log(index);
-    uni.navigateTo({
-      url: './myList' });
-
-  } })), _name$components$onSh);exports.default = _default;
+    } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

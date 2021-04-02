@@ -1,7 +1,15 @@
+.detail {
+  padding: 20rpx;
+  height: 100%;
+  position: relative;
+}
 .img {
   width: 100%;
+  border-radius: 8rpx;
 }
 .content {
   padding: 20rpx;
+  font-size: 28rpx;
+  background-color: #e9e7eb;
 }
 

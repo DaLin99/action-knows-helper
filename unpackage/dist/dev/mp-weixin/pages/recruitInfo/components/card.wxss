@@ -53,4 +53,15 @@
 .recruit-info-item:hover .hover-height-light.data-v-5eb37a7d {
   color: #2291ec;
 }
+.company.data-v-5eb37a7d {
+  margin-top: 8px;
+}
+.salary.data-v-5eb37a7d {
+  font-size: 18px;
+  color: #f58c37;
+}
+.requirement-item.data-v-5eb37a7d {
+  font-size: 15px;
+  color: #807b7b;
+}
 

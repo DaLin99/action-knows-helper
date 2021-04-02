@@ -53,11 +53,12 @@
   -webkit-box-orient: vertical;
 }
 .card-item .card-top .card-top-right .content {
-  font-size: 28rpx;
+  font-size: 24rpx;
   color: #6a6a68;
   -webkit-line-clamp: 3;
 }
 .card-item .card-top .card-top-right .title {
+  color: #122e0c;
   -webkit-line-clamp: 1;
 }
 .card-item .card-bottom {
@@ -88,9 +89,10 @@
 .card-item .card-bottom .icon-publisher .publisher-avator {
   height: 40rpx;
   width: 40rpx;
+  margin-left: 8rpx;
 }
 .card-item .card-bottom .publish-date {
-  color: #7763ce;
+  color: #535252;
   font-size: 24rpx;
 }
 .card-item .card-bottom .check-times {
@@ -99,6 +101,7 @@
   display: flex;
   position: absolute;
   right: 40%;
+  top: 4rpx;
 }
 .card-item .card-bottom .check-times image {
   height: 40rpx;
@@ -112,6 +115,17 @@
   position: absolute;
   right: 0;
   top: 0;
+  background-color: green;
+  font-size: 30rpx;
+  color: #fff;
+  border-bottom-left-radius: 16rpx;
+  padding: 10rpx;
+}
+.card-item .found {
+  background-color: #8abafb;
+}
+.card-item .lost {
+  background-color: #c6d9f2;
 }
 .card-item:hover {
   box-shadow: 0px 1px 3px 0px rgba(0, 21, 41, 0.12);

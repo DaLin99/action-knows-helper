@@ -11,10 +11,7 @@
         >
       </view>
       <view class="btn-container" @click="handle(info.isApply === 1 ? 0 : 1)">
-        <text
-          >{{ info.isApply
-          }}{{ info.isApply === 1 ? "取消报名" : "我要报名" }}</text
-        >
+        <text>{{ info.isApply === 1 ? "取消报名" : "我要报名" }}</text>
       </view>
     </view>
     <view class="info-container">

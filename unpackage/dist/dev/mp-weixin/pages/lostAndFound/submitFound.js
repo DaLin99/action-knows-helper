@@ -391,7 +391,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../common/api/ind
       this.$refs.form.
       submit().
       then(function (res) {
-        _index.default.submitLost(_objectSpread(_objectSpread({}, res), {}, { type: "lost" })).then(function () {
+        _index.default.submitLost(_objectSpread(_objectSpread({}, res), {}, { type: "found" })).then(function () {
           uni.showToast({
             title: "发布成功" });
 
@@ -408,7 +408,6 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../common/api/ind
       this.$refs.form.
       submit().
       then(function (res) {
-        console.log(res);
         _index.default.submitLost(_objectSpread(_objectSpread({}, res), {}, { id: _this.formData.id })).then(function () {
           uni.showToast({
             title: "修改成功",

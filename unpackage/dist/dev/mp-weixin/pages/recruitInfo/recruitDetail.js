@@ -99,7 +99,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   var l0 = _vm.info.educationRequirement.split("，")
   var l1 = _vm.info.skillTagList.split("，")
-  var g0 = _vm.info.publishDate.split(" ")
   var l2 = _vm.info.jobDescription.split("，")
   var l3 = _vm.info.jobResponsibility.split("，")
   _vm.$mp.data = Object.assign(
@@ -108,7 +107,6 @@ var render = function() {
       $root: {
         l0: l0,
         l1: l1,
-        g0: g0,
         l2: l2,
         l3: l3
       }
@@ -148,10 +146,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 10));
-
-
-
-
 
 
 

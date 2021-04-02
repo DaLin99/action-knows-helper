@@ -246,6 +246,36 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var _cosWxSdkV = _interopRequireDefault(__webpack_require__(/*! cos-wx-sdk-v5 */ 73));
 var _index = _interopRequireDefault(__webpack_require__(/*! ../../common/api/index */ 8));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var MxDatePicker = function MxDatePicker() {__webpack_require__.e(/*! require.ensure | components/mx-datepicker/mx-datepicker */ "components/mx-datepicker/mx-datepicker").then((function () {return resolve(__webpack_require__(/*! @/components/mx-datepicker/mx-datepicker.vue */ 209));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
@@ -257,39 +287,39 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../common/api/ind
     var formRules = {};
     var arr = [
     {
-      name: "time",
-      label: "丢失时间" },
+      name: 'time',
+      label: '丢失时间' },
 
     {
-      name: "place",
-      label: "丢失地点" },
+      name: 'place',
+      label: '丢失地点' },
 
     {
-      name: "title",
-      label: "物品名称" },
+      name: 'title',
+      label: '物品名称' },
 
     {
-      name: "lostType",
-      label: "物品分类" },
+      name: 'lostType',
+      label: '物品分类' },
 
     {
-      name: "tell",
-      label: "联系方式" },
+      name: 'tell',
+      label: '联系方式' },
 
     {
-      name: "wechat",
-      label: "wechat" },
+      name: 'wechat',
+      label: 'wechat' },
 
     {
-      name: "content",
-      label: "备注信息" },
+      name: 'content',
+      label: '备注信息' },
 
     {
-      name: "imageUrl",
-      label: "图片" }];
+      name: 'imageUrl',
+      label: '图片' }];
 
 
-    arr.forEach(function (item) {return formData[item.name] = "";});
+    arr.forEach(function (item) {return formData[item.name] = '';});
     arr.forEach(function (item, index) {
       formRules[item.name] = {
         rules: [
@@ -301,7 +331,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../common/api/ind
 
     });
     return {
-      lostTypeList: ["日用品", "学习书籍", "衣物", "电子产品", "其他"],
+      lostTypeList: ['日用品', '学习书籍', '衣物', '电子产品', '其他'],
       showPicker: false,
       formData: formData,
       rules: formRules,
@@ -327,7 +357,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../common/api/ind
     },
     // 点击下拉框选择
     pickType: function pickType(e, value) {
-      this.formData.lostTime = "2020-12-12";
+      this.formData.lostTime = '2020-12-12';
       this.formData.lostType = e.detail.value;
     },
     onSelected: function onSelected(e) {
@@ -337,29 +367,29 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../common/api/ind
         this.lostTime = e.value;
         this[this.type] = e.value;
         //选择的值
-        console.log("value => " + e.value);
+        console.log('value => ' + e.value);
         //原始的Date对象
-        console.log("date => " + e.date);
+        console.log('date => ' + e.date);
       }
     },
 
     pickFile: function pickFile() {
       var that = this;
-      var Bucket = "xqbzheng-1300584219";
-      var Region = "ap-guangzhou";
-      var SecretId = "AKIDve9XfEyiRxubz9wmEb8PORElCNQGnw96";
-      var SecretKey = "qUtGw7tkMipjaCdbQZSs0zoPyHYbZOrb";
+      var Bucket = 'xqbzheng-1300584219';
+      var Region = 'ap-guangzhou';
+      var SecretId = 'AKIDve9XfEyiRxubz9wmEb8PORElCNQGnw96';
+      var SecretKey = 'qUtGw7tkMipjaCdbQZSs0zoPyHYbZOrb';
       var cos = new _cosWxSdkV.default({
         SecretId: SecretId,
         SecretKey: SecretKey });
 
       uni.chooseImage({
         count: 1,
-        sizeType: ["original", "compressed"], // original 原图，compressed 压缩图，默认二者都有
-        sourceType: ["album", "camera"],
+        sizeType: ['original', 'compressed'], // original 原图，compressed 压缩图，默认二者都有
+        sourceType: ['album', 'camera'],
         success: function success(res) {
           var filePath = res.tempFiles[0].path;
-          var filename = filePath.substr(filePath.lastIndexOf("/") + 1);
+          var filename = filePath.substr(filePath.lastIndexOf('/') + 1);
           uni.compressImage({
             src: filePath,
             success: function success(res) {
@@ -368,7 +398,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../common/api/ind
               {
                 Bucket: Bucket,
                 Region: Region,
-                Key: "image/" + filename,
+                Key: 'image/' + filename,
                 FilePath: filePath,
                 onProgress: function onProgress(progressData) {
                   console.log(JSON.stringify(progressData));
@@ -391,16 +421,16 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../common/api/ind
       this.$refs.form.
       submit().
       then(function (res) {
-        _index.default.submitLost(_objectSpread(_objectSpread({}, res), {}, { type: "lost" })).then(function () {
+        _index.default.submitLost(_objectSpread(_objectSpread({}, res), {}, { type: 'lost' })).then(function () {
           uni.showToast({
-            title: "发布成功" });
+            title: '发布成功' });
 
           // 页面回跳
           uni.navigateBack();
         });
       }).
       catch(function (err) {
-        console.log("表单错误信息：", err);
+        console.log('表单错误信息：', err);
       });
     },
     // 点击提交编辑按钮
@@ -411,7 +441,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../common/api/ind
         console.log(res);
         _index.default.submitLost(_objectSpread(_objectSpread({}, res), {}, { id: _this.formData.id })).then(function () {
           uni.showToast({
-            title: "修改成功",
+            title: '修改成功',
             success: function success() {
               // 页面回跳
               uni.navigateBack({
@@ -422,26 +452,26 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../common/api/ind
         });
       }).
       catch(function (err) {
-        console.log("表单错误信息：", err);
+        console.log('表单错误信息：', err);
       });
     },
     mockBtn: function mockBtn() {
       var data = {
         time: 1616256000000,
-        place: "123",
-        title: "11",
-        lostType: "0",
-        tell: "123",
-        wechat: "123",
+        place: '123',
+        title: '11',
+        lostType: '0',
+        tell: '123',
+        wechat: '123',
         imageUrl:
-        "https://xqbzheng-1300584219.cos.ap-guangzhou.myqcloud.com/image/DzhAsb7wQC3Pae4cda8e885eff9157f7b377563d6c9b.jpg",
-        content: "123123",
-        type: "lost",
-        userId: "omT555KQGwEZOtSyfm9XH2bN4wm4" };
+        'https://xqbzheng-1300584219.cos.ap-guangzhou.myqcloud.com/image/DzhAsb7wQC3Pae4cda8e885eff9157f7b377563d6c9b.jpg',
+        content: '123123',
+        type: 'lost',
+        userId: 'omT555KQGwEZOtSyfm9XH2bN4wm4' };
 
       _index.default.submitLost(data).then(function () {
         uni.showToast({
-          title: "修改成功",
+          title: '修改成功',
           success: function success() {
             // 页面回跳
             uni.navigateBack({

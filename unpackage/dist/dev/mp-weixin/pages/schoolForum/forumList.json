@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "校园论坛",
   "usingComponents": {
-    "card": "/pages/schoolForum/components/card"
+    "card": "/pages/schoolForum/components/card",
+    "tabs": "/pages/component/tabs/tabs"
   }
 }

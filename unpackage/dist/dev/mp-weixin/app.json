@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/recruitInfo/recruitInfoList",
     "pages/schoolForum/forumList",
     "pages/schoolActivity/schoolActivityList",
-    "pages/recruitInfo/recruitInfoList",
     "pages/recruitInfo/myList",
     "pages/schoolForum/forumDetail",
     "pages/schoolForum/submitForum",
@@ -38,12 +38,6 @@
         "text": "失物招领"
       },
       {
-        "pagePath": "pages/schoolForum/forumList",
-        "iconPath": "static/image/tabBar/forum.png",
-        "selectedIconPath": "static/image/tabBar/forum-selected.png",
-        "text": "校园论坛"
-      },
-      {
         "pagePath": "pages/recruitInfo/recruitInfoList",
         "iconPath": "static/image/tabBar/job.png",
         "selectedIconPath": "static/image/tabBar/job-selected.png",
@@ -54,6 +48,12 @@
         "iconPath": "static/image/tabBar/activity.png",
         "selectedIconPath": "static/image/tabBar/activity-selected.png",
         "text": "学院活动"
+      },
+      {
+        "pagePath": "pages/schoolForum/forumList",
+        "iconPath": "static/image/tabBar/forum.png",
+        "selectedIconPath": "static/image/tabBar/forum-selected.png",
+        "text": "校园论坛"
       },
       {
         "pagePath": "pages/userInfo/userInfo",

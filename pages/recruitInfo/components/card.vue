@@ -8,19 +8,18 @@
       <view class="left-top">
         <view class="flex-box hover-height-light">
           <text>{{ item.jobType }}</text>
-          <text>{{ item.salary }}</text>
+          <text class="salary">{{ item.salary }}</text>
         </view>
-        <view class="flex-box">
+        <view class="flex-box company">
           <text>{{ item.company }}</text>
-          <text>{{ item.place }}</text>
+          <text>{{ item.address }}</text>
         </view>
       </view>
       <view class="left-bottom">
         <view class="flex-box">
           <text
-            v-for="(
-              requirementItem, requirementIndex
-            ) in requirements"
+            class="requirement-item"
+            v-for="(requirementItem, requirementIndex) in requirements"
             :key="requirementIndex"
           >
             {{ requirementItem }}
@@ -45,9 +44,9 @@ export default {
   },
   computed: {
     requirements() {
-      return this.item.educationRequirement?.split('，') || []
-    }
-  }
+      return this.item.educationRequirement?.split("，") || [];
+    },
+  },
 };
 </script>
 
@@ -88,5 +87,16 @@ export default {
   .hover-height-light {
     color: rgb(34, 145, 236);
   }
+}
+.company {
+  margin-top: 8px;
+}
+.salary {
+  font-size: 18px;
+  color: #f58c37;
+}
+.requirement-item {
+  font-size: 15px;
+  color: #807b7b;
 }
 </style>

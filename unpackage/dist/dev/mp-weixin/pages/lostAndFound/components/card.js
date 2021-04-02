@@ -153,19 +153,35 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 var _default2 =
 {
   props: {
     item: {
       type: Object,
-      default: function _default() {return {};} } },
+      default: function _default() {return {};} },
+
+    showLabel: {
+      type: Boolean,
+      default: function _default() {return false;} } },
 
 
   data: function data() {
     return {
       eyesImg: 'https://xqbzheng-1300584219.cos.ap-guangzhou.myqcloud.com/eyes.svg' };
 
-  } };exports.default = _default2;
+  },
+  computed: {
+    labelStyle: function labelStyle() {
+      return "label ".concat(this.item.type === 'lost' ? 'lost' : 'found');
+    } } };exports.default = _default2;
 
 /***/ }),
 

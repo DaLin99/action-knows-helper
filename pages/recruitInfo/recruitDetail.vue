@@ -25,11 +25,7 @@
         </view>
       </view>
       <view class="update-time">
-        <text
-          >更新于：{{ info.publisher }}-{{
-            info.publishDate.split(" ")[0]
-          }}</text
-        >
+        <text>更新于：{{ info.publisher }}-{{ info.publishDate }}</text>
       </view>
     </view>
     <!-- 投递方式 -->
@@ -50,7 +46,7 @@
         v-for="(workReqItem, index) in info.jobDescription.split('，')"
         :key="index"
       >
-        {{ workReqItem }}
+        {{ index + 1 }}. {{ workReqItem }}
       </view>
     </view>
 
@@ -60,7 +56,7 @@
         v-for="(workResItem, index) in info.jobResponsibility.split('，')"
         :key="index"
       >
-        {{ workResItem }}
+        {{ index + 1 }}. {{ workResItem }}
       </view>
     </view>
     <view class="btn-container">
@@ -253,6 +249,7 @@ export default {
       width: 50%;
       background-color: #54cebc;
       border: none;
+      color: #ffffff;
     }
   }
 }

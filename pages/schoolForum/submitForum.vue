@@ -1,7 +1,7 @@
 <template>
   <div class="submit-info-container">
     <uni-forms ref="form" :value="formData" :rules="rules">
-      <uni-forms-item label="论坛标题" name="topicTitle">
+      <uni-forms-item label="论坛标题" name="topicTitle" class="form-line">
         <input
           v-model="formData.topicTitle"
           type="text"
@@ -11,7 +11,6 @@
       </uni-forms-item>
 
       <uni-forms-item label="话题类别" name="topicType">
-        {{ formData.topicType }}
         <picker
           :range="lostTypeList"
           mode="selector"
@@ -239,5 +238,8 @@ export default {
   position: fixed;
   left: 0;
   bottom: 0;
+}
+.mt12 {
+  margin-top: 20rpx;
 }
 </style>

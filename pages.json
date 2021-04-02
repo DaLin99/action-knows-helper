@@ -1,6 +1,13 @@
 {
   "pages": [
     {
+      "path": "pages/recruitInfo/recruitInfoList",
+      "style": {
+        "navigationBarTitleText": "校园招聘",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/schoolForum/forumList",
       "style": {
         "navigationBarTitleText": "校园论坛"
@@ -13,13 +20,7 @@
         "enablePullDownRefresh": false
       }
     },
-    {
-      "path": "pages/recruitInfo/recruitInfoList",
-      "style": {
-        "navigationBarTitleText": "校园招聘",
-        "enablePullDownRefresh": false
-      }
-    },
+
     {
       "path": "pages/recruitInfo/myList",
       "style": {
@@ -135,12 +136,6 @@
         "text": "失物招领"
       },
       {
-        "pagePath": "pages/schoolForum/forumList",
-        "iconPath": "static/image/tabBar/forum.png",
-        "selectedIconPath": "static/image/tabBar/forum-selected.png",
-        "text": "校园论坛"
-      },
-      {
         "pagePath": "pages/recruitInfo/recruitInfoList",
         "iconPath": "static/image/tabBar/job.png",
         "selectedIconPath": "static/image/tabBar/job-selected.png",
@@ -151,6 +146,12 @@
         "iconPath": "static/image/tabBar/activity.png",
         "selectedIconPath": "static/image/tabBar/activity-selected.png",
         "text": "学院活动"
+      },
+      {
+        "pagePath": "pages/schoolForum/forumList",
+        "iconPath": "static/image/tabBar/forum.png",
+        "selectedIconPath": "static/image/tabBar/forum-selected.png",
+        "text": "校园论坛"
       },
       {
         "pagePath": "pages/userInfo/userInfo",

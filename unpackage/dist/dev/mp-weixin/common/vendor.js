@@ -2667,13 +2667,13 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
                                                                                                       * @Description:
                                                                                                       */
 
-var urlConfig = "";
+var urlConfig = '';
 
 if (true) {
   // 开发环境
-  // urlConfig = 'http://127.0.0.1:8000/';
+  urlConfig = 'http://127.0.0.1:8000/';
   // urlConfig = 'http://47.112.174.173/';
-  urlConfig = "https://www.xiaoqingb.top/";
+  urlConfig = 'https://www.xiaoqingb.top/';
 } else {}var _default =
 
 urlConfig;exports.default = _default;
@@ -2794,7 +2794,74 @@ var _request = _interopRequireDefault(__webpack_require__(/*! ../request.js */ 1
 
 /***/ }),
 
-/***/ 177:
+/***/ 18:
+/*!*************************************************************************************************!*\
+  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/activity.js ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _request = _interopRequireDefault(__webpack_require__(/*! ../request.js */ 13));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var MODULE = "schoolActivity";
+
+// 获取学院活动信息
+var fetchActivityList = function fetchActivityList() {return _request.default.globalRequest("".concat(MODULE, "/list"));};
+var getActivityDetail = function getActivityDetail(params) {return (
+    _request.default.globalRequest("".concat(MODULE, "/detail"), "get", params));};
+// 报名
+var applyActivity = function applyActivity(params) {return (
+    _request.default.globalRequest("".concat(MODULE, "/apply"), "post", params));};var _default =
+{
+  fetchActivityList: fetchActivityList,
+  getActivityDetail: getActivityDetail,
+  applyActivity: applyActivity };exports.default = _default;
+
+/***/ }),
+
+/***/ 19:
+/*!**********************************************************************************************!*\
+  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/forum.js ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _request = _interopRequireDefault(__webpack_require__(/*! ../request.js */ 13));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var MODULE = 'schoolForum';
+
+// 获取校园论坛信息
+var fetchForumList = function fetchForumList() {return _request.default.globalRequest("".concat(MODULE, "/list"));};
+// 发布帖子
+var submitForum = function submitForum(params) {return (
+    _request.default.globalRequest("".concat(MODULE, "/publish"), 'post', params));};
+// 获取详情
+var fetchForumDetail = function fetchForumDetail(params) {return (
+    _request.default.globalRequest("".concat(MODULE, "/detail"), 'get', params));};
+// 发布评论
+var submitComment = function submitComment(params) {return (
+    _request.default.globalRequest("".concat(MODULE, "/comment"), 'post', params));};
+// 点赞
+var postThumbUp = function postThumbUp(params) {return (
+    _request.default.globalRequest("".concat(MODULE, "/thumbUp"), 'post', params));};
+
+// 删除
+var deleteForum = function deleteForum(params) {return (
+    _request.default.globalRequest("".concat(MODULE, "/delete"), 'post', params));};var _default =
+
+{
+  fetchForumList: fetchForumList,
+  submitForum: submitForum,
+  fetchForumDetail: fetchForumDetail,
+  submitComment: submitComment,
+  postThumbUp: postThumbUp,
+  deleteForum: deleteForum };exports.default = _default;
+
+/***/ }),
+
+/***/ 191:
 /*!******************************************************************************************************************************!*\
   !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \******************************************************************************************************************************/
@@ -2933,67 +3000,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   "cloud-download-filled": "\uE8E9",
   "headphones": "\uE8BF",
   "shop": "\uE609" };exports.default = _default;
-
-/***/ }),
-
-/***/ 18:
-/*!*************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/activity.js ***!
-  \*************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _request = _interopRequireDefault(__webpack_require__(/*! ../request.js */ 13));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-var MODULE = "schoolActivity";
-
-// 获取学院活动信息
-var fetchActivityList = function fetchActivityList() {return _request.default.globalRequest("".concat(MODULE, "/list"));};
-var getActivityDetail = function getActivityDetail(params) {return (
-    _request.default.globalRequest("".concat(MODULE, "/detail"), "get", params));};
-// 报名
-var applyActivity = function applyActivity(params) {return (
-    _request.default.globalRequest("".concat(MODULE, "/apply"), "post", params));};var _default =
-{
-  fetchActivityList: fetchActivityList,
-  getActivityDetail: getActivityDetail,
-  applyActivity: applyActivity };exports.default = _default;
-
-/***/ }),
-
-/***/ 19:
-/*!**********************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/forum.js ***!
-  \**********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _request = _interopRequireDefault(__webpack_require__(/*! ../request.js */ 13));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-var MODULE = "schoolForum";
-
-// 获取校园论坛信息
-var fetchForumList = function fetchForumList() {return _request.default.globalRequest("".concat(MODULE, "/list"));};
-// 发布帖子
-var submitForum = function submitForum(params) {return (
-    _request.default.globalRequest("".concat(MODULE, "/publish"), "post", params));};
-// 获取详情
-var fetchForumDetail = function fetchForumDetail(params) {return (
-    _request.default.globalRequest("".concat(MODULE, "/detail"), "get", params));};
-// 发布评论
-var submitComment = function submitComment(params) {return (
-    _request.default.globalRequest("".concat(MODULE, "/comment"), "post", params));};
-// 点赞
-var postThumbUp = function postThumbUp(params) {return (
-    _request.default.globalRequest("".concat(MODULE, "/thumbUp"), "post", params));};var _default =
-{
-  fetchForumList: fetchForumList,
-  submitForum: submitForum,
-  fetchForumDetail: fetchForumDetail,
-  submitComment: submitComment,
-  postThumbUp: postThumbUp };exports.default = _default;
 
 /***/ }),
 
@@ -10954,12 +10960,27 @@ var login = /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PURE__*
 
 
 var loginByCard = /*#__PURE__*/function () {var _ref2 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(params) {return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
-              _request.default.globalRequest("".concat(MODULE, "/loginByCard"), 'post', params));case 2:return _context2.abrupt("return", _context2.sent);case 3:case "end":return _context2.stop();}}}, _callee2);}));return function loginByCard(_x2) {return _ref2.apply(this, arguments);};}();var _default =
+              _request.default.globalRequest("".concat(MODULE, "/loginByCard"), 'post', params));case 2:return _context2.abrupt("return", _context2.sent);case 3:case "end":return _context2.stop();}}}, _callee2);}));return function loginByCard(_x2) {return _ref2.apply(this, arguments);};}();
+
+
+var favoriteTotal = /*#__PURE__*/function () {var _ref3 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3(params) {return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:_context3.next = 2;return (
+              _request.default.globalRequest("".concat(MODULE, "/favoriteTotal"), 'get', params));case 2:return _context3.abrupt("return", _context3.sent);case 3:case "end":return _context3.stop();}}}, _callee3);}));return function favoriteTotal(_x3) {return _ref3.apply(this, arguments);};}();
+
+
+var thumbTotal = /*#__PURE__*/function () {var _ref4 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4(params) {return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:_context4.next = 2;return (
+              _request.default.globalRequest("".concat(MODULE, "/thumbTotal"), 'get', params));case 2:return _context4.abrupt("return", _context4.sent);case 3:case "end":return _context4.stop();}}}, _callee4);}));return function thumbTotal(_x4) {return _ref4.apply(this, arguments);};}();
+
+
+var commentTotal = /*#__PURE__*/function () {var _ref5 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5(params) {return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0:_context5.next = 2;return (
+              _request.default.globalRequest("".concat(MODULE, "/commentTotal"), 'get', params));case 2:return _context5.abrupt("return", _context5.sent);case 3:case "end":return _context5.stop();}}}, _callee5);}));return function commentTotal(_x5) {return _ref5.apply(this, arguments);};}();var _default =
 
 
 {
   login: login,
-  loginByCard: loginByCard };exports.default = _default;
+  loginByCard: loginByCard,
+  favoriteTotal: favoriteTotal,
+  commentTotal: commentTotal,
+  thumbTotal: thumbTotal };exports.default = _default;
 
 /***/ })
 
