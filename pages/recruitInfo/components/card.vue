@@ -90,6 +90,7 @@ export default {
 }
 .company {
   margin-top: 8px;
+  font-size: 26rpx;
 }
 .salary {
   font-size: 18px;
