@@ -230,7 +230,7 @@ export default {
       this.$refs.form
         .submit()
         .then((res) => {
-          api.submitLost({ ...res, type: "lost" }).then(() => {
+          api.submitLost({ ...res, type: "found" }).then(() => {
             uni.showToast({
               title: "发布成功",
             });
@@ -247,7 +247,6 @@ export default {
       this.$refs.form
         .submit()
         .then((res) => {
-          console.log(res);
           api.submitLost({ ...res, id: this.formData.id }).then(() => {
             uni.showToast({
               title: "修改成功",
