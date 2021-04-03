@@ -82,6 +82,11 @@ export default {
   onShow() {
     this.getList()
   },
+  computed: {
+    ...mapState({
+      'userInfo': state=>state.userInfo
+    }),
+  },
   methods: {
     ...mapMutations([
       'initUserInfo',
@@ -108,15 +113,16 @@ export default {
       });
     },
     showDetail(id) {
-      console.log(id);
       uni.navigateTo({
         url: `../schoolActivity/schoolActivityDetail?info=${id}`,
       });
     },
     async getList() {
       const { code, data } = await api.fetchActivityList();
-      console.log("data:", data);
       this.activityList = data.filter((item) => item.status === "1") || [];
+      this.activityList = this.activityList.filter(i=>{
+        return i.list.some(itm=>itm.userId === this.userInfo.openid)
+      })
     },
   },
 };
