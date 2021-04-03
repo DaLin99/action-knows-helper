@@ -235,16 +235,14 @@ var _vuex = __webpack_require__(/*! vuex */ 20);function _interopRequireDefault(
     this.auth();
   },
   methods: _objectSpread(_objectSpread({},
-  (0, _vuex.mapMutations)([
-  'initUserInfo'])), {}, {
-
+  (0, _vuex.mapMutations)(["initUserInfo"])), {}, {
     /**
-                            * 登陆验证
-                            */
+                                                     * 登陆验证
+                                                     */
     auth: function auth() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var that;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
                 that = _this;
                 uni.getStorage({
-                  key: 'userInfo',
+                  key: "userInfo",
                   success: function success(result) {
                     uni.userId = result.data.openid;
                     console.log(result);
@@ -254,7 +252,7 @@ var _vuex = __webpack_require__(/*! vuex */ 20);function _interopRequireDefault(
                   },
                   fail: function fail(result) {
                     uni.navigateTo({
-                      url: '/pages/userInfo/initUserInfo' });
+                      url: "/pages/userInfo/initUserInfo" });
 
                   } });case 2:case "end":return _context.stop();}}}, _callee);}))();
 

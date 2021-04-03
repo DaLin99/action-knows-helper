@@ -14,6 +14,7 @@
 .activity-container .acitivity-item-container {
   width: 45%;
   padding: 16rpx;
+  height: 600rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -21,19 +22,21 @@
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
   margin: 8rpx 16rpx;
   box-sizing: border-box;
   border: 1px solid #f0f0f0;
   background: #ffffff;
-  border-radius: 12rpx;
+  border-radius: 8rpx;
 }
 .activity-container .acitivity-item-container .activity-bgc-container {
   width: 100%;
-  height: 100%;
 }
 .activity-container .acitivity-item-container .activity-bgc-container .activity-bgc {
   width: 100%;
-  height: 100%;
+  height: 260rpx;
   border-radius: 12rpx;
 }
 .activity-container .acitivity-item-container .activitity-title {
@@ -42,7 +45,6 @@
 }
 .activity-container .acitivity-item-container .activitity-des {
   margin-top: 24rpx;
-  height: 315rpx;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -63,7 +65,6 @@
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
-  margin-top: 48rpx;
 }
 .activity-container .acitivity-item-container .holder-date-container .icon-and-hoder {
   display: -webkit-box;

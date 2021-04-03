@@ -2633,7 +2633,7 @@ request.globalRequest = function (url, method, data, power) {
       } else {
         uni.showToast({
           title: res[1].data.message,
-          icon: 'none',
+          icon: "none",
           duration: 3000 });
 
         reject(res[1].data);
