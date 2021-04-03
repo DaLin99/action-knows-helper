@@ -127,4 +127,7 @@
   padding: 16rpx 0rpx 12rpx 24rpx;
   background-color: #ffffff;
 }
+.activity-title {
+  color: #444446;
+}
 

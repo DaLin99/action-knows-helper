@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "失物详情",
+  "navigationBarTitleText": "物品详情",
   "enablePullDownRefresh": false,
   "usingComponents": {
     "uni-list": "/uni_modules/uni-list/components/uni-list/uni-list",

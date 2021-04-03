@@ -118,7 +118,7 @@
     {
       "path": "pages/lostAndFound/detail",
       "style": {
-        "navigationBarTitleText": "失物详情",
+        "navigationBarTitleText": "物品详情",
         "enablePullDownRefresh": false
       }
     }

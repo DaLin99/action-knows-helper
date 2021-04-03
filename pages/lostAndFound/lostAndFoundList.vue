@@ -15,165 +15,175 @@
       />
     </view>
     <view class="btn-list">
-      <view 
-        class="publish" 
-        @click="goToPulbish">发布</view>
-      <view
-      class="my"
-      @click="goToMyList"
-      >我的</view>
+      <view class="publish" @click="goToPulbish">发布</view>
+      <!-- <view class="my" @click="goToMyList">我的</view> -->
     </view>
   </view>
 </template>
 
 <script>
-import tabs from 'pages/component/tabs/tabs.vue';
-import card from './components/card.vue';
-import api from '../../common/api/'
-import {mapMutations, mapState} from 'vuex'
+import tabs from "pages/component/tabs/tabs.vue";
+import card from "./components/card.vue";
+import api from "../../common/api/";
+import { mapMutations, mapState } from "vuex";
+import { shuffle } from "../../common/utils";
 export default {
-	name: 'HelloWorld',
-	components: { tabs, card },
-	data() {
-		return {
-			showDatasource: [],
-			activeTabIndex: 0,
-			tabsList: [
-				{
-					tabName: '寻找失物',
-					dataSource: [
-						{
-							imgPath: require('../../static/image/activity-bgc.jpeg'),
-							title: '寻找一双鞋子',
-							content: '我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以',
-							publisher: '发布者名字',
-							publishDate: '2021-1-2'
-						},{
-							imgPath: require('../../static/image/activity-bgc.jpeg'),
-							title: '寻找一双鞋子',
-							content: '我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以',
-							publisher: '发布者名字',
-							publishDate: '2021-1-2'
-						},{
-							imgPath: require('../../static/image/activity-bgc.jpeg'),
-							title: '寻找一双鞋子',
-							content: '我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以',
-							publisher: '发布者名字',
-							publishDate: '2021-1-2'
-						},{
-							imgPath: require('../../static/image/activity-bgc.jpeg'),
-							title: '寻找一双鞋子',
-							content: '我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以',
-							publisher: '发布者名字',
-							publishDate: '2021-1-2'
-						},{
-							imgPath: require('../../static/image/activity-bgc.jpeg'),
-							title: '寻找一双鞋子',
-							content: '我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以',
-							publisher: '发布者名字',
-							publishDate: '2021-1-2'
-						},
-					],
-				},
-				{
-					tabName: '寻找失主',
-					dataSource: [
-						{
-							imgPath: require('../../static/image/activity-bgc.jpeg'),
-							title: '寻找一双鞋子',
-							content: '我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以',
-							publisher: '发布者名字',
-							publishDate: '2021-1-2'
-						},{
-							imgPath: require('../../static/image/activity-bgc.jpeg'),
-							title: '寻找一双鞋子',
-							content: '我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以',
-							publisher: '发布者名字',
-							publishDate: '2021-1-2'
-						},{
-							imgPath: require('../../static/image/activity-bgc.jpeg'),
-							title: '寻找一双鞋子',
-							content: '我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以',
-							publisher: '发布者名字',
-							publishDate: '2021-1-2'
-						},
-					],
-				},
-			],
-		};
-	},
-	onLoad() {
+  name: "HelloWorld",
+  components: { tabs, card },
+  data() {
+    return {
+      showDatasource: [],
+      activeTabIndex: 0,
+      tabsList: [
+        {
+          tabName: "寻找失物",
+          dataSource: [
+            {
+              imgPath: require("../../static/image/activity-bgc.jpeg"),
+              title: "寻找一双鞋子",
+              content:
+                "我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以",
+              publisher: "发布者名字",
+              publishDate: "2021-1-2",
+            },
+            {
+              imgPath: require("../../static/image/activity-bgc.jpeg"),
+              title: "寻找一双鞋子",
+              content:
+                "我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以",
+              publisher: "发布者名字",
+              publishDate: "2021-1-2",
+            },
+            {
+              imgPath: require("../../static/image/activity-bgc.jpeg"),
+              title: "寻找一双鞋子",
+              content:
+                "我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以",
+              publisher: "发布者名字",
+              publishDate: "2021-1-2",
+            },
+            {
+              imgPath: require("../../static/image/activity-bgc.jpeg"),
+              title: "寻找一双鞋子",
+              content:
+                "我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以",
+              publisher: "发布者名字",
+              publishDate: "2021-1-2",
+            },
+            {
+              imgPath: require("../../static/image/activity-bgc.jpeg"),
+              title: "寻找一双鞋子",
+              content:
+                "我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以",
+              publisher: "发布者名字",
+              publishDate: "2021-1-2",
+            },
+          ],
+        },
+        {
+          tabName: "寻找失主",
+          dataSource: [
+            {
+              imgPath: require("../../static/image/activity-bgc.jpeg"),
+              title: "寻找一双鞋子",
+              content:
+                "我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以",
+              publisher: "发布者名字",
+              publishDate: "2021-1-2",
+            },
+            {
+              imgPath: require("../../static/image/activity-bgc.jpeg"),
+              title: "寻找一双鞋子",
+              content:
+                "我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以",
+              publisher: "发布者名字",
+              publishDate: "2021-1-2",
+            },
+            {
+              imgPath: require("../../static/image/activity-bgc.jpeg"),
+              title: "寻找一双鞋子",
+              content:
+                "我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以我的aj房子家门口突然就不见了，大家帮帮忙我的aj房子家门口突然就不见了，大家帮帮忙，救救孩子可以",
+              publisher: "发布者名字",
+              publishDate: "2021-1-2",
+            },
+          ],
+        },
+      ],
+    };
+  },
+  onLoad() {
     this.auth();
-		// this.showDatasource = this.tabsList[0].dataSource;
-	},
+    // this.showDatasource = this.tabsList[0].dataSource;
+  },
   created() {
     this.getList();
   },
-	methods: {
-    ...mapMutations([
-      'initUserInfo',
-    ]),
+  methods: {
+    ...mapMutations(["initUserInfo"]),
     /**
      * 登陆验证
-     */ 
+     */
     async auth() {
       const that = this;
       console.log(123);
       uni.getStorage({
-          key: 'userInfo',
-          success: function (result) {
-            uni.userId = result.data.openid
-            console.log('设置成功');
-            console.log(result);
-            that.initUserInfo({
-              ...result.data
-            })
-          },
-          fail(result) {
-            uni.navigateTo({
-              url: '/pages/userInfo/initUserInfo'
-            })
-          }
+        key: "userInfo",
+        success: function (result) {
+          uni.userId = result.data.openid;
+          console.log("设置成功");
+          console.log(result);
+          that.initUserInfo({
+            ...result.data,
+          });
+        },
+        fail(result) {
+          uni.navigateTo({
+            url: "/pages/userInfo/initUserInfo",
+          });
+        },
       });
     },
-		/**
+    /**
      * 点击tab-nav-name进行切换
      * @param {String}  i 索引
      */
-		async clcikTab(i) {
+    async clcikTab(i) {
       this.activeTabIndex = i;
-			// this.showDatasource = this.tabsList[i].dataSource;
+      // this.showDatasource = this.tabsList[i].dataSource;
       const params = {
-        type: i === 0 ? 'lost' : 'found'
+        type: i === 0 ? "lost" : "found",
       };
       const res = await api.getLostAndFoundList(params);
-      this.showDatasource = res?.data;
-		},
+      const randomData = shuffle(res?.data);
+      this.showDatasource = randomData;
+    },
     /**
      * 前往发布 0丢失1拾到
      */
-    goToPulbish(){
+    goToPulbish() {
       console.log(this.activeTabIndex);
-      if(this.activeTabIndex === 0) {
+      if (this.activeTabIndex === 0) {
         uni.navigateTo({
-          url: './submitLost',
+          url: "./submitLost",
         });
       } else {
         uni.navigateTo({
-          url: './submitFound',
+          url: "./submitFound",
         });
       }
     },
     /**
      * 获取列表
      */
-    async getList(){
+    async getList() {
       const params = {
-        type: this.activeTabIndex === 0 ? 'lost' : 'found'
+        type: this.activeTabIndex === 0 ? "lost" : "found",
       };
       const res = await api.getLostAndFoundList(params);
-      this.showDatasource = res?.data;
-      console.log(res)
+      const randomData = shuffle(res?.data);
+      this.showDatasource = randomData;
+      console.log(res);
     },
     /**
      * 查看详情
@@ -190,34 +200,34 @@ export default {
     goToMyList(index) {
       console.log(index);
       uni.navigateTo({
-        url: './myList',
+        url: "./myList",
       });
-    }
-	},
+    },
+  },
 };
 </script>
 <style lang="less" scoped>
-  
-  .card-list {
-  	padding: 0px 36rpx;
+.card-list {
+  padding: 0px 36rpx;
+}
+.btn-list {
+  position: fixed;
+  right: 0;
+  bottom: 50rpx;
+  .publish,
+  .my {
+    width: 100rpx;
+    height: 100rpx;
+    text-align: center;
+    line-height: 100rpx;
+    border-radius: 50%;
+    color: #fff;
   }
-  .btn-list{
-    position: fixed;
-    right: 0;
-    bottom: 50rpx;
-    .publish, .my {
-      width: 100rpx;
-      height: 100rpx;
-      text-align: center;
-      line-height: 100rpx;
-      border-radius: 50%;
-      color: #fff;
-    }
-    .publish{
-      background-color: #adc4fb;
-    }
-    .my{
-      background-color: #a9c4e1;
-    }
+  .publish {
+    background-color: #adc4fb;
   }
+  .my {
+    background-color: #a9c4e1;
+  }
+}
 </style>

@@ -40,7 +40,7 @@
         <view class="header-img-container">
           <!-- <image :src="info.imageUrl" class="header-img" mode="" /> -->
         </view>
-        <text>{{ info.activityTitle }}</text>
+        <text class="activity-title">{{ info.activityTitle }}</text>
         <!-- <text class="company-name">地点{{info.activityPlace}}</text> -->
         <text>{{ info.activityContent }}</text>
       </view>
@@ -199,5 +199,8 @@ export default {
       background-color: #ffffff;
     }
   }
+}
+.activity-title {
+  color: #444446;
 }
 </style>
