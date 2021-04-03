@@ -26,7 +26,7 @@
 
 <script>
 import api from "../../common/api/";
-import { mapMutations, mapState } from "vuex";
+import {mapMutations, mapState} from 'vuex'
 export default {
   data() {
     return {
@@ -82,39 +82,47 @@ export default {
   onShow() {
     this.getList()
   },
+  computed: {
+    ...mapState({
+      'userInfo': state=>state.userInfo
+    }),
+  },
   methods: {
-    ...mapMutations(["initUserInfo"]),
+    ...mapMutations([
+      'initUserInfo',
+    ]),
     /**
      * 登陆验证
-     */
+     */ 
     async auth() {
       const that = this;
       uni.getStorage({
-        key: "userInfo",
-        success: function (result) {
-          uni.userId = result.data.openid;
-          console.log(result);
-          that.initUserInfo({
-            ...result.data,
-          });
-        },
-        fail(result) {
-          uni.navigateTo({
-            url: "/pages/userInfo/initUserInfo",
-          });
-        },
+          key: 'userInfo',
+          success: function (result) {
+            uni.userId = result.data.openid
+            console.log(result);
+            that.initUserInfo({
+              ...result.data
+            })
+          },
+          fail(result) {
+            uni.navigateTo({
+              url: '/pages/userInfo/initUserInfo'
+            })
+          }
       });
     },
     showDetail(id) {
-      console.log(id);
       uni.navigateTo({
         url: `../schoolActivity/schoolActivityDetail?info=${id}`,
       });
     },
     async getList() {
       const { code, data } = await api.fetchActivityList();
-      console.log("data:", data);
       this.activityList = data.filter((item) => item.status === "1") || [];
+      this.activityList = this.activityList.filter(i=>{
+        return i.list.some(itm=>itm.userId === this.userInfo.openid)
+      })
     },
   },
 };
@@ -130,7 +138,7 @@ export default {
   .acitivity-item-container {
     width: 45%;
     padding: 16rpx;
-    height: 600rpx;
+    height: 560rpx;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -143,8 +151,8 @@ export default {
     .activity-bgc-container {
       width: 100%;
       .activity-bgc {
-        width: 100%;
-        height: 260rpx;
+        width: 100%; 
+       height: 260rpx;
         border-radius: 12rpx;
       }
     }

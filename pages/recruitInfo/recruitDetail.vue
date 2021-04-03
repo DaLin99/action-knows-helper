@@ -8,7 +8,7 @@
       </view>
       <view class="requiredment-tags">
         <view
-          v-for="(item, index) in info.educationRequirement.split('，')"
+          v-for="(item, index) in educationRequirements"
           :key="index"
           class="requiredment-tag"
         >
@@ -17,7 +17,7 @@
       </view>
       <view class="skill-item-container">
         <view
-          v-for="(skillItem, index) in info.skillTagList.split('，')"
+          v-for="(skillItem, index) in skillTagLists"
           :key="index"
           class="skill-item"
         >
@@ -43,7 +43,7 @@
     <view class="work-requiredments">
       <text>任职要求</text>
       <view
-        v-for="(workReqItem, index) in info.jobDescription.split('，')"
+        v-for="(workReqItem, index) in jobDescriptions"
         :key="index"
       >
         {{ index + 1 }}. {{ workReqItem }}
@@ -53,7 +53,7 @@
     <view class="work-responsibility">
       <text>岗位责任</text>
       <view
-        v-for="(workResItem, index) in info.jobResponsibility.split('，')"
+        v-for="(workResItem, index) in jobResponsibilitys"
         :key="index"
       >
         {{ index + 1 }}. {{ workResItem }}
@@ -110,8 +110,21 @@ export default {
     };
   },
   onLoad(opt) {
-    console.log(opt.id);
     this.getDetail(opt.id);
+  },
+  computed:{
+    jobDescriptions() {
+      return this.info.jobDescription?.split('，')
+    },
+    jobResponsibilitys() {
+      return this.info.jobResponsibilitys?.split('，')
+    },
+    skillTagLists() {
+      return this.info.skillTagLists?.split('，')
+    },
+    educationRequirements() {
+      return this.info.educationRequirements?.split('，')
+    }
   },
   methods: {
     async handleCollect(isCollect) {

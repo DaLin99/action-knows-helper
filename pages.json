@@ -4,19 +4,27 @@
       "path": "pages/recruitInfo/recruitInfoList",
       "style": {
         "navigationBarTitleText": "校园招聘",
-        "enablePullDownRefresh": false
+        "enablePullDownRefresh": true
       }
     },
     {
       "path": "pages/schoolForum/forumList",
       "style": {
-        "navigationBarTitleText": "校园论坛"
+        "navigationBarTitleText": "校园论坛",
+        "enablePullDownRefresh": true
       }
     },
     {
       "path": "pages/schoolActivity/schoolActivityList",
       "style": {
         "navigationBarTitleText": "校园活动",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/schoolActivity/myList",
+      "style": {
+        "navigationBarTitleText": "我报名的校园活动",
         "enablePullDownRefresh": false
       }
     },
@@ -42,12 +50,19 @@
         "enablePullDownRefresh": false
       }
     },
+    {
+      "path": "pages/schoolForum/myForum",
+      "style": {
+        "navigationBarTitleText": "我发布的论坛",
+        "enablePullDownRefresh": false
+      }
+    },
 
     {
       "path": "pages/lostAndFound/lostAndFoundList",
       "style": {
-        "navigationBarTitleText": "全部",
-        "enablePullDownRefresh": false
+        "navigationBarTitleText": "失物招领",
+        "enablePullDownRefresh": true
       }
     },
     {

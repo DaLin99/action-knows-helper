@@ -55,7 +55,7 @@ export default {
         },
         { 
           title: "报名的学院活动",
-          url: "auth",
+          url: "../schoolActivity/myList",
         },
         {
           title: "关于",
