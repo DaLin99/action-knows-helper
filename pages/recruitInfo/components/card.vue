@@ -91,6 +91,7 @@ export default {
 .company {
   margin-top: 8px;
   font-size: 26rpx;
+  color: #9b9a9c;
 }
 .salary {
   font-size: 18px;

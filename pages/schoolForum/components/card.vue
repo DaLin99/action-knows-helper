@@ -60,13 +60,13 @@ export default {
   }
   .main-content{
     font-size: 24rpx;
-    color: #C0C0C0;
+    color: #abaaac;
     display: -webkit-box;
     overflow: hidden;
     text-overflow: ellipsis;
     word-wrap: break-word;
     white-space: normal !important;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
   .bottom {
@@ -87,7 +87,7 @@ export default {
   }
   .response {
     font-size: 22rpx;
-    color: #b5d6e1;
+    color: #a6c5d1;
   }
 }
 </style>
