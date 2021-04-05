@@ -82,6 +82,10 @@ export default {
   onShow() {
     this.getList()
   },
+   onPullDownRefresh () {
+      //调用刷新时将执行的方法
+    this.getList();
+  },
   methods: {
     ...mapMutations(["initUserInfo"]),
     /**
@@ -115,6 +119,7 @@ export default {
       const { code, data } = await api.fetchActivityList();
       console.log("data:", data);
       this.activityList = data.filter((item) => item.status === "1") || [];
+      uni.stopPullDownRefresh();
     },
   },
 };
