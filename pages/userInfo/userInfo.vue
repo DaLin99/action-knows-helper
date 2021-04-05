@@ -1,8 +1,11 @@
 <template>
   <view>
     <view class="user-msg shadow-box m-20">
-      <image class="avator" :src="avatarUrl"></image>
-      <text>{{ userInfo.nickName }}</text>
+      <image
+        class="avator"
+        src="https://thirdwx.qlogo.cn/mmopen/vi_32/uyHGHH4UkuaXX6iaDvQPicU7EWaG7kkbGZhiauqjMAOZSvlpSEHKTx7gCUf5bAicD2BAcFAM6Au6jicO3VsfLoMoNGg/132"
+      ></image>
+      <text>Joyce </text>
       <text class="self-words">{{ comeForm }}</text>
       <view class="overview">
         <view class="overview-item" v-for="(item, index) in overview">
@@ -26,7 +29,7 @@
 </template>
 
 <script>
-  import api from '../../common/api';
+import api from "../../common/api";
 import { mapMutations, mapState } from "vuex";
 export default {
   data() {
@@ -53,7 +56,7 @@ export default {
           title: "收藏的招聘信息",
           url: "../recruitInfo/myList",
         },
-        { 
+        {
           title: "报名的学院活动",
           url: "../schoolActivity/myList",
         },
@@ -86,28 +89,26 @@ export default {
     this.getUserInfo();
   },
   methods: {
-    ...mapMutations([
-      'initUserInfo',
-    ]),
+    ...mapMutations(["initUserInfo"]),
     /**
      * 登陆验证
-     */ 
+     */
     async auth() {
       const that = this;
       uni.getStorage({
-          key: 'userInfo',
-          success: function (result) {
-            uni.userId = result.data.openid
-            console.log(result);
-            that.initUserInfo({
-              ...result.data
-            })
-          },
-          fail(result) {
-            uni.navigateTo({
-              url: '/pages/userInfo/initUserInfo'
-            })
-          }
+        key: "userInfo",
+        success: function (result) {
+          uni.userId = result.data.openid;
+          console.log(result);
+          that.initUserInfo({
+            ...result.data,
+          });
+        },
+        fail(result) {
+          uni.navigateTo({
+            url: "/pages/userInfo/initUserInfo",
+          });
+        },
       });
     },
     async getUserInfo(e) {
@@ -120,7 +121,7 @@ export default {
     },
     goToPage(url) {
       uni.navigateTo({
-        url:url,
+        url: url,
       });
     },
   },
@@ -134,7 +135,7 @@ export default {
     },
     // 头像地址
     comeForm() {
-      return `来自${this.userInfo.province || "神秘星球"}的用户`;
+      return `来自${"Beijing" || "神秘星球"}的用户`;
     },
   },
 };

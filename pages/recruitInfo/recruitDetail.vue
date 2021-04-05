@@ -42,20 +42,14 @@
     <!-- 任职要求 -->
     <view class="work-requiredments">
       <text>任职要求</text>
-      <view
-        v-for="(workReqItem, index) in jobDescriptions"
-        :key="index"
-      >
+      <view v-for="(workReqItem, index) in jobDescriptions" :key="index">
         {{ index + 1 }}. {{ workReqItem }}
       </view>
     </view>
 
     <view class="work-responsibility">
       <text>岗位责任</text>
-      <view
-        v-for="(workResItem, index) in jobResponsibilitys"
-        :key="index"
-      >
+      <view v-for="(workResItem, index) in jobResponsibilitys" :key="index">
         {{ index + 1 }}. {{ workResItem }}
       </view>
     </view>
@@ -112,19 +106,19 @@ export default {
   onLoad(opt) {
     this.getDetail(opt.id);
   },
-  computed:{
+  computed: {
     jobDescriptions() {
-      return this.info.jobDescription?.split('，')
+      return this.info.jobDescription?.split("，");
     },
     jobResponsibilitys() {
-      return this.info.jobResponsibilitys?.split('，')
+      return this.info.jobResponsibility?.split("，");
     },
     skillTagLists() {
-      return this.info.skillTagLists?.split('，')
+      return this.info.skillTagLists?.split("，");
     },
     educationRequirements() {
-      return this.info.educationRequirements?.split('，')
-    }
+      return this.info.educationRequirements?.split("，");
+    },
   },
   methods: {
     async handleCollect(isCollect) {

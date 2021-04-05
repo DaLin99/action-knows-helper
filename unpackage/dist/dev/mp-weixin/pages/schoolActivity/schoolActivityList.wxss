@@ -3,9 +3,6 @@
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
   -webkit-flex-wrap: wrap;
           flex-wrap: wrap;
   background: #ffffff;

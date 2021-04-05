@@ -57,6 +57,7 @@
 .company.data-v-5eb37a7d {
   margin-top: 8px;
   font-size: 26rpx;
+  color: #9b9a9c;
 }
 .salary.data-v-5eb37a7d {
   font-size: 18px;

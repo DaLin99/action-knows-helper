@@ -116,7 +116,7 @@ export default {
     this.auth();
     // this.showDatasource = this.tabsList[0].dataSource;
   },
-  created() {
+  onShow() {
     this.getList();
   },
   methods: {

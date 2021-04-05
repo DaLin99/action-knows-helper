@@ -1,12 +1,7 @@
 <template>
   <view class="submit-info-container">
-    <uni-forms 
-      ref="form" 
-      :value="formData" 
-      :rules="rules">
-      <uni-forms-item 
-        label="丢失时间" 
-        name="time">
+    <uni-forms ref="form" :value="formData" :rules="rules">
+      <uni-forms-item label="丢失时间" name="time">
         <uni-datetime-picker
           v-model="formData.time"
           type="date"
@@ -15,63 +10,48 @@
           return-type="timestamp"
         />
       </uni-forms-item>
-      <uni-forms-item 
-        label="丢失地点" 
-        name="place">
+      <uni-forms-item label="丢失地点" name="place">
         <input
           v-model="formData.place"
           type="text"
           placeholder="请填写丢失地点"
           class="mt12"
-        >
+        />
       </uni-forms-item>
-      <uni-forms-item 
-        label="物品名称" 
-        name="title" 
-        class="mt12">
+      <uni-forms-item label="物品名称" name="title" class="mt12">
         <input
           v-model="formData.title"
           type="text"
           placeholder="请填写物品名称"
-        >
+        />
       </uni-forms-item>
-      <uni-forms-item 
-        label="物品分类" 
-        name="lostType">
+      <uni-forms-item label="物品分类" name="lostType">
         <picker
           :range="lostTypeList"
           mode="selector"
           class="mt12"
           @change="pickType"
-        >{{ lostTypeList[formData.lostType] || "请选择分类" }}</picker
+          >{{ lostTypeList[formData.lostType] || "请选择分类" }}</picker
         >
       </uni-forms-item>
-      <uni-forms-item 
-        name="tell" 
-        label="联系方式" 
-        class="mt12">
+      <uni-forms-item name="tell" label="联系方式" class="mt12">
         <input
           v-model="formData.tell"
           type="text"
           placeholder="请填写联系方式"
           class="mt12"
-        >
+        />
       </uni-forms-item>
-      <uni-forms-item 
-        label="Wechat" 
-        name="wechat" 
-        class="mt12">
+      <uni-forms-item label="Wechat" name="wechat" class="mt12">
         <input
           v-model="formData.wechat"
           type="text"
           class="mt12"
           placeholder="请填写Wechat"
-        >
+        />
       </uni-forms-item>
 
-      <uni-forms-item 
-        label="选择图片" 
-        name="imageUrl">
+      <uni-forms-item label="选择图片" name="imageUrl">
         <view class="image-picker">
           <cover-image
             v-if="formData.imageUrl"
@@ -79,14 +59,10 @@
             class="image-preview mb10 mr10"
             @click="previewImage(formData.imageUrl)"
           />
-          <button 
-            type="default" 
-            @click="pickFile">+</button>
+          <button type="default" @click="pickFile">+</button>
         </view>
       </uni-forms-item>
-      <uni-forms-item 
-        label="备注信息" 
-        name="content">
+      <uni-forms-item label="备注信息" name="content">
         <textarea
           v-model="formData.content"
           placeholder="请填写备注信息"
@@ -94,15 +70,9 @@
         />
       </uni-forms-item>
     </uni-forms>
-    <button 
-      v-if="!isEdit" 
-      type="primary" 
-      @click="submit">发布</button>
-    <button 
-      v-else 
-      type="primary" 
-      @click="submitEdit">提交修改</button>
-      <!-- <button 
+    <button v-if="!isEdit" type="primary" @click="submit">发布</button>
+    <button v-else type="primary" @click="submitEdit">提交修改</button>
+    <!-- <button 
       type="primary" 
       @click="mockBtn">mock</button>
     <view 
@@ -114,9 +84,9 @@
 </template>
 
 <script>
-import MxDatePicker from '@/components/mx-datepicker/mx-datepicker.vue';
-import COS from 'cos-wx-sdk-v5';
-import api from '../../common/api/index';
+import MxDatePicker from "@/components/mx-datepicker/mx-datepicker.vue";
+import COS from "cos-wx-sdk-v5";
+import api from "../../common/api/index";
 export default {
   components: {
     MxDatePicker,
@@ -126,39 +96,39 @@ export default {
     let formRules = {};
     const arr = [
       {
-        name: 'time',
-        label: '丢失时间',
+        name: "time",
+        label: "丢失时间",
       },
       {
-        name: 'place',
-        label: '丢失地点',
+        name: "place",
+        label: "丢失地点",
       },
       {
-        name: 'title',
-        label: '物品名称',
+        name: "title",
+        label: "物品名称",
       },
       {
-        name: 'lostType',
-        label: '物品分类',
+        name: "lostType",
+        label: "物品分类",
       },
       {
-        name: 'tell',
-        label: '联系方式',
+        name: "tell",
+        label: "联系方式",
       },
       {
-        name: 'wechat',
-        label: 'wechat',
+        name: "wechat",
+        label: "wechat",
       },
       {
-        name: 'content',
-        label: '备注信息',
+        name: "content",
+        label: "备注信息",
       },
       {
-        name: 'imageUrl',
-        label: '图片',
+        name: "imageUrl",
+        label: "图片",
       },
     ];
-    arr.forEach((item) => (formData[item.name] = ''));
+    arr.forEach((item) => (formData[item.name] = ""));
     arr.forEach((item, index) => {
       formRules[item.name] = {
         rules: [
@@ -170,7 +140,7 @@ export default {
       };
     });
     return {
-      lostTypeList: ['日用品', '学习书籍', '衣物', '电子产品', '其他'],
+      lostTypeList: ["日用品", "学习书籍", "衣物", "电子产品", "其他"],
       showPicker: false,
       formData,
       rules: formRules,
@@ -196,7 +166,7 @@ export default {
     },
     // 点击下拉框选择
     pickType(e, value) {
-      this.formData.lostTime = '2020-12-12';
+      this.formData.lostTime = "2020-12-12";
       this.formData.lostType = e.detail.value;
     },
     onSelected(e) {
@@ -206,29 +176,29 @@ export default {
         this.lostTime = e.value;
         this[this.type] = e.value;
         //选择的值
-        console.log('value => ' + e.value);
+        console.log("value => " + e.value);
         //原始的Date对象
-        console.log('date => ' + e.date);
+        console.log("date => " + e.date);
       }
     },
 
     pickFile() {
       const that = this;
-      const Bucket = 'xqbzheng-1300584219';
-      const Region = 'ap-guangzhou';
-      const SecretId = 'AKIDve9XfEyiRxubz9wmEb8PORElCNQGnw96';
-      const SecretKey = 'qUtGw7tkMipjaCdbQZSs0zoPyHYbZOrb';
+      const Bucket = "xqbzheng-1300584219";
+      const Region = "ap-guangzhou";
+      const SecretId = "AKIDve9XfEyiRxubz9wmEb8PORElCNQGnw96";
+      const SecretKey = "qUtGw7tkMipjaCdbQZSs0zoPyHYbZOrb";
       const cos = new COS({
         SecretId,
         SecretKey,
       });
       uni.chooseImage({
         count: 1,
-        sizeType: ['original', 'compressed'], // original 原图，compressed 压缩图，默认二者都有
-        sourceType: ['album', 'camera'],
+        sizeType: ["original", "compressed"], // original 原图，compressed 压缩图，默认二者都有
+        sourceType: ["album", "camera"],
         success: (res) => {
           const filePath = res.tempFiles[0].path;
-          const filename = filePath.substr(filePath.lastIndexOf('/') + 1);
+          const filename = filePath.substr(filePath.lastIndexOf("/") + 1);
           uni.compressImage({
             src: filePath,
             success(res) {
@@ -237,7 +207,7 @@ export default {
                 {
                   Bucket,
                   Region,
-                  Key: 'image/' + filename,
+                  Key: "image/" + filename,
                   FilePath: filePath,
                   onProgress: function (progressData) {
                     console.log(JSON.stringify(progressData));
@@ -260,16 +230,16 @@ export default {
       this.$refs.form
         .submit()
         .then((res) => {
-          api.submitLost({ ...res, type: 'lost' }).then(() => {
+          api.submitLost({ ...res, type: "lost" }).then(() => {
             uni.showToast({
-              title: '发布成功',
+              title: "发布成功",
             });
             // 页面回跳
             uni.navigateBack();
           });
         })
         .catch((err) => {
-          console.log('表单错误信息：', err);
+          console.log("表单错误信息：", err);
         });
     },
     // 点击提交编辑按钮
@@ -278,39 +248,41 @@ export default {
         .submit()
         .then((res) => {
           console.log(res);
-          api.submitLost({ ...res, id: this.formData.id }).then(() => {
-            uni.showToast({
-              title: '修改成功',
-              success() {
-                // 页面回跳
-                uni.navigateBack({
-                  delta: 2,
-                });
-              },
+          api
+            .submitLost({ ...res, id: this.formData.id, type: "lost" })
+            .then(() => {
+              uni.showToast({
+                title: "修改成功",
+                success() {
+                  // 页面回跳
+                  uni.navigateBack({
+                    delta: 2,
+                  });
+                },
+              });
             });
-          });
         })
         .catch((err) => {
-          console.log('表单错误信息：', err);
+          console.log("表单错误信息：", err);
         });
     },
     mockBtn() {
       const data = {
         time: 1616256000000,
-        place: '123',
-        title: '11',
-        lostType: '0',
-        tell: '123',
-        wechat: '123',
+        place: "123",
+        title: "11",
+        lostType: "0",
+        tell: "123",
+        wechat: "123",
         imageUrl:
-          'https://xqbzheng-1300584219.cos.ap-guangzhou.myqcloud.com/image/DzhAsb7wQC3Pae4cda8e885eff9157f7b377563d6c9b.jpg',
-        content: '123123',
-        type: 'lost',
-        userId: 'omT555KQGwEZOtSyfm9XH2bN4wm4',
+          "https://xqbzheng-1300584219.cos.ap-guangzhou.myqcloud.com/image/DzhAsb7wQC3Pae4cda8e885eff9157f7b377563d6c9b.jpg",
+        content: "123123",
+        type: "lost",
+        userId: "omT555KQGwEZOtSyfm9XH2bN4wm4",
       };
       api.submitLost(data).then(() => {
         uni.showToast({
-          title: '修改成功',
+          title: "修改成功",
           success() {
             // 页面回跳
             uni.navigateBack({

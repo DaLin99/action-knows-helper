@@ -96,7 +96,7 @@ var components
 try {
   components = {
     uniIcons: function() {
-      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 187))
+      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 203))
     }
   }
 } catch (e) {
@@ -233,6 +233,9 @@ var _vuex = __webpack_require__(/*! vuex */ 20);function _interopRequireDefault(
   created: function created() {
     this.getList();
     this.auth();
+  },
+  onShow: function onShow() {
+    this.getList();
   },
   methods: _objectSpread(_objectSpread({},
   (0, _vuex.mapMutations)(["initUserInfo"])), {}, {

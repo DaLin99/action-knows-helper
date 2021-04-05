@@ -28,11 +28,10 @@ export default {
   onload(opt) {
     console.log(opt);
   },
-  created() {
-    this.getList();
-  },
+  created() {},
   onShow() {
     this.auth();
+    this.getList();
   },
   data() {
     return {

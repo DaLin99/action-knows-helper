@@ -3,9 +3,11 @@
     "pages/recruitInfo/recruitInfoList",
     "pages/schoolForum/forumList",
     "pages/schoolActivity/schoolActivityList",
+    "pages/schoolActivity/myList",
     "pages/recruitInfo/myList",
     "pages/schoolForum/forumDetail",
     "pages/schoolForum/submitForum",
+    "pages/schoolForum/myForum",
     "pages/lostAndFound/lostAndFoundList",
     "pages/lostAndFound/myList",
     "pages/schoolActivity/schoolActivityDetail",
@@ -64,5 +66,5 @@
     ]
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap24.json"
+  "sitemapLocation": "sitemap68.json"
 }

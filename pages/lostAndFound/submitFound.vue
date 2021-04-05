@@ -247,17 +247,19 @@ export default {
       this.$refs.form
         .submit()
         .then((res) => {
-          api.submitLost({ ...res, id: this.formData.id }).then(() => {
-            uni.showToast({
-              title: "修改成功",
-              success() {
-                // 页面回跳
-                uni.navigateBack({
-                  delta: 2,
-                });
-              },
+          api
+            .submitLost({ ...res, id: this.formData.id, type: "found" })
+            .then(() => {
+              uni.showToast({
+                title: "修改成功",
+                success() {
+                  // 页面回跳
+                  uni.navigateBack({
+                    delta: 2,
+                  });
+                },
+              });
             });
-          });
         })
         .catch((err) => {
           console.log("表单错误信息：", err);

@@ -1,6 +1,6 @@
 {
-  "navigationBarTitleText": "全部",
-  "enablePullDownRefresh": false,
+  "navigationBarTitleText": "失物招领",
+  "enablePullDownRefresh": true,
   "usingComponents": {
     "tabs": "/pages/component/tabs/tabs",
     "card": "/pages/lostAndFound/components/card"
