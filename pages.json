@@ -18,7 +18,7 @@
       "path": "pages/schoolActivity/schoolActivityList",
       "style": {
         "navigationBarTitleText": "校园活动",
-        "enablePullDownRefresh": false
+        "enablePullDownRefresh": true
       }
     },
     {

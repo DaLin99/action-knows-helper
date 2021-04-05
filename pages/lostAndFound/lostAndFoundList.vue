@@ -119,8 +119,14 @@ export default {
   onShow() {
     this.getList();
   },
-  methods: {
-    ...mapMutations(["initUserInfo"]),
+   onPullDownRefresh () {
+      //调用刷新时将执行的方法
+    this.getList();
+  },
+	methods: {
+    ...mapMutations([
+      'initUserInfo',
+    ]),
     /**
      * 登陆验证
      */
@@ -181,9 +187,9 @@ export default {
         type: this.activeTabIndex === 0 ? "lost" : "found",
       };
       const res = await api.getLostAndFoundList(params);
-      const randomData = shuffle(res?.data);
-      this.showDatasource = randomData;
-      console.log(res);
+      this.showDatasource = res?.data;
+      console.log(res)
+      uni.stopPullDownRefresh();
     },
     /**
      * 查看详情

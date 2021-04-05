@@ -81,6 +81,10 @@ export default {
       ],
     };
   },
+   onPullDownRefresh () {
+      //调用刷新时将执行的方法
+    this.getList();
+  },
   methods: {
     ...mapMutations(["initUserInfo"]),
     /**
@@ -106,6 +110,7 @@ export default {
     async getList() {
       const res = await api.getRecruitInfoList();
       this.recruitInfoList = res.data.filter((item) => item.status === "1");
+      uni.stopPullDownRefresh();
     },
     showDetail(id) {
       uni.navigateTo({

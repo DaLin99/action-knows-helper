@@ -92,6 +92,7 @@ export default {
       this.forumList = data.sort(function(a,b){
         return b.publishDate > a.publishDate ? 1 : -1;
       })
+      uni.stopPullDownRefresh();
     },
     clcikTab(i) {
       this.activeTabIndex = i;
@@ -126,6 +127,10 @@ export default {
     avatarUrl() {
       return this.userInfo?.avatarUrl;
     },
+  },
+   onPullDownRefresh () {
+      //调用刷新时将执行的方法
+    this.getList();
   },
 };
 </script>
