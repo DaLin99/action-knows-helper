@@ -213,6 +213,10 @@ var _vuex = __webpack_require__(/*! vuex */ 20);function _interopRequireDefault(
 
 
   },
+  onPullDownRefresh: function onPullDownRefresh() {
+    //调用刷新时将执行的方法
+    this.getList();
+  },
   methods: _objectSpread(_objectSpread({},
   (0, _vuex.mapMutations)(["initUserInfo"])), {}, {
     /**
@@ -237,7 +241,8 @@ var _vuex = __webpack_require__(/*! vuex */ 20);function _interopRequireDefault(
     },
     getList: function getList() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
                   _api.default.getRecruitInfoList());case 2:res = _context2.sent;
-                _this2.recruitInfoList = res.data.filter(function (item) {return item.status === "1";});case 4:case "end":return _context2.stop();}}}, _callee2);}))();
+                _this2.recruitInfoList = res.data.filter(function (item) {return item.status === "1";});
+                uni.stopPullDownRefresh();case 5:case "end":return _context2.stop();}}}, _callee2);}))();
     },
     showDetail: function showDetail(id) {
       uni.navigateTo({

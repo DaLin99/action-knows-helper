@@ -223,7 +223,8 @@ var _vuex = __webpack_require__(/*! vuex */ 20);function _interopRequireDefault(
                 _this2.activeTabIndex = 0;
                 _this2.forumList = data.sort(function (a, b) {
                   return b.publishDate > a.publishDate ? 1 : -1;
-                });case 7:case "end":return _context2.stop();}}}, _callee2);}))();
+                });
+                uni.stopPullDownRefresh();case 8:case "end":return _context2.stop();}}}, _callee2);}))();
     },
     clcikTab: function clcikTab(i) {
       this.activeTabIndex = i;
@@ -257,7 +258,12 @@ var _vuex = __webpack_require__(/*! vuex */ 20);function _interopRequireDefault(
     // 头像地址
     avatarUrl: function avatarUrl() {var _this$userInfo;
       return (_this$userInfo = this.userInfo) === null || _this$userInfo === void 0 ? void 0 : _this$userInfo.avatarUrl;
-    } }) };exports.default = _default;
+    } }),
+
+  onPullDownRefresh: function onPullDownRefresh() {
+    //调用刷新时将执行的方法
+    this.getList();
+  } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

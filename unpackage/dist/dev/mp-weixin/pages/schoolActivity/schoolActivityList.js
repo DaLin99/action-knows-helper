@@ -237,6 +237,10 @@ var _vuex = __webpack_require__(/*! vuex */ 20);function _interopRequireDefault(
   onShow: function onShow() {
     this.getList();
   },
+  onPullDownRefresh: function onPullDownRefresh() {
+    //调用刷新时将执行的方法
+    this.getList();
+  },
   methods: _objectSpread(_objectSpread({},
   (0, _vuex.mapMutations)(["initUserInfo"])), {}, {
     /**
@@ -269,7 +273,8 @@ var _vuex = __webpack_require__(/*! vuex */ 20);function _interopRequireDefault(
     getList: function getList() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$api$fetchActiv, code, data;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
                   _api.default.fetchActivityList());case 2:_yield$api$fetchActiv = _context2.sent;code = _yield$api$fetchActiv.code;data = _yield$api$fetchActiv.data;
                 console.log("data:", data);
-                _this2.activityList = data.filter(function (item) {return item.status === "1";}) || [];case 7:case "end":return _context2.stop();}}}, _callee2);}))();
+                _this2.activityList = data.filter(function (item) {return item.status === "1";}) || [];
+                uni.stopPullDownRefresh();case 8:case "end":return _context2.stop();}}}, _callee2);}))();
     } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

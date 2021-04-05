@@ -280,11 +280,17 @@ var _utils = __webpack_require__(/*! ../../common/utils */ 98);function _interop
   onShow: function onShow() {
     this.getList();
   },
+  onPullDownRefresh: function onPullDownRefresh() {
+    //调用刷新时将执行的方法
+    this.getList();
+  },
   methods: _objectSpread(_objectSpread({},
-  (0, _vuex.mapMutations)(["initUserInfo"])), {}, {
+  (0, _vuex.mapMutations)([
+  'initUserInfo'])), {}, {
+
     /**
-                                                     * 登陆验证
-                                                     */
+                            * 登陆验证
+                            */
     auth: function auth() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var that;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
                 that = _this;
                 console.log(123);
@@ -337,14 +343,14 @@ var _utils = __webpack_require__(/*! ../../common/utils */ 98);function _interop
     /**
         * 获取列表
         */
-    getList: function getList() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var params, res, randomData;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
+    getList: function getList() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var params, res;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
                 params = {
                   type: _this3.activeTabIndex === 0 ? "lost" : "found" };_context3.next = 3;return (
 
                   _api.default.getLostAndFoundList(params));case 3:res = _context3.sent;
-                randomData = (0, _utils.shuffle)(res === null || res === void 0 ? void 0 : res.data);
-                _this3.showDatasource = randomData;
-                console.log(res);case 7:case "end":return _context3.stop();}}}, _callee3);}))();
+                _this3.showDatasource = res === null || res === void 0 ? void 0 : res.data;
+                console.log(res);
+                uni.stopPullDownRefresh();case 7:case "end":return _context3.stop();}}}, _callee3);}))();
     },
     /**
         * 查看详情
