@@ -2585,9 +2585,9 @@ if (hadRuntime) {
 /***/ }),
 
 /***/ 13:
-/*!********************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/request.js ***!
-  \********************************************************************************************/
+/*!*****************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/request.js ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2650,9 +2650,9 @@ request;exports.default = _default;
 /***/ }),
 
 /***/ 14:
-/*!*******************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/config.js ***!
-  \*******************************************************************************************/
+/*!****************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/config.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2671,9 +2671,9 @@ var urlConfig = '';
 
 if (true) {
   // 开发环境
-  urlConfig = 'http://127.0.0.1:8000/';
+  // urlConfig = 'http://127.0.0.1:8000/';
   // urlConfig = 'http://47.112.174.173/';
-  urlConfig = 'https://www.xiaoqingb.top/';
+  // urlConfig = 'https://www.xiaoqingb.top/';
 } else {}var _default =
 
 urlConfig;exports.default = _default;
@@ -2681,9 +2681,9 @@ urlConfig;exports.default = _default;
 /***/ }),
 
 /***/ 15:
-/*!*****************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/lostAndFound.js ***!
-  \*****************************************************************************************************/
+/*!**************************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/api/lostAndFound.js ***!
+  \**************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2733,9 +2733,9 @@ var getdetail = function getdetail(params) {return (
 /***/ }),
 
 /***/ 16:
-/*!****************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/recruitInfo.js ***!
-  \****************************************************************************************************/
+/*!*************************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/api/recruitInfo.js ***!
+  \*************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2765,9 +2765,9 @@ var postThumpUp = function postThumpUp(data) {return (
 /***/ }),
 
 /***/ 17:
-/*!*************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/favorite.js ***!
-  \*************************************************************************************************/
+/*!**********************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/api/favorite.js ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2795,9 +2795,9 @@ var _request = _interopRequireDefault(__webpack_require__(/*! ../request.js */ 1
 /***/ }),
 
 /***/ 18:
-/*!*************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/activity.js ***!
-  \*************************************************************************************************/
+/*!**********************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/api/activity.js ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2821,9 +2821,9 @@ var applyActivity = function applyActivity(params) {return (
 /***/ }),
 
 /***/ 19:
-/*!**********************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/forum.js ***!
-  \**********************************************************************************************/
+/*!*******************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/api/forum.js ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10023,9 +10023,9 @@ var index = {
 /***/ }),
 
 /***/ 208:
-/*!******************************************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/uni_modules/uni-icons/components/uni-icons/icons.js ***!
-  \******************************************************************************************************************************/
+/*!***************************************************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/uni_modules/uni-icons/components/uni-icons/icons.js ***!
+  \***************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10165,9 +10165,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 216:
-/*!*********************************************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/uni_modules/uni-forms/components/uni-forms/validate.js ***!
-  \*********************************************************************************************************************************/
+/*!******************************************************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/uni_modules/uni-forms/components/uni-forms/validate.js ***!
+  \******************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10777,9 +10777,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 24:
-/*!*****************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/store/index.js ***!
-  \*****************************************************************************************/
+/*!**************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/store/index.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10846,9 +10846,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 4:
-/*!*************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/pages.json ***!
-  \*************************************************************************************/
+/*!**********************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/pages.json ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -10856,32 +10856,10 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 69:
-/*!***********************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/static/thumbs-up.svg ***!
-  \***********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "static/img/thumbs-up.310a0682.svg";
-
-/***/ }),
-
-/***/ 70:
-/*!*****************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/static/see.svg ***!
-  \*****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "static/img/see.36130429.svg";
-
-/***/ }),
-
 /***/ 8:
-/*!**********************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/index.js ***!
-  \**********************************************************************************************/
+/*!*******************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/api/index.js ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10912,9 +10890,9 @@ _forum.default);exports.default = _default;
 /***/ }),
 
 /***/ 81:
-/*!*******************************************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/node_modules/cos-wx-sdk-v5/demo/lib/cos-wx-sdk-v5.js ***!
-  \*******************************************************************************************************************************/
+/*!****************************************************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/node_modules/cos-wx-sdk-v5/demo/lib/cos-wx-sdk-v5.js ***!
+  \****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10923,9 +10901,9 @@ _forum.default);exports.default = _default;
 /***/ }),
 
 /***/ 9:
-/*!*********************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/api/user.js ***!
-  \*********************************************************************************************/
+/*!******************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/api/user.js ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10974,9 +10952,9 @@ var commentTotal = /*#__PURE__*/function () {var _ref5 = _asyncToGenerator( /*#_
 /***/ }),
 
 /***/ 98:
-/*!******************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/common/utils.js ***!
-  \******************************************************************************************/
+/*!***************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/common/utils.js ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11005,9 +10983,9 @@ function shuffle(a) {
 /***/ }),
 
 /***/ 99:
-/*!*********************************************************************************************************!*\
-  !*** /Users/shaohuilin/Desktop/mini_program/uni_app/action-knows-helper/static/image/activity-bgc.jpeg ***!
-  \*********************************************************************************************************/
+/*!******************************************************************************************************!*\
+  !*** /Users/xiaoqingb/Documents/HBuilderProjects/action-knows-helper/static/image/activity-bgc.jpeg ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 

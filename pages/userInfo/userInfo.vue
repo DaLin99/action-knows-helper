@@ -1,12 +1,11 @@
 <template>
   <view>
-    <view class="user-msg shadow-box m-20">
+    <view class="user-msg m-20">
       <image
         class="avator"
         src="https://thirdwx.qlogo.cn/mmopen/vi_32/uyHGHH4UkuaXX6iaDvQPicU7EWaG7kkbGZhiauqjMAOZSvlpSEHKTx7gCUf5bAicD2BAcFAM6Au6jicO3VsfLoMoNGg/132"
       ></image>
       <text>Joyce </text>
-      <text class="self-words">{{ comeForm }}</text>
       <view class="overview">
         <view class="overview-item" v-for="(item, index) in overview">
           <text class="overview-count">{{ item.count }}</text>
@@ -15,7 +14,7 @@
       </view>
     </view>
 
-    <view class="feature-list shadow-box m-20">
+    <view class="feature-list m-20">
       <uni-list-item
         v-for="(item, index) in featureList"
         :title="item.title"
@@ -45,37 +44,33 @@ export default {
           url: "auth",
         },
         {
-          title: "我的失物招领",
+          title: "我的失物",
           url: "../lostAndFound/myList",
         },
         {
-          title: "已发布的论坛",
+          title: "发布论坛",
           url: "../schoolForum/myForum",
         },
         {
-          title: "收藏的招聘信息",
+          title: "收藏招聘",
           url: "../recruitInfo/myList",
         },
         {
-          title: "报名的学院活动",
+          title: "已报名活动",
           url: "../schoolActivity/myList",
-        },
-        {
-          title: "关于",
-          url: "about",
         },
       ],
       overview: [
         {
-          title: "评论",
+          title: "点评数",
           count: 2,
         },
         {
-          title: "点赞",
+          title: "点赞数",
           count: 2,
         },
         {
-          title: "收藏",
+          title: "收藏数",
           count: 2,
         },
       ],

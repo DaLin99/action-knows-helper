@@ -28,15 +28,17 @@
         <text>更新于：{{ info.publisher }}-{{ info.publishDate }}</text>
       </view>
     </view>
-    <!-- 投递方式 -->
-    <view class="email-box">
-      简历投递Email：
-      <text class="email">{{ info.eMail }}</text>
-    </view>
+
     <div class="company">
       <p>公司名：{{ info.company }}</p>
       <p>地点： {{ info.address }}</p>
     </div>
+    <view class="work-responsibility">
+      <text>岗位责任</text>
+      <view v-for="(workResItem, index) in jobResponsibilitys" :key="index">
+        {{ index + 1 }}. {{ workResItem }}
+      </view>
+    </view>
     <!-- 职位描述 -->
     <text class="work-title">职位描述</text>
     <!-- 任职要求 -->
@@ -46,14 +48,12 @@
         {{ index + 1 }}. {{ workReqItem }}
       </view>
     </view>
-
-    <view class="work-responsibility">
-      <text>岗位责任</text>
-      <view v-for="(workResItem, index) in jobResponsibilitys" :key="index">
-        {{ index + 1 }}. {{ workResItem }}
-      </view>
+    <!-- 投递方式 -->
+    <view class="email-box">
+      简历投递Email：
+      <text class="email">{{ info.eMail }}</text>
     </view>
-    <view class="btn-container">
+    <view>
       <button
         @click="handleCollect(info.isCollect)"
         class="collect-btn"
@@ -174,9 +174,6 @@ export default {
     display: flex;
     flex-direction: column;
     padding: 24rpx;
-    color: #ffffff;
-    background-color: #54cebc;
-    box-shadow: 0px 10px 30px 0px rgba(0, 21, 41, 0.12);
     .workType-salary {
       display: flex;
       justify-content: space-between;
@@ -222,7 +219,6 @@ export default {
     }
   }
   .email-box {
-    background-color: #eafaf7;
     padding: 24rpx 36rpx;
     color: #32394d;
     .email {
@@ -244,20 +240,6 @@ export default {
   }
   .work-responsibility {
     margin-bottom: 200rpx;
-  }
-  .btn-container {
-    width: 100%;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    margin-top: 36rpx;
-    display: flex;
-    .collect-btn {
-      width: 50%;
-      background-color: #54cebc;
-      border: none;
-      color: #ffffff;
-    }
   }
 }
 </style>

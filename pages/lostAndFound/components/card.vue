@@ -1,8 +1,13 @@
 <template>
-  <view class="card-item shadow-box" @click="$emit('onClick')">
+  <view 
+    class="card-item shadow-box" 
+    @click="$emit('onClick')">
     <view class="card-top">
       <view class="card-top-left">
-        <image :src="item.imgPath" class="card-img" alt="" />
+        <image 
+          :src="item.imgPath" 
+          class="card-img" 
+          alt="" />
       </view>
       <view class="card-top-right">
         <text class="title">{{ item.title }}</text>
@@ -10,19 +15,15 @@
       </view>
     </view>
     <view class="card-bottom">
-      <view class="icon-publisher">
-        <image :src="item.avator" class="publisher-avator" />
-        <text class="publisher-name ml10">{{
-          item.publisher === "匿名id" ? "毕业快乐" : item.publisher
-        }}</text>
-      </view>
       <view class="check-times">
         <image :src="eyesImg" />
         <text>{{ item.checkTimes }}</text>
       </view>
-      <text class="publish-date">{{ item.publishDate }}</text>
+      <text>{{ item.publishDate }}</text>
     </view>
-    <view v-if="showLabel" :class="labelStyle">
+    <view 
+      v-if="showLabel" 
+      :class="labelStyle">
       <view v-if="item.type === 'lost'">丢</view>
       <view v-else>拾</view>
     </view>
@@ -44,12 +45,12 @@ export default {
   data() {
     return {
       eyesImg:
-        "https://xqbzheng-1300584219.cos.ap-guangzhou.myqcloud.com/eyes.svg",
+        'https://xqbzheng-1300584219.cos.ap-guangzhou.myqcloud.com/eyes.svg',
     };
   },
   computed: {
     labelStyle() {
-      return `label ${this.item.type === "lost" ? "lost" : "found"}`;
+      return `label ${this.item.type === 'lost' ? 'lost' : 'found'}`;
     },
   },
 };
@@ -107,8 +108,6 @@ export default {
   }
   .card-bottom {
     position: relative;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
 
     .icon-publisher {
@@ -131,9 +130,6 @@ export default {
     }
     .check-times {
       display: flex;
-      position: absolute;
-      right: 40%;
-      top: 4rpx;
       image {
         height: 40rpx;
         width: 50rpx;

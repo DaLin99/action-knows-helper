@@ -5,11 +5,10 @@
     <view class="content-top"/>
     <title class="title mt10 mb5">Topic：{{ item.topicTitle }}</title>
     <text class="main-content">{{ item.topicContent }}</text>
-    <text class="response">{{ responseWords }}</text>
     <view class="bottom">
       <view class="date">{{ publishDate }}</view>
       <view class="read-num">
-        <text>已读{{ item.readNums }}</text>
+        <text>已读人数{{ item.readNums }}</text>
       </view>
     </view>
   </view>
@@ -24,13 +23,6 @@ export default {
     },
   },
   computed: {
-    responseWords() {
-      return this.item.commentList.length > 0
-        ? `最新回复：${
-            this.item.commentList[this.item.commentList.length - 1].content
-          }`
-        : '呀～暂无人回复';
-    },
     publishDate() {
       return this.item.publishDate?.split('').slice(0, 10).join('')
     }
@@ -87,7 +79,7 @@ export default {
   }
   .response {
     font-size: 22rpx;
-    color: #a6c5d1;
+    color: #ccc;
   }
 }
 </style>

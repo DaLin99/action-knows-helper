@@ -4,19 +4,16 @@
 .btn-list.data-v-a7eb29b8 {
   position: fixed;
   right: 0;
-  bottom: 50rpx;
+  top: 50rpx;
 }
 .btn-list .publish.data-v-a7eb29b8,
 .btn-list .my.data-v-a7eb29b8 {
-  width: 100rpx;
-  height: 100rpx;
   text-align: center;
   line-height: 100rpx;
-  border-radius: 50%;
   color: #fff;
 }
 .btn-list .publish.data-v-a7eb29b8 {
-  background-color: #adc4fb;
+  background-color: #ffb297;
 }
 .btn-list .my.data-v-a7eb29b8 {
   background-color: #a9c4e1;

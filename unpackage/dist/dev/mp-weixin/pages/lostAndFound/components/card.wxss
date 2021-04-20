@@ -63,12 +63,6 @@
 }
 .card-item .card-bottom {
   position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
@@ -99,9 +93,6 @@
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  position: absolute;
-  right: 40%;
-  top: 4rpx;
 }
 .card-item .card-bottom .check-times image {
   height: 40rpx;

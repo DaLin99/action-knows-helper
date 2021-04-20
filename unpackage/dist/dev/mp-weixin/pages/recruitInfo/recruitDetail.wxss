@@ -17,9 +17,6 @@
   -webkit-flex-direction: column;
           flex-direction: column;
   padding: 24rpx;
-  color: #ffffff;
-  background-color: #54cebc;
-  box-shadow: 0px 10px 30px 0px rgba(0, 21, 41, 0.12);
 }
 .recruit-detail-container .card .workType-salary {
   display: -webkit-box;
@@ -83,7 +80,6 @@
   font-size: 24rpx;
 }
 .recruit-detail-container .email-box {
-  background-color: #eafaf7;
   padding: 24rpx 36rpx;
   color: #32394d;
 }
@@ -105,21 +101,5 @@
 }
 .recruit-detail-container .work-responsibility {
   margin-bottom: 200rpx;
-}
-.recruit-detail-container .btn-container {
-  width: 100%;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  margin-top: 36rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-}
-.recruit-detail-container .btn-container .collect-btn {
-  width: 50%;
-  background-color: #54cebc;
-  border: none;
-  color: #ffffff;
 }
 

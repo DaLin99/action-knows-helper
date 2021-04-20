@@ -22,8 +22,7 @@
   }
 	/*每个页面公共css */
   .shadow-box {
-    box-shadow: 0 4rpx 18rpx 0 #B0BEC5;
-    border-radius: 20rpx;
+    border: 1px solid #000;
     overflow: hidden;
   }
   .m-10 {

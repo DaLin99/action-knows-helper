@@ -138,8 +138,7 @@ export default {
     }
     .btn-container {
       width: 35%;
-      background-color: green;
-      color: #ffffff;
+      color: #000;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -174,10 +173,7 @@ export default {
     align-items: center;
     justify-content: space-between;
     background: #ffffff;
-    border: 1pt solid #f7f7f7;
     border-radius: 5pt;
-    box-shadow: 0pt 4pt 8pt 1pt rgba(10, 64, 115, 0.18);
-    padding: 36rpx;
     margin: 48rpx;
     .header-img-container {
       width: 100%;
@@ -187,20 +183,14 @@ export default {
         border-radius: 50%;
       }
     }
-    .company-name {
-      color: #8d8d93;
-    }
   }
   .des-container {
     background-color: #ffffff;
     padding-bottom: 240rpx;
     .des-item {
-      padding: 16rpx 0rpx 12rpx 24rpx;
+      padding: 4rpx;
       background-color: #ffffff;
     }
   }
-}
-.activity-title {
-  color: #444446;
 }
 </style>

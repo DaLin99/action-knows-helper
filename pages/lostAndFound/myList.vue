@@ -96,7 +96,7 @@ export default {
   .btn-list{
     position: fixed;
     right: 0;
-    bottom: 50rpx;
+    top: 50rpx;
     .publish, .my {
       width: 100rpx;
       height: 100rpx;
@@ -106,7 +106,7 @@ export default {
       color: #fff;
     }
     .publish{
-      background-color: #9773ff;
+      background-color: #ffb297;
     }
     .my{
       background-color: #82d5e0;

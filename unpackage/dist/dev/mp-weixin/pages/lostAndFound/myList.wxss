@@ -4,7 +4,7 @@
 .btn-list.data-v-25a31361 {
   position: fixed;
   right: 0;
-  bottom: 50rpx;
+  top: 50rpx;
 }
 .btn-list .publish.data-v-25a31361,
 .btn-list .my.data-v-25a31361 {
@@ -16,7 +16,7 @@
   color: #fff;
 }
 .btn-list .publish.data-v-25a31361 {
-  background-color: #9773ff;
+  background-color: #ffb297;
 }
 .btn-list .my.data-v-25a31361 {
   background-color: #82d5e0;

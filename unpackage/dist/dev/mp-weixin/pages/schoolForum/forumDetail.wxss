@@ -25,7 +25,6 @@
 }
 .title.data-v-68a4c167 {
   font-size: 34rpx;
-  color: #33373f;
 }
 .avator.data-v-68a4c167 {
   width: 100rpx;
@@ -99,10 +98,6 @@
 .input-container.data-v-68a4c167 {
   width: 100%;
   background: #e9ebf2;
-  position: fixed;
-  left: 0px;
-  bottom: 0px;
-  z-index: 3;
   padding: 24rpx 0;
 }
 .input-comment.data-v-68a4c167 {
@@ -127,10 +122,9 @@
   opacity: 0.5;
   font-size: 24rpx;
   position: absolute;
-  right: 20rpx;
   top: 20rpx;
 }
 .date .delete-btn.data-v-68a4c167 {
-  color: #d7d7d7;
+  color: #000;
 }
 

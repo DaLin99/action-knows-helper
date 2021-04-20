@@ -4,13 +4,13 @@
 			<view class="login-card">
 				<view class="login-head">账号认证</view>
 				<view class="login-input login-margin-b">
-					<input type="number" v-model="cardId" placeholder="学号/一卡通账号" />
+					<input type="number" v-model="cardId" placeholder="账号" />
 				</view>
 				<view class="login-input">
 					<input type="password" v-model="cardPassword" placeholder="密码" />
 				</view>
 				<view class="login-function">
-					<view class="login-forget" >密码默认身份证后六位</view>
+					<view class="login-forget" >一卡通账号密码</view>
 				</view>
 			</view>
 		</view>
@@ -18,7 +18,7 @@
 			<button class="landing" type="primary" @click="login">登陆</button>
 		</view>
     <view class="next-time" @click="nextTimeAuth">
-      下次再认证
+      放弃
     </view>
 	</view>
 </template>
@@ -72,7 +72,6 @@
 		line-height: 84upx;
 		border-radius: 44upx;
 		font-size: 32upx;
-		background: linear-gradient(left,#b4b4f7, #a9c9fa);
 	}
 	.login-btn{
 		padding: 10upx 20upx;
@@ -94,7 +93,6 @@
 
 	}
 	.login-input input{
-		background: #F2F5F6;
 		font-size: 28upx;
 		padding: 10upx 25upx;
 		height: 62upx;
@@ -123,7 +121,6 @@
 	.login-bg {
 		height: 260upx;
 		padding: 25upx;
-		background: linear-gradient(left,#b4b4f7, #a9c9fa);
 	}
   .next-time{
     text-align: center;

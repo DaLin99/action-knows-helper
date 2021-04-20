@@ -43,8 +43,7 @@
 }
 .school-activity-detail .date-and-btn .btn-container {
   width: 35%;
-  background-color: green;
-  color: #ffffff;
+  color: #000;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -102,10 +101,7 @@
   -webkit-justify-content: space-between;
           justify-content: space-between;
   background: #ffffff;
-  border: 1pt solid #f7f7f7;
   border-radius: 5pt;
-  box-shadow: 0pt 4pt 8pt 1pt rgba(10, 64, 115, 0.18);
-  padding: 36rpx;
   margin: 48rpx;
 }
 .school-activity-detail .introduce-box .header-img-container {
@@ -116,18 +112,12 @@
 .school-activity-detail .introduce-box .header-img-container .header-img {
   border-radius: 50%;
 }
-.school-activity-detail .introduce-box .company-name {
-  color: #8d8d93;
-}
 .school-activity-detail .des-container {
   background-color: #ffffff;
   padding-bottom: 240rpx;
 }
 .school-activity-detail .des-container .des-item {
-  padding: 16rpx 0rpx 12rpx 24rpx;
+  padding: 4rpx;
   background-color: #ffffff;
-}
-.activity-title {
-  color: #444446;
 }
 

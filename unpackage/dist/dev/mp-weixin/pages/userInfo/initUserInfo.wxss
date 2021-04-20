@@ -4,8 +4,6 @@
 		line-height: 84rpx;
 		border-radius: 44rpx;
 		font-size: 32rpx;
-		background: -webkit-linear-gradient(left,#b4b4f7, #a9c9fa);
-		background: linear-gradient(left,#b4b4f7, #a9c9fa);
 }
 .login-btn{
 		padding: 10rpx 20rpx;
@@ -26,7 +24,6 @@
 		font-size: 26rpx;
 }
 .login-input input{
-		background: #F2F5F6;
 		font-size: 28rpx;
 		padding: 10rpx 25rpx;
 		height: 62rpx;
@@ -55,8 +52,6 @@
 .login-bg {
 		height: 260rpx;
 		padding: 25rpx;
-		background: -webkit-linear-gradient(left,#b4b4f7, #a9c9fa);
-		background: linear-gradient(left,#b4b4f7, #a9c9fa);
 }
 .next-time{
     text-align: center;

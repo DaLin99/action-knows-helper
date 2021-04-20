@@ -12,7 +12,6 @@
         </view>
         <view class="flex-box company">
           <text>{{ item.company }}</text>
-          <text>{{ item.address }}</text>
         </view>
       </view>
       <view class="left-bottom">
@@ -55,7 +54,7 @@ export default {
   display: flex;
   height: 200rpx;
   padding: 24rpx;
-  border-bottom: solid 1px #f3e2e2;
+  border-bottom: solid 1px #0f0f0f;
 
   .container-left {
     width: 70%;
@@ -79,7 +78,6 @@ export default {
     .company-img {
       width: 100%;
       height: 100%;
-      border-radius: 16px;
     }
   }
 }
@@ -92,14 +90,12 @@ export default {
 .company {
   margin-top: 8px;
   font-size: 26rpx;
-  color: #9b9a9c;
 }
 .salary {
   font-size: 18px;
-  color: #f58c37;
+  color: #090703;
 }
 .requirement-item {
   font-size: 15px;
-  color: #807b7b;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <view class="forum-detail-container">
     <text class="date">
-      发表于{{ info.publishDate }}
+      {{ info.publishDate }}
       <view
         class="delete-btn"
         v-if="canBeDelete"
@@ -10,10 +10,6 @@
       </view>
     </text>
     <view class="flex-top">
-      <view class="avator-name-container">
-        <img :src="info.avatorUrl" class="avator" />
-        <text>{{ info.userName }}</text>
-      </view>
       <view class="title">
         Topic:{{info.topicTitle}}
       </view>
@@ -25,19 +21,12 @@
       <view
         class="icon-nums-container"
       >
-        <view class="thumb">
-            <img
-              src="../../static/thumbs-up.svg"
-              alt=""
-              @click="thumbUp(info.isThumbUp === 1 ? 0 : 1)"
-              :style="{ background: info.isThumbUp === 1 ? 'yellow' : '' }"
-              class="thumbs-up"
-            />
+        <view class="thumb"
+        @click="thumbUp(info.isThumbUp === 1 ? 0 : 1)"
+        :style="{ background: info.isThumbUp === 1 ? 'yellow' : '' }"
+        >
+            点赞
             <text class="thumbs-up-nums">{{ info.thumbUpNums }}</text>
-        </view>
-        <view class="thumb">
-          <img src="../../static/see.svg" alt="" class="see" />
-          <text class="see-nums">{{ info.readNums }}</text>
         </view>
       </view>
       <view class="comment-container">
@@ -47,9 +36,6 @@
           v-for="(item, index) in info.commentList"
           :key="index"
         >
-          <view class="left">
-            <img :src="item.avatorUrl" alt="" class="see" />
-          </view>
           <view class="right">
             <h5>
               <text class="name">{{ item.userName }}</text>
@@ -63,11 +49,10 @@
     <view class="input-container">
       <view class="input-btn">
         <Input
-          class="input-comment"
-          placeholder="想说什么就说出来吧"
+          placeholder="输入内容"
           v-model="commentValue"
         />
-        <button class="comment-btn" type="primary" size="mini" @click="submitComment">
+        <button  type="primary" size="mini" @click="submitComment">
           评论
         </button>
       </view>
@@ -236,7 +221,6 @@ export default {
 }
 .title{
   font-size: 34rpx;
-  color: #33373f;
 }
 .avator {
   width: 100rpx;
@@ -298,10 +282,6 @@ export default {
 .input-container {
   width: 100%;
   background: rgb(233, 235, 242);
-  position: fixed;
-  left: 0px;
-  bottom: 0px;
-  z-index: 3;
   padding: 24rpx 0;
 }
 .input-comment {
@@ -323,10 +303,9 @@ export default {
   opacity: 0.5;
   font-size: 24rpx;
   position: absolute;
-  right: 20rpx;
   top: 20rpx;
   .delete-btn{
-    color: #d7d7d7;
+    color: #000;
   }
 }
 </style>

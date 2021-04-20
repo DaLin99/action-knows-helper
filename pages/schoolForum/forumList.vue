@@ -172,8 +172,8 @@ export default {
 }
 .btn-list {
   position: fixed;
-  right: 0rpx;
-  bottom: 50rpx;
+  right: 0;
+  top: 50rpx;
 }
 .publish,
 .my {
@@ -181,11 +181,10 @@ export default {
   height: 100rpx;
   text-align: center;
   line-height: 100rpx;
-  border-radius: 50%;
   color: #fff;
 }
 .publish {
-  background-color: #adc4fb;
+  background-color: #b9faac;
 }
 .my {
   background-color: #82d5e0;
